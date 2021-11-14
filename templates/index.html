@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body>
+<h2> The Customer Booking Page <h2>
+<form action ="" method="post">
+    <p>
+      {{form.name.label}} <br>
+      {{form.name(size=30)}}
+   </p>
+   <p>
+      {{form.age.label}} <br>
+      {{form.age(size=30)}}
+   </p>
+   <p>
+      {{form.mobile.label}} <br>
+      {{form.mobile(size=30)}}
+   </p>
+   <p>
+      {{form.destination.label}} <br>
+      {{form.destination(size=30)}}
+   </p>
+   <p>
+      {{form.seat.label}} <br>
+      {{form.seat(size=30)}}
+   </p>
+   <p>
+      {{form.submit()}}
+   </p>
+</body>
+</html>
