@@ -21,6 +21,7 @@ def index():
         allot2 = allot()
         print(allot2)
         seat(allot2)
+        return render_template('output.html', nameh=name2, ageh=age2, destinationh=destination2)
     return render_template('index.html', form=form)
     
 if __name__ == '__main__':
