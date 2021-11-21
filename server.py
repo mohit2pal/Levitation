@@ -17,7 +17,6 @@ def index():
         age2 =request.form['age']
         mobile2 =request.form['mobile']
         destination2 =request.form['destination']
-        seat2 =request.form['seat']
         entry(name2,age2,mobile2,destination2)
         allot2 = allot()
         print(allot2)
