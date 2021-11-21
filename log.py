@@ -1,6 +1,19 @@
-def entry(a):
-    n=a
-    L=("\n",n,"\n")
+
+'''a=['A1','A2','A3','A4','A5']
+def seat():
+    
+ for i in range (0,2):
+    print("CHOOSE YOUR SEAT FROM THESE: ", a ,"\n")
+    s=input("Enter:   ")
+    a.remove(s)
+    print("thanku")'''
+
+def entry(name1,age1,mob1,dest1):
+    n=name1
+    ag=age1
+    m=mob1
+    d=dest1
+    L=("\n",n,"   ",ag,"   ",m,"     ",d)
     f1=open('log.txt','a')
     f1.writelines(L)
     f1.close()

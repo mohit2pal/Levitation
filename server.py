@@ -2,6 +2,8 @@ from flask import Flask, render_template, redirect
 from flask import request
 from forms import SignUpForm
 from log import * 
+from alllot import *
+from seat import *
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'levetation'
@@ -16,7 +18,10 @@ def index():
         mobile2 =request.form['mobile']
         destination2 =request.form['destination']
         seat2 =request.form['seat']
-        entry(name2)
+        entry(name2,age2,mobile2,destination2)
+        allot2 = allot()
+        print(allot2)
+        seat(allot2)
     return render_template('index.html', form=form)
     
 if __name__ == '__main__':
