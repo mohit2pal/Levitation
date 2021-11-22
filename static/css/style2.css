@@ -11,15 +11,16 @@ body {
     align-items:flex-end;
     width: auto;
     height: fit-content;
+    background-image: url("https://i.ibb.co/YdrqCC9/pod-bay2.jpg" );
     background-repeat: no-repeat;
-    background-color: azure;
+    background-color: rgb(0, 0, 0);
     background-size: cover;
 }
 
 .container {
     width: 420px;
     max-width: 50%;
-    background-color:aqua;
+    background-color:rgb(163, 196, 175);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 2px 0;
