@@ -20,9 +20,8 @@ body {
 .container {
     width: 570px;
     max-width: 50%;
-    background-color: rgb(57, 84, 109);
+    background-color: rgb(77, 145, 201);
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px 2px;
-    
+    border-radius: 30px;
+    box-shadow: 0 0 10px 2px;   
 }
