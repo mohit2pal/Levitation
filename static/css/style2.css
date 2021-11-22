@@ -9,8 +9,7 @@ body {
     display:flex;
     justify-content:center;
     align-items:flex-end;
-    width: 99vw;
-    height: 90vh;
+    width: auto;
     height: fit-content;
     background-repeat: no-repeat;
     background-color: azure;
@@ -18,7 +17,7 @@ body {
 }
 
 .container {
-    width: 570px;
+    width: 420px;
     max-width: 50%;
     background-color:aqua;
     padding: 20px;
