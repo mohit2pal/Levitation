@@ -8,7 +8,11 @@ from seat import *
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'levetation'
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+@app.route('/pod_ticket', methods=['GET', 'POST'])
 def index():
     form = SignUpForm()
     if form.is_submitted():
@@ -24,5 +28,9 @@ def index():
         return render_template('output.html', nameh=name2, ageh=age2, destinationh=destination2)
     return render_template('index.html', form=form)
     
+@app.route('/pod_bay_ticket')
+def rticket():
+    return ('Hello Reciever')
+
 if __name__ == '__main__':
     app.run()
