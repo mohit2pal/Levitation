@@ -1,0 +1,27 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    padding: 50;
+    margin: 20;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 79vw;
+    height: 50vh;
+    background-image: url("https://i.ibb.co/FKMbb0r/1-edit.jpg");
+    background-repeat: no-repeat;
+    background-color: black;
+    background-size: cover;
+}
+
+.container {
+    width: 800px;
+    max-width: 40%;
+    background-color: rgb(159, 212, 255);
+    padding: 50px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px 2px;   
+}
