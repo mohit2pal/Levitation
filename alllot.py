@@ -50,6 +50,8 @@ def allot():
     if(seat_counter > 0):
         if ( timeal > 0):
             pod_bay_counter-= timeal
+            if(pod_bay_counter < 0):
+                pod_bay_counter = 5 + pod_bay_counter
             seat_counter = 27
         else:
             seat_counter-= 1
