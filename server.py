@@ -30,7 +30,8 @@ def index():
     
 @app.route('/pod_bay_ticket')
 def rticket():
-    return render_template('reciever.html')
+    form = SignUpForm()
+    return render_template('reciever.html', form=form)
 
 if __name__ == '__main__':
     app.run()
