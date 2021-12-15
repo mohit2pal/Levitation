@@ -30,7 +30,7 @@ def index():
     
 @app.route('/pod_bay_ticket')
 def rticket():
-    return ('Hello Reciever')
+    return render_template('reciever.html')
 
 if __name__ == '__main__':
     app.run()
