@@ -18,7 +18,7 @@
 
 import datetime
 
-seat_counter = 28
+seat_counter = 29
 pod_bay_counter = 5
 platform_counter = 12
 time = 0
@@ -52,16 +52,16 @@ def allot():
             pod_bay_counter-= timeal
             if(pod_bay_counter < 0):
                 pod_bay_counter = 5 + pod_bay_counter
-            seat_counter = 27
+            seat_counter = 28
         else:
             seat_counter-= 1
     if(seat_counter == 0 and pod_bay_counter != 0):
         pod_bay_counter-= 1
-        seat_counter = 27
+        seat_counter = 28
     if(seat_counter == 0 and pod_bay_counter == 0):
         platform_counter-=1
         pod_bay_counter = 5
-        seat_counter = 27
+        seat_counter = 28
     
     platform_change = 12-platform_counter
     platform_ascii= platform_change + 65
@@ -69,7 +69,8 @@ def allot():
     pod_change = 5-pod_bay_counter
     pod_bay = pod_change +1
     pod = str(pod_bay)
-    str2 = platform + pod
+    seat = str(seat_counter)
+    str2 = platform + pod + " " + seat
     
     return (str2)
 
@@ -79,3 +80,7 @@ def allot():
 #   allot()
 #   print(i, end=" ")
 #   print(platform_counter, pod_bay_counter, seat_counter)
+
+for i in range(28): 
+  a =allot()
+  print(a)
