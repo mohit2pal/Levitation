@@ -81,6 +81,6 @@ def allot():
 #   print(i, end=" ")
 #   print(platform_counter, pod_bay_counter, seat_counter)
 
-for i in range(100): 
-  a =allot()
-  print(a)
+# for i in range(100): 
+#   a =allot()
+#   print(a)
