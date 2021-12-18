@@ -36,7 +36,7 @@ def counth():
     global time_rec
     time_count = 0
     for i in range(time_rec,timeh):
-        if(i%5 == 4):
+        if(i%5 == 3):
             time_count+=1
     time_rec = timeh
     return(time_count)
@@ -51,7 +51,7 @@ def allot():
         if ( timeal > 0):
             pod_bay_counter-= timeal
             if(pod_bay_counter < 0):
-                pod_bay_counter = 5 + pod_bay_counter
+                pod_bay_counter = 6 + pod_bay_counter
             seat_counter = 28
         else:
             seat_counter-= 1
@@ -81,6 +81,6 @@ def allot():
 #   print(i, end=" ")
 #   print(platform_counter, pod_bay_counter, seat_counter)
 
-for i in range(28): 
+for i in range(100): 
   a =allot()
   print(a)
