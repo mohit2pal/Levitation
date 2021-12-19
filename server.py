@@ -24,8 +24,8 @@ def index():
         entry(name2,age2,mobile2,destination2)
         allot2 = allot()
         print(allot2)
-        seat(allot2)
-        return render_template('output.html', nameh=name2, ageh=age2, destinationh=destination2)
+        # seat(allot2)
+        return render_template('output.html', nameh=name2, ageh=age2, destinationh=destination2, alloth = allot2)
     return render_template('index.html', form=form)
     
 @app.route('/pod_bay_ticket')
