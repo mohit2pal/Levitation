@@ -57,8 +57,8 @@ def seat(b):
  store=b
 
 
-seat("A1")
-print(store)
-seat("A1")
-seat("A3")
-seat("A3")   
+# seat("A1")
+# print(store)
+# seat("A1")
+# seat("A3")
+# seat("A3")   
