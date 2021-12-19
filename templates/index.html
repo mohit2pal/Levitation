@@ -14,19 +14,20 @@
    <form action ="" method="post">
       <p style="text-align: center;font-size: 30px;">
          {{form.name.label}} <br>
-         {{form.name(size=40,style='height: 30px')}}
+         {{form.name(size=40,style='height: 30px', required ='required')}}
+         
       </p>
       <p style="text-align: center;font-size: 30px;">
          {{form.age.label}} <br>
-         {{form.age(size=40,style='height: 30px')}}
+         {{form.age(size=40,style='height: 30px', required ='required')}}
       </p>
       <p style="text-align: center;font-size: 30px;">
          {{form.mobile.label}} <br>
-         {{form.mobile(size=40,style='height: 30px')}}
+         {{form.mobile(size=40,style='height: 30px', required ='required')}}
       </p>
       <p style="text-align: center;font-size: 30px;">
          {{form.destination.label}} <br>
-         {{form.destination(size=40,style='height: 30px')}}
+         {{form.destination(size=40,style='height: 30px', required ='required')}}
       </p>
       <p class="btn" style="text-align: center; font-size: medium;">
          {{form.submit()}}
