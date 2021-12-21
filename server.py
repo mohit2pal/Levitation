@@ -44,9 +44,14 @@ def rticket():
     form = SignUpForm()
     return render_template('reciever.html', form=form)
 
-@app.route('/worker')
+@app.route('/worker', methods=['GET', 'POST'])
 def worker():
-    return render_template("worker.html")
+    form = SignUpForm()
+    if form.is_submitted():
+        result=request.form
+        pod_d = request.form['name']
+        return (pod_d)
+    return render_template("worker.html", form=form)
 
 if __name__ == '__main__':
     app.run()
