@@ -44,5 +44,9 @@ def rticket():
     form = SignUpForm()
     return render_template('reciever.html', form=form)
 
+@app.route('/worker')
+def worker():
+    return render_template("worker.html")
+
 if __name__ == '__main__':
     app.run()
