@@ -5,6 +5,7 @@
 
 
 import datetime
+from re import I
 
 seat_counter = 29
 pod_bay_counter = 6
@@ -13,6 +14,7 @@ time = 0
 time_rec = 0
 time_rechr = 0
 time_hourrecd = 0
+#pod_d = 0
 
 def sec():
   global time
@@ -43,7 +45,7 @@ def counth():
 def allot():
     global seat_counter
     global pod_bay_counter
-    global platform_counter
+    global platform_counter      
     timeal = counth()
     if(seat_counter > 0):
         # if(seat_counter > 28):
@@ -70,7 +72,12 @@ def allot():
     # if(seat_counter == 28 and pod_bay_counter < 0):
     #     platform_counter-= 1
     #     pod_bay_counter = 5
+
+    #if (pod_d = A1):
+
         
+    
+
     platform_change = 12-platform_counter
     platform_ascii= platform_change + 65
     platform = chr(platform_ascii)
@@ -79,6 +86,7 @@ def allot():
     pod = str(pod_bay)
     seat = str(seat_counter)
     str2 = platform + pod + " " + seat
+    
     
     return (str2)
 
