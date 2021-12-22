@@ -5,6 +5,7 @@
 
 
 import datetime
+from re import S
 
 seat_counter = 29
 pod_bay_counter = 6
@@ -13,7 +14,64 @@ time = 0
 time_rec = 0
 time_rechr = 0
 time_hourrecd = 0
+y=0
+cbay=0
 
+def inworker(s):
+    global y
+    y=s
+
+def change(x):
+    global cbay
+    d=" ".join(x)
+    e=d.split()
+    f=e[0]
+    g=e[1]
+    h="".join(g)
+    j="".join(f)
+    i=int(h)
+    k=ord(j)
+
+    if(x==y):
+
+     if(k==77):
+         k=65
+         i=0
+     if(i==6):   
+      i=1
+      k=k+1
+     if(i!=6):
+      i=i+1
+
+     cbay+=1
+     pascii=chr(k)
+     fplatform=str(pascii)
+     fbay=str(i)
+     final=fplatform+fbay
+     return final
+    
+    if(cbay>=1):
+        if(k==77):
+         k=65
+         i=0
+        if(i==6):   
+         i=1
+         k=k+1
+        if(i!=6):
+         i=i+1
+
+        cbay+=1
+        pascii=chr(k)
+        fplatform=str(pascii)
+        fbay=str(i)
+        final=fplatform+fbay
+        return final
+
+    else:
+        return x
+    
+
+    
 def sec():
   global time
   global time_hourrecd
@@ -79,10 +137,14 @@ def allot():
     pod = str(pod_bay)
     seat = str(seat_counter)
     str2 = platform + pod + " " + seat
-    
-    return (str2)
+    allot2=str2.split()
+    allot3=allot2[0]
+    a=change(allot3)
+    return (a)
 
+def find():
+ for i in range(900): 
+   c =allot()
+   print(c)
 
-# for i in range(100): 
-#   a =allot()
-#   print(a)
+ return c

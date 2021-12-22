@@ -27,8 +27,7 @@ def index():
        mobile2 =request.form['mobile']
        destination2 =request.form['destination']
        entry(name2,age2,mobile2,destination2)
-       allot2 = allot()
-       print(allot2)
+       allot2 = find()
        #seat(allot2)
        return render_template('seat.html')
     return render_template('index.html', form=form)
@@ -43,6 +42,17 @@ def output():
 def rticket():
     form = SignUpForm()
     return render_template('reciever.html', form=form)
+
+
+@app.route('/worker', methods=['GET', 'POST'])
+def worker():
+    form = SignUpForm()
+    if form.is_submitted():
+        result=request.form
+        pod_d = request.form['name']
+        inworker(pod_d)
+    return render_template("worker.html", form=form)
+
 
 if __name__ == '__main__':
     app.run()
