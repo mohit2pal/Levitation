@@ -34,11 +34,11 @@ def change(x):
 
     if(x==y):
 
-     if(k==77):
+     if(k==77 and i==6):
          k=65
          i=0
      if(i==6):   
-      i=1
+      i=0
       k=k+1
      if(i!=6):
       i=i+1
@@ -51,11 +51,11 @@ def change(x):
      return final
     
     if(cbay>=1):
-        if(k==77):
+        if(k==77 and i==6):
          k=65
          i=0
         if(i==6):   
-         i=1
+         i=0
          k=k+1
         if(i!=6):
          i=i+1
