@@ -53,7 +53,8 @@ def worker():
     if form.is_submitted():
         result=request.form
         pod_d = request.form['name']
-        inworker(pod_d)
+        # inworker(pod_d)
+        print(pod_d)
     return render_template("worker.html", form=form)
 
 
