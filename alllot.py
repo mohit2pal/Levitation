@@ -25,6 +25,15 @@ def inworker(s):
     '''workcount+=1
     return workcount'''
 
+def check(l):
+    o=l
+    d=" ".join(o)
+    while d==y :
+        allot()
+    
+    return o
+
+
 def change(x):
     global cbay
     global wcount
@@ -38,8 +47,7 @@ def change(x):
     k=ord(j)
 
     if(x==y):
-     '''global z
-     z=inworker(0)'''
+    
      print(wcount)
      wcount+=1
      print(wcount)
@@ -81,10 +89,6 @@ def change(x):
         fbay=str(i)
         final=fplatform+fbay
         return final
-
-       
-
-
 
     else:
         return x
@@ -158,12 +162,13 @@ def allot():
     str2 = platform + pod + " " + seat
     allot2=str2.split()
     allot3=allot2[0]
-    a=change(allot3)
-    return (a)
+    '''a=check(allot3)
+    return (a)'''
 
-def find():
- for i in range(900): 
-   c =allot()
+def find(u):
+ o=u
+ for i in range(250):   
+   c =check(o)
    print(c)
 
  return c
