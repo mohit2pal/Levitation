@@ -34,7 +34,6 @@ def check(l):
     while(pidd == o):
         pid = allot()
         pidd = pid[:2]
-    
     return pid
 
 
