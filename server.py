@@ -53,5 +53,9 @@ def worker():
         return (pod_d)
     return render_template("worker.html", form=form)
 
+@app.route('/no_work')
+def work():
+    return render_template('booking.html')
+
 if __name__ == '__main__':
     app.run()
