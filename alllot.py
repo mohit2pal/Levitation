@@ -5,7 +5,7 @@
 
 
 import datetime
-from re import S
+
 
 seat_counter = 29
 pod_bay_counter = 6
@@ -16,13 +16,18 @@ time_rechr = 0
 time_hourrecd = 0
 y=0
 cbay=0
+wcount=0
 
 def inworker(s):
+    
     global y
     y=s
+    '''workcount+=1
+    return workcount'''
 
 def change(x):
     global cbay
+    global wcount
     d=" ".join(x)
     e=d.split()
     f=e[0]
@@ -33,6 +38,11 @@ def change(x):
     k=ord(j)
 
     if(x==y):
+     '''global z
+     z=inworker(0)'''
+     print(wcount)
+     wcount+=1
+     print(wcount)
 
      if(k==77 and i==6):
          k=65
@@ -51,6 +61,7 @@ def change(x):
      return final
     
     if(cbay>=1):
+        fcount=int (wcount/28)
         if(k==77 and i==6):
          k=65
          i=0
@@ -58,14 +69,22 @@ def change(x):
          i=0
          k=k+1
         if(i!=6):
-         i=i+1
-
+         i=i+fcount
+         print(i)
+         
+        if(x=="A1"):
+            cbay=-1
+            
         cbay+=1
         pascii=chr(k)
         fplatform=str(pascii)
         fbay=str(i)
         final=fplatform+fbay
         return final
+
+       
+
+
 
     else:
         return x
