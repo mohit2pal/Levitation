@@ -23,7 +23,6 @@ def check(l):
     while(pidd == l):
         pid = allot()
         pidd = pid[:2]
-    
     return pid
 
     
@@ -105,5 +104,6 @@ def find(u):
    print(c)
 
  return c
+
 
 
