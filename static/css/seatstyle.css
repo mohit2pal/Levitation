@@ -47,7 +47,7 @@ body {
   border-top-right-radius: 10px;
 }
 
-.seat.selected {
+.seat.booked {
   background-color: green;
 }
 
@@ -112,4 +112,19 @@ p.text{
 
 p.text span{
     color: rgb(158, 248, 158);
+}
+
+.button {
+  background-color: cornsilk;
+  border: 1px solid hsl(216, 65%, 58%);
+  border-radius: 5px;
+  padding: 5px 5px;
+  color: rgb(12, 8, 19);
+  outline: none;
+}
+
+.button:hover {
+  border-color: navy;
+  background-color: rebeccapurple;
+  color: white;
 }
