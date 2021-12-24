@@ -19,7 +19,7 @@ def home():
 @app.route('/pod_ticket', methods=['GET', 'POST'])
 def index():
     global name2
-    global allot2
+    global final
     global pod_d
     form = SignUpForm()
     if form.is_submitted():
@@ -30,6 +30,7 @@ def index():
        destination2 =request.form['destination']
        entry(name2,age2,mobile2,destination2)
        allot2 = find(pod_d)
+       final=allot2[:2]
        #seat(allot2)
        return render_template('seat.html')
     return render_template('index.html', form=form)
@@ -38,11 +39,17 @@ def index():
 def output():
     namet = name2
     allott = allot2
-    return render_template('output.html', nameh=namet, alloth=allott)
+    return render_template('output.html', nameh=namet, alloth=final)
     
-@app.route('/pod_bay_ticket')
+@app.route('/pod_bay_ticket', methods=['GET', 'POST'])
 def rticket():
     form = SignUpForm()
+    if form.is_submitted():
+       result= request.form
+       rname =request.form['name']
+       rage =request.form['age']
+       rmobile =request.form['mobile']
+       rentry(rname,rage,rmobile)
     return render_template('reciever.html', form=form)
 
 
