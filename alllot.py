@@ -14,35 +14,19 @@ time = 0
 time_rec = 0
 time_rechr = 0
 time_hourrecd = 0
-pod_dmg= ""
-pidu=""
 
-def check2(p):
-    pid = allot()
-    pidd = pid[:2]
-    while(pidd == p):
-        pid = allot()
-        pidd = pid[:2]
-    return pid
     
 def check(l):
-    global pidu
     dmg = l.split()
-    # print(dmg[1])
-    b=int(str(len(dmg)))
-    for i in range(b):
-        # print(i)
-        # if(i==" "):
-        #    break
-        pidu= dmg[i]
-        r=check2(pidu)
-        # pad= pad + i
-        # print(pad)
-        # pidu = i
-        # pad= i + pidu
-    
-    return r
-    
+    pid = allot()
+    pidd = pid[:2]
+    for i in dmg:
+      while(pidd == i):
+         pid = allot()
+         pidd = pid[:2]
+    return pidd
+       
+        
 def sec():
   global time
   global time_hourrecd
@@ -116,11 +100,10 @@ def allot():
 
 def find(u):
  o=u
- for i in range(100):   
+ for i in range(900):   
    c =check(o)
    print(c) 
 
  return c
 
 
-find("A1 A2")
