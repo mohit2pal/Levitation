@@ -53,8 +53,12 @@ def worker():
         return (pod_d)
     return render_template("worker.html", form=form)
 
-@app.route('/no_work')
+@app.route('/no_work', methods=['GET', 'POST'])
 def work():
+    if request.method == 'POST':
+        dataty = request.get_json()
+        print(dataty)
+        print(type(dataty))
     return render_template('booking.html')
 
 if __name__ == '__main__':
