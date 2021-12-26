@@ -5,6 +5,7 @@
 
 
 import datetime
+import json
 
 seat_counter = 29
 pod_bay_counter = 6
@@ -13,6 +14,21 @@ time = 0
 time_rec = 0
 time_rechr = 0
 time_hourrecd = 0
+pod_rec = ""
+
+def check_json(t):
+    global pod_rec
+    if(t != pod_rec):
+        dicto = {"change": 'true'}
+        json_object = json.dumps(dicto, indent = 1)
+        with open("./static/js/change.json", "w") as outfile:
+           outfile.write(json_object)
+    else:
+        dicto = {"change": 'false'}
+        json_object = json.dumps(dicto, indent = 1)
+        with open("./static/js/change.json", "w") as outfile:
+            outfile.write(json_object)
+    pod_rec = t
 
 def sec():
   global time
@@ -78,7 +94,9 @@ def allot():
     pod_bay = pod_change +1
     pod = str(pod_bay)
     seat = str(seat_counter)
+    str3 = platform + pod
     str2 = platform + pod + " " + seat
+    check_json(str3)
     
     return (str2)
 

@@ -2,6 +2,8 @@ const container = document.querySelector(".container")
 const seats = document.querySelectorAll(".row .seat")
 const button = document.querySelector(".button")
 
+updateUI()
+
 //To send and recieve data using ajax
 function ajaxx() {
     const markseat = localStorage.getItem("bookedSeats")
@@ -12,6 +14,30 @@ function ajaxx() {
     xhr.setRequestHeader('Content-Type', 'application/json')
 
     xhr.send(markseat)
+}
+
+//A functio to update the UI
+function updateUI() {
+    var xhr = new XMLHttpRequest()
+    xhr.open('GET', './static/js/change.json', true)
+
+    xhr.onload = function () {
+        if (this.status == 200) {
+            var change = JSON.parse(this.responseText)
+
+            if (change['change'] == "true") {
+                const bookedSeats = document.querySelectorAll(".row .seat.hooked")
+                const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
+                localStorage.setItem("bookedSeats", JSON.stringify(seatsIndex))
+                populateUI()
+            }
+            else {
+                populateUI()
+            }
+        }
+    }
+    xhr.send()
+
 }
 // for storing value in local storage
 function store() {
@@ -65,4 +91,4 @@ function populateUI() {
     }
 }
 
-populateUI()
+// populateUI()
