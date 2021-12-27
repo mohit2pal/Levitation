@@ -50,15 +50,17 @@
 
     <div class = "container my-4 col-5">
         <h1>Registration Page</h2>
-        </div>      
+    </div>      
     
         <form action ="" method="post">
+
+        <div class="container my-4 col-3">
+          {{form.name.label}} <br>
+          {{form.name(size=40,style='height: 30px')}}          
+        </div>
         <div class="container my-4 col-3">
           {{form.mobile.label}} <br>
           {{form.mobile(size=40,style='height: 30px')}}
-        </div> <div class="container my-4 col-3">
-          {{form.name.label}} <br>
-          {{form.name(size=40,style='height: 30px')}}          
         </div>
         <div class="container my-4 col-3">
           {{form.age.label}} <br>
@@ -68,7 +70,8 @@
           {{form.destination.label}} <br>
           {{form.destination(size=40,style='height: 30px')}}          
         </div>
-        <p class="btn" style="text-align: center; font-size: medium;">
+
+        <p class="container my-4 col-1" style="text-align: center; font-size: medium;">
           {{form.submit()}}
         </p>
       
