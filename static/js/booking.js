@@ -49,7 +49,17 @@ function store() {
 // used to listen seat clicking and toggling color
 container.addEventListener("click", (e) => {
     if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
-        e.target.classList.toggle("booked")
+        if( document.querySelectorAll(".row .seat.booked").length < 5) {
+           e.target.classList.toggle("booked")
+        }
+        else {
+            if(e.target.classList.contains("booked")){
+              e.target.classList.toggle("booked")
+            }
+            // else {
+            //     pass
+            // }
+        }
     }
     // const bookedSeats = document.querySelectorAll(".row .seat.booked")
     // const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
