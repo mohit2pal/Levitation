@@ -6,7 +6,7 @@ updateUI()
 
 //To send and recieve data using ajax
 function ajaxx() {
-    const markseat = localStorage.getItem("bookedSeats")
+    const markseat = localStorage.getItem("currentSeats")
     console.log(markseat)
     console.log(typeof markseat)
     var xhr = new XMLHttpRequest()
@@ -38,6 +38,14 @@ function updateUI() {
     }
     xhr.send()
 
+}
+
+//to store data of the current seats booked
+function current_store() {
+    const currentSeats = document.querySelectorAll(".row .seat.booked")
+    const currentIndex = [...currentSeats].map((seat) => [...seats].indexOf(seat))
+
+    localStorage.setItem("currentSeats", JSON.stringify(currentIndex))
 }
 // for storing value in local storage
 function store() {
@@ -74,6 +82,7 @@ container.addEventListener("click", (e) => {
 button.addEventListener("click", () => {
 
     store()
+    current_store()
     const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats"))
 
     if (selectedSeats !== null && selectedSeats.length > 0) {
