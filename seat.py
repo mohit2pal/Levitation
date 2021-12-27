@@ -1,6 +1,8 @@
     
 s=['1','2','3','4','5'] 
+
 store = ""
+s=[1,2,3,4,5,6,7,8,9]
 
 def seat(b):
  global s
@@ -35,4 +37,27 @@ def seat(b):
  store=b
 
 
+# seat("A1")
+# print(store)
+# seat("A1")
+# seat("A3")
+# seat("A3")   
+
+def seats(a):
+  global s
+  global sub
+  sub = list(set(s) - set(a))
+
+# print subtraction value
+  print('list1 - list2 =', sub)
+
+
+from alllot import *
   
+def find(u):
+    o=len(u)
+    for i in range(0,o): 
+      a =allot()
+    #   return a
+  
+    print(a)

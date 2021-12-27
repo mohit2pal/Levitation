@@ -53,7 +53,6 @@ def rticket():
        rentry(rname,rage,rmobile)
     return render_template('reciever.html', form=form)
 
-
 @app.route('/worker', methods=['GET', 'POST'])
 def worker():
     global pod_d
@@ -63,6 +62,15 @@ def worker():
         pod_d = request.form['name']
     return render_template("worker.html", form=form)
 
+@app.route('/no_work', methods=['GET', 'POST'])
+def work():
+    if request.method == 'POST':
+        dataty = request.get_json()
+        print(dataty)
+        print(type(dataty))
+        find(dataty)
+        # seats(dataty)
+    return render_template('booking.html')
 
 
 if __name__ == '__main__':
