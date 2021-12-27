@@ -30,6 +30,8 @@ def index():
        destination2 =request.form['destination']
        entry(name2,age2,mobile2,destination2)
        allot2 = check(pod_d)
+       print(allot2)
+       print(name2)
        #seat(allot2)
        return render_template('seat.html')
     return render_template('index.html', form=form)
@@ -60,6 +62,7 @@ def worker():
         result=request.form
         pod_d = request.form['name']
     return render_template("worker.html", form=form)
+
 
 
 if __name__ == '__main__':

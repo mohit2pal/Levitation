@@ -5,6 +5,7 @@
 
 
 import datetime
+from re import I
 
 
 seat_counter = 29
@@ -14,6 +15,7 @@ time = 0
 time_rec = 0
 time_rechr = 0
 time_hourrecd = 0
+#pod_d = 0
 
     
 def check(l):
@@ -85,7 +87,12 @@ def allot():
     # if(seat_counter == 28 and pod_bay_counter < 0):
     #     platform_counter-= 1
     #     pod_bay_counter = 5
+
+    #if (pod_d = A1):
+
         
+    
+
     platform_change = 12-platform_counter
     platform_ascii= platform_change + 65
     platform = chr(platform_ascii)
@@ -95,6 +102,7 @@ def allot():
     seat = str(seat_counter)
     str_net = platform + pod
     str2 = platform + pod + " " + seat
+
     return (str2)
 
 

@@ -1,21 +1,90 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./static/css/style3.css">
-    <title>VIRGIN HYPERLOOP | HOME</title>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     
-</head>
-<body>
-   <div class="container">
-   <div id="text"; style="text-align: center;"> <h2> Click on the below buttons to generate a Ticket </h2></div>
-   <div id="option-buttons" class="btn-grid"; style="text-align:center ;">
-       <button class="btn" onclick="window.location.href='{{'pod_bay_ticket'}}'">Platform Acess Zone</button>
-       <button class="btn" onclick="window.location.href='{{'pod_ticket'}}'">Pod Journey Ticket</button>
-   </div>
-   </div> 
-</body>
+
+    <title>Virgin Hyperloop | Home</title>
+  </head>
+  <body class="bg-dark">   
+  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">Virgin Hyperloop</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>            
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+<br>
+<video style="width:1536px; height:620px;" playsinline autoplay muted loop>
+  <source src="/static/css/virginhyperloop.mp4" type="video/mp4" />
+</video>
+ 
+<div class="position-absolute top-50 start-50 translate-middle">
+
+<form>
+
+    
+    <div class = "container my-4 col-12">
+        <h1  class="text-white">Welcome to Virgin Hyperloop</h2>
+        </div>
+        
+        <div class = "container my-4 col-12">
+            <h3 class="text-white">Click on the below buttons to generate a Ticket</h3>
+        </div>
+        
+        <div class="d-grid gap-2 col-4 mx-auto my-4">
+        <a class="btn btn-success" onclick="window.location.href='{{'pod_bay_ticket'}}'" role="button">Platfrom Acess zone</a>
+        <a class="btn btn-success" onclick="window.location.href='{{'pod_ticket'}}'" role="button">Pod Journey ticket</a>
+        </div>
+    
+
+</form>
+
+</div>
+
+       
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
 </html>

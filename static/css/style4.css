@@ -1,4 +1,4 @@
-*, *::before, *::after {
+/*, *::before, *::after {
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -25,3 +25,4 @@ body {
     border-radius: 200px;
     box-shadow: 0 0 10px 0;
 }
+*/
