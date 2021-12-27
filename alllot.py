@@ -7,6 +7,7 @@
 import datetime
 import json
 
+
 seat_counter = 29
 pod_bay_counter = 6
 platform_counter = 12
@@ -15,6 +16,7 @@ time_rec = 0
 time_rechr = 0
 time_hourrecd = 0
 pod_rec = ""
+#pod_d = 0
 
 def check_json(t):
     global pod_rec
@@ -30,6 +32,18 @@ def check_json(t):
             outfile.write(json_object)
     pod_rec = t
 
+    
+def check(l):
+    dmg = l.split()
+    pid = allot()
+    pidd = pid[:2]
+    for i in dmg:
+      while(pidd == i):
+         pid = allot()
+         pidd = pid[:2]
+    return pidd
+       
+        
 def sec():
   global time
   global time_hourrecd
@@ -40,6 +54,7 @@ def sec():
   time_rechr = timehr - time_hourrecd
   time_hourrecd = timehr
   return (time)
+
 
 def counth():
     timeh1 = sec()
@@ -60,6 +75,7 @@ def allot():
     global seat_counter
     global pod_bay_counter
     global platform_counter
+    global pod_dmg
     timeal = counth()
     if(seat_counter > 0):
         # if(seat_counter > 28):
@@ -86,7 +102,12 @@ def allot():
     # if(seat_counter == 28 and pod_bay_counter < 0):
     #     platform_counter-= 1
     #     pod_bay_counter = 5
+
+    #if (pod_d = A1):
+
         
+    
+
     platform_change = 12-platform_counter
     platform_ascii= platform_change + 65
     platform = chr(platform_ascii)
@@ -101,7 +122,18 @@ def allot():
     return (str2)
 
 
+
 # for i in range(100): 
 #   a =allot()
 #   print(a)
+
+
+# def find(u):
+#  o=u
+#  for i in range(900):   
+#    c =check(o)
+#    print(c) 
+
+#  return c
+
 
