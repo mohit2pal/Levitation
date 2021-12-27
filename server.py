@@ -59,6 +59,7 @@ def work():
         dataty = request.get_json()
         print(dataty)
         print(type(dataty))
+        find(dataty)
         # seats(dataty)
     return render_template('booking.html')
 

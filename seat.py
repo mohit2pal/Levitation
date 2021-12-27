@@ -20,7 +20,7 @@
              print(s)
    
 seat("M1")   '''
-    
+   
 # s=['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28'] 
 store = ""
 s=[1,2,3,4,5,6,7,8,9]
@@ -71,4 +71,14 @@ def seats(a):
 
 # print subtraction value
   print('list1 - list2 =', sub)
+
+
+from alllot import *
   
+def find(u):
+    o=len(u)
+    for i in range(0,o): 
+      a =allot()
+    #   return a
+  
+    print(a)
