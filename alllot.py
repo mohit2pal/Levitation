@@ -98,12 +98,18 @@ def allot():
     return (str2)
 
 
-def find(u):
- o=u
- for i in range(900):   
-   c =check(o)
-   print(c) 
 
- return c
+# for i in range(100): 
+#   a =allot()
+#   print(a)
+
+
+# def find(u):
+#  o=u
+#  for i in range(900):   
+#    c =check(o)
+#    print(c) 
+
+#  return c
 
 

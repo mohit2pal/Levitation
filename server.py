@@ -29,7 +29,7 @@ def index():
        mobile2 =request.form['mobile']
        destination2 =request.form['destination']
        entry(name2,age2,mobile2,destination2)
-       allot2 = find(pod_d)
+       allot2 = check(pod_d)
        #seat(allot2)
        return render_template('seat.html')
     return render_template('index.html', form=form)
@@ -38,7 +38,7 @@ def index():
 def output():
     namet = name2
     allott = allot2
-    return render_template('output.html', nameh=namet, alloth=allot2)
+    return render_template('output.html', nameh=namet, alloth=allott)
     
 @app.route('/pod_bay_ticket', methods=['GET', 'POST'])
 def rticket():
