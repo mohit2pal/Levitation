@@ -6,6 +6,7 @@
 
 import datetime
 
+
 seat_counter = 29
 pod_bay_counter = 6
 platform_counter = 12
@@ -14,6 +15,18 @@ time_rec = 0
 time_rechr = 0
 time_hourrecd = 0
 
+    
+def check(l):
+    dmg = l.split()
+    pid = allot()
+    pidd = pid[:2]
+    for i in dmg:
+      while(pidd == i):
+         pid = allot()
+         pidd = pid[:2]
+    return pidd
+       
+        
 def sec():
   global time
   global time_hourrecd
@@ -24,6 +37,7 @@ def sec():
   time_rechr = timehr - time_hourrecd
   time_hourrecd = timehr
   return (time)
+
 
 def counth():
     timeh1 = sec()
@@ -44,6 +58,7 @@ def allot():
     global seat_counter
     global pod_bay_counter
     global platform_counter
+    global pod_dmg
     timeal = counth()
     if(seat_counter > 0):
         # if(seat_counter > 28):
@@ -78,11 +93,17 @@ def allot():
     pod_bay = pod_change +1
     pod = str(pod_bay)
     seat = str(seat_counter)
+    str_net = platform + pod
     str2 = platform + pod + " " + seat
-    
     return (str2)
 
 
-# for i in range(100): 
-#   a =allot()
-#   print(a)
+def find(u):
+ o=u
+ for i in range(900):   
+   c =check(o)
+   print(c) 
+
+ return c
+
+

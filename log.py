@@ -17,3 +17,12 @@ def entry(name1,age1,mob1,dest1):
     f1=open('log.txt','a')
     f1.writelines(L)
     f1.close()
+
+def rentry(name,age,mob):
+    n=name
+    ag=age
+    m=mob
+    L=("\n",n,"   ",ag,"   ",m)
+    f1=open('rdata.txt','a')
+    f1.writelines(L)
+    f1.close()
