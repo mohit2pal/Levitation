@@ -21,8 +21,9 @@
    
 seat("M1")   '''
     
-s=['1','2','3','4','5'] 
+# s=['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28'] 
 store = ""
+s=[1,2,3,4,5,6,7,8,9]
 
 def seat(b):
  global s
@@ -62,3 +63,12 @@ def seat(b):
 # seat("A1")
 # seat("A3")
 # seat("A3")   
+
+def seats(a):
+  global s
+  global sub
+  sub = list(set(s) - set(a))
+
+# print subtraction value
+  print('list1 - list2 =', sub)
+  
