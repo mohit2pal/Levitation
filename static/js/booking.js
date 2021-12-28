@@ -10,7 +10,7 @@ function ajaxx() {
     console.log(markseat)
     console.log(typeof markseat)
     var xhr = new XMLHttpRequest()
-    xhr.open('POST', '/no_work', true)
+    xhr.open('POST', '/seat_selection', true)
     xhr.setRequestHeader('Content-Type', 'application/json')
 
     xhr.send(markseat)
