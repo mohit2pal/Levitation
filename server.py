@@ -49,15 +49,6 @@ def rticket():
        rentry(rname,rage,rmobile)
     return render_template('reciever.html', form=form)
 
-@app.route('/worker', methods=['GET', 'POST'])
-def worker():
-    global pod_d
-    form = SignUpForm()
-    if form.is_submitted():
-        result=request.form
-        pod_d = request.form['name']
-    return render_template("worker.html", form=form)
-
 @app.route('/seat_selection', methods=['GET', 'POST'])
 def work():
     global seat_ticket
@@ -86,6 +77,26 @@ def output():
     # print("This is in print_ticket:", datatly)
     return render_template('ticket.html', nameh=namet, alloth=allott)
 
+@app.route('/worker', methods=['GET', 'POST'])
+def worker():
+    global pod_d
+    if request.method == 'POST':
+        pod_d = request.get_json()
+        print("This is the damaged pods:", pod_d)
+    return render_template("worker.html")
+
+@app.route('/damage_submit', methods=['GET', 'POST'])
+def submit():
+    return render_template("dmg_submit.html")
+
+# @app.route('/log', methods=['GET', 'POST'])
+# def log():
+#     return render_template("log.html")
+
+@app.route('/log', methods=['GET', 'POST']) 
+def log(): 
+	with open('log.txt', 'r') as f: 
+		return render_template('log.html', text=f.read()) 
 
 if __name__ == '__main__':
     app.run()
