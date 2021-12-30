@@ -15,8 +15,8 @@
           <small>Available</small>
         </li>
         <li>
-          <div class="seat selected"></div>
-          <small>Selected</small>
+          <div class="seat booked"></div>
+          <small>Booked</small>
         </li>
         <li>
           <div class="seat sold"></div>
@@ -24,7 +24,6 @@
         </li>
       </ul>
       <div class="container">
-        <div class="screen"></div>
 
         <div class="row">
             <div class="seat"></div>
@@ -76,14 +75,8 @@
             <div class="seat"></div>
           </div>
 
-          <p class="text">
-            You have selected <span id="count">0</span> seat for a price of RS.<span
-              id="total"
-              >0</span
-            >
-          </p>
 
-      <div class="button">Submit</div>
+      <div class="button" onclick="window.location.href='{{'print_ticket'}}'">Submit</div>
   
    </body>
 </html>

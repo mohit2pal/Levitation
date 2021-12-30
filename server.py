@@ -8,6 +8,8 @@ from seat import *
 name2 = ""
 allot2 = ""
 pod_d=""
+# seat_ticket= ""
+# datatly = []
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'levetation'
@@ -33,14 +35,8 @@ def index():
        print(allot2)
        print(name2)
        #seat(allot2)
-       return render_template('seat.html')
+       return redirect("/seat_selection")
     return render_template('index.html', form=form)
-
-@app.route('/print_ticket', methods=['GET', 'POST'])
-def output():
-    namet = name2
-    allott = allot2
-    return render_template('output.html', nameh=namet, alloth=allott)
     
 @app.route('/pod_bay_ticket', methods=['GET', 'POST'])
 def rticket():
@@ -53,25 +49,59 @@ def rticket():
        rentry(rname,rage,rmobile)
     return render_template('reciever.html', form=form)
 
-@app.route('/worker', methods=['GET', 'POST'])
-def worker():
-    global pod_d
-    form = SignUpForm()
-    if form.is_submitted():
-        result=request.form
-        pod_d = request.form['name']
-    return render_template("worker.html", form=form)
-
-@app.route('/no_work', methods=['GET', 'POST'])
+@app.route('/seat_selection', methods=['GET', 'POST'])
 def work():
+    # global seat_ticket
+    # global datatly
+    global pod_d
     if request.method == 'POST':
+        # seat_ticket = ""
         dataty = request.get_json()
+        # datatly = dataty
+        # for i in dataty:
+        #     i2 = str(i)
+        #     seat_ticket = seat_ticket + "|" + i2 + "|"
         print(dataty)
+        # print(datatly)
+        # print(seat_ticket)
         print(type(dataty))
-        find(dataty)
+        # find(dataty)
+        dataty_len = len(dataty)
+        dataty_length = dataty_len - 1
+        for i in range(dataty_length):
+            check(pod_d)
         # seats(dataty)
     return render_template('booking.html')
 
+@app.route('/print_ticket', methods=['GET', 'POST'])
+def output():
+    
+    namet = name2
+    allott = allot2
+    # seat_tickett = seat_ticket
+    # print("This is in print_ticket:", datatly)
+    return render_template('ticket.html', nameh=namet, alloth=allott)
+
+@app.route('/worker', methods=['GET', 'POST'])
+def worker():
+    global pod_d
+    if request.method == 'POST':
+        pod_d = request.get_json()
+        print("This is the damaged pods:", pod_d)
+    return render_template("worker.html")
+
+@app.route('/damage_submit', methods=['GET', 'POST'])
+def submit():
+    return render_template("dmg_submit.html")
+
+# @app.route('/log', methods=['GET', 'POST'])
+# def log():
+#     return render_template("log.html")
+
+@app.route('/log', methods=['GET', 'POST']) 
+def log(): 
+	with open('log.txt', 'r') as f: 
+		return render_template('log.html', text=f.read()) 
 
 if __name__ == '__main__':
     app.run()
