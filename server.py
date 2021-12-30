@@ -101,7 +101,11 @@ def submit():
 @app.route('/log', methods=['GET', 'POST']) 
 def log(): 
 	with open('log.txt', 'r') as f: 
-		return render_template('log.html', text=f.read()) 
+		return render_template('log.html', text=f.read())
+
+@app.route('/aboutus', methods=['GET', 'POST'])
+def aboutus():
+        return render_template("aboutus.html") 
 
 if __name__ == '__main__':
     app.run()

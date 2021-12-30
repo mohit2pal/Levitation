@@ -39,8 +39,8 @@ body {
 
 .seat {
   background-color: #444451;
-  height: 26px;
-  width: 32px;
+  height: 40px;
+  width: 80px;
   margin: 3px;
   font-size: 50px;
   border-top-left-radius: 10px;
@@ -57,6 +57,7 @@ body {
 
 .seat:nth-of-type(2) {
   margin-right: 30px;
+  margin-bottom: 10px;
 }
 
 .seat:nth-last-of-type(2) {
@@ -75,7 +76,7 @@ body {
 
 .showcase {
   background: rgba(0, 0, 0, 0.1);
-  padding: 5px 10px;
+  padding: 5px 5px;
   border-radius: 5px;
   color: #777;
   list-style-type: none;
@@ -115,6 +116,7 @@ p.text span{
 }
 
 .button {
+  text-align: center;
   background-color: cornsilk;
   border: 1px solid hsl(216, 65%, 58%);
   border-radius: 5px;
