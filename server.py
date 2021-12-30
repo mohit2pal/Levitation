@@ -51,10 +51,11 @@ def rticket():
 
 @app.route('/seat_selection', methods=['GET', 'POST'])
 def work():
-    global seat_ticket
+    # global seat_ticket
     # global datatly
+    global pod_d
     if request.method == 'POST':
-        seat_ticket = ""
+        # seat_ticket = ""
         dataty = request.get_json()
         # datatly = dataty
         # for i in dataty:
@@ -62,9 +63,13 @@ def work():
         #     seat_ticket = seat_ticket + "|" + i2 + "|"
         print(dataty)
         # print(datatly)
-        print(seat_ticket)
+        # print(seat_ticket)
         print(type(dataty))
-        find(dataty)
+        # find(dataty)
+        dataty_len = len(dataty)
+        dataty_length = dataty_len - 1
+        for i in range(dataty_length):
+            check(pod_d)
         # seats(dataty)
     return render_template('booking.html')
 
