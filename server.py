@@ -4,6 +4,7 @@ from forms import SignUpForm
 from log import * 
 from alllot import *
 from seat import *
+import os
 
 name2 = ""
 allot2 = ""
@@ -104,4 +105,5 @@ def log():
 		return render_template('log.html', text=f.read()) 
 
 if __name__ == '__main__':
-    app.run()
+    port = os.environ.get("PORT", 5000)
+    app.run(debug=False, host="0.0.0.0", port=port)
