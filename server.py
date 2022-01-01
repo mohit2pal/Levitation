@@ -1,3 +1,5 @@
+# The main server for the app
+
 from flask import Flask, render_template, redirect
 from flask import request
 from forms import SignUpForm
