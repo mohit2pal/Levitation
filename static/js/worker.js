@@ -6,7 +6,7 @@ const button = document.querySelector(".button")
 
 //To send and recieve data using ajax
 function ajaxx() {
-    const markseat = localStorage.getItem("currentSeats2")
+    const markseat = localStorage.getItem("bookedSeats2")
     console.log(markseat)
     console.log(typeof markseat)
     var xhr = new XMLHttpRequest()
