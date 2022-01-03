@@ -10,20 +10,54 @@
       <h1>Login</h1>
       <form method="post">
         <div class="txt_field">
-          <input type="text" required>
+          <input id="login" type="text" required>
           <span></span>
           <label>Username</label>
         </div>
         <div class="txt_field">
-          <input type="password" required>
+          <input id="password" type="password" required>
           <span></span>
           <label>Password</label>
         </div>
         
-        <input type="submit" href="index.html" value="Login">
+        <input id="submit" type="submit" href="index.html" value="Login">
         
       </form>
     </div>
+
+    <script>
+
+      document.getElementById("submit").addEventListener("click", loginid)
+
+
+      function loginid() {
+        let formt = document.getElementById("submit").value
+        let user = document.getElementById("login").value
+        let pass = document.getElementById("password").value
+
+        let check = 0
+        console.log(formt)
+        console.log(user)
+        console.log(pass)
+
+        if (user === "levitation" && pass === "222553") {
+          let check = 1
+        }
+        else {
+          alert('Please enter the correct username and password')
+          let check = 0
+        }
+      }
+
+      function ajaxx() {
+        var xhr = new XMLHttpRequest()
+        xhr.open('POST', '/worker/login', true)
+
+        xhr=send(check)
+      }
+
+    </script>
+
 
   </body>
 </html>
