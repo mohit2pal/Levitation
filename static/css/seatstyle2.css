@@ -122,7 +122,15 @@ p.text span{
     color: rgb(158, 248, 158);
 }
 
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
 .button {
+  display: flex;
+  justify-content: center;
   align-items:flex-end;
   background-color: cornsilk;
   border: 1px solid hsl(216, 65%, 58%);
