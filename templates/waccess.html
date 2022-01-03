@@ -24,7 +24,9 @@
         
       </form>
     </div>
+<script>
 
+<<<<<<< Updated upstream
     <script>
 
       document.getElementById("submit").addEventListener("click", loginid)
@@ -59,5 +61,22 @@
     </script>
 
 
+=======
+  document.getElementById("submit").addEventListener("click", myfunction())
+  function myfunction()
+  {
+    var username = document.form["Username"].value;
+    var password = document.form["Password"].value;
+    if(username == 'levitation' && password == '222553')
+    {
+      window.location.href='worker.html';
+    }
+    else
+    {
+      alert("Invalid Username or Password")
+    }
+  }
+</script>
+>>>>>>> Stashed changes
   </body>
 </html>
