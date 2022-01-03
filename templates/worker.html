@@ -5,13 +5,32 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./static/css/seatstyle2.css" />
+
   <script defer src="./static/js/worker.js"></script>
-  <title>Document</title>
+  <title>Virgin Hyperloop | Worker</title>
 </head>
 
 <body>
+
+<div class ="navbar">
+  <div class="topnav" id="myTopnav">
+    <a href="">Virgin Hyperloop</a>    
+    <a onclick="window.location.href='{{'/'}}'">Home</a>
+    <a onclick="window.location.href='{{'/worker'}}'">Worker</a>
+    <a onclick="window.location.href='{{'/aboutus'}}'">About Us</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<br>
+
+  <h2 text-align:"center">Click on the Pod Bay Number which is damaged </h2>
   <div class="container">
+    
 
     <div class="row">
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -131,7 +150,7 @@
 
     </div>
     <br></br>
-    <div class="row">
+    <div class="row" text-align: "center">
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       M
     </div>
@@ -144,9 +163,22 @@
       <div class="seat">5</div>
       <div class="seat">6</div>
 
+      <br></br>
+  </div>
 
-      <button class="button" onclick="window.location.href='{{'damage_submit'}}'">Submit</button>
+  <button class="button" onclick="window.location.href='{{'damage_submit'}}'" >Submit</button>
 
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+    
 
 </body>
 

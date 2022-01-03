@@ -1,85 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seat Booking</title>
-    <script defer src="./static/js/booking.js"></script>
-    <link rel="stylesheet" href="./static/css/seatstyle.css" />
-  </head>
-  <body>
-    <h1 style = text-align:"center">Congratulations on successfull registration</h1>
-    <h3 style = text-align:"center">Kindly select your seats </h3>
-    <ul class="showcase">
-        <li>
-          <div class="seat"></div>
-          <small>Available</small>
-        </li>
-        <li>
-          <div class="seat booked"></div>
-          <small>Booked</small>
-        </li>
-        <li>
-          <div class="seat sold"></div>
-          <small>Sold</small>
-        </li>
-      </ul>
-      <div class="container">
 
-        <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seat Booking</title>
+  <script defer src="./static/js/booking.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./static/css/seatstyle.css" />
+</head>
 
-          </div>
+<body>
+  <div class="navbar">
+    <div class="topnav" id="myTopnav">
+      <a href="">Virgin Hyperloop</a>
+      <a onclick="window.location.href='{{'/'}}'">Home</a>
+      <a onclick="window.location.href='{{'/worker'}}'">Worker</a>
+      <a onclick="window.location.href='{{'/aboutus'}}'">About Us</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
 
-          <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
+  <h2 style=text-align:"center">Congratulations on successfull registration</h2>
+  <h3 style=text-align:"center">Kindly select your seats </h3>
+  <ul class="showcase">
+    <li>
+      <div class="seat"></div>
+      <small>Available</small>
+    </li>
+    <li>
+      <div class="seat booked"></div>
+      <small>Booked</small>
+    </li>
+    <li>
+      <div class="seat sold"></div>
+      <small>Sold</small>
+    </li>
+  </ul>
+  <div class="container">
 
-          </div>
-          <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
+    <div class="row">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
 
-          </div>
-          <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
+    </div>
 
-          </div>
-          <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
+    <div class="row">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
 
-          </div>
-          <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
+    </div>
+    <div class="row">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
 
-          </div>
-          <div class="row">
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-            <div class="seat"></div>
-          </div>
-<br>
-<br>
+    </div>
+    <div class="row">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
 
-      <div class="button" onclick="window.location.href='{{'print_ticket'}}'">Submit</div>
-  
-   </body>
+    </div>
+    <div class="row">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+
+    </div>
+    <div class="row">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+
+    </div>
+    <div class="row">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+    </div>
+    <br>
+    <br>
+
+    <div class="button" onclick="window.location.href='{{'print_ticket'}}'">Submit</div>
+
+</body>
+
 </html>

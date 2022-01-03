@@ -39,8 +39,8 @@ body {
 
 .seat {
   background-color: #444451;
-  height: 26px;
-  width: 32px;
+  height: 70px;
+  width: 40px;
   margin: 3px;
   font-size: 50px;
   border-top-left-radius: 10px;
@@ -123,10 +123,11 @@ p.text span{
 }
 
 .button {
+  align-items:flex-end;
   background-color: cornsilk;
   border: 1px solid hsl(216, 65%, 58%);
   border-radius: 5px;
-  padding: 5px 5px;
+  padding: 15px 5px;
   color: rgb(12, 8, 19);
   outline: none;
 }
@@ -135,4 +136,61 @@ p.text span{
   border-color: navy;
   background-color: rebeccapurple;
   color: white;
+}
+
+.navbar {
+  width: 1536px;
+  height: 56px;
+  padding: 8px 0px;
+  color: #212529;
+  background: #212529;
+}
+
+.topnav {
+  width: 1320px;
+  height: 40px;
+  color: #212529;
+  padding: 0px 12px;
+  margin: 0px 108px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 }
