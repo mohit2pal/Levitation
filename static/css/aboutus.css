@@ -29,9 +29,9 @@
 	width: 100%;
 	height: auto;
     border-radius: 25px;
-    border: 2px solid #73AD21;
+    border: 2px solid;
     padding: 20px;
-    box-shadow: 23px 20px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 23px 20px 5px 0px rgba(80, 78, 78, 0.75);
 
     
 }
@@ -119,8 +119,8 @@
 }
 
 .navbar {
-    width: 1536px;
-    height: 56px;
+    width: 1519.2px;
+    height: 66px;
     padding: 14px 16px;
     color: #212529;
     background: #212529;
@@ -174,7 +174,24 @@
       text-align: left;
     }
   }
+
+  .container {
+	  text-align: center;
+  }
   
+  .header {
+	  padding-top: 60px;
+	  color: #444;
+	  font-size: 20px;
+	  margin: auto;
+	  line-height: 50px;
+  }
+  .sub-container {
+	  max-width: 1200px;
+	  margin: auto;
+	  padding: 48px 0;
+	  display: flex;
+  }
 
 
 
