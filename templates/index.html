@@ -40,33 +40,31 @@
       </div>
     </nav>
 
- 
+<br>
+<br>
 
 
-    <div class = "container my-4 col-5">
-      <br>
-      <br>
-      <br>
-        <h1>Registration Page</h2>
-    </div>      
+    <div class = "container my-4 col-4 shadow-lg p-3 mb-5 bg-body rounded">
+        <h2 style = text-align:"center"><b>Registration Page</b> : </h2>
+         
     
         <form action ="" method="post">
 
-        <div class="container my-4 col-3">
+        <div class="container my-4 col-8">
           {{form.name.label}} <br>
           {{form.name(size=40,style='height: 30px')}}          
         </div>
-        <div class="container my-4 col-3">
+        <div class="container my-4 col-8">
           {{form.mobile.label}} <br>
           {{form.mobile(size=40,style='height: 30px')}}
         </div>
-        <div class="container my-4 col-3">
+        <div class="container my-4 col-8">
           {{form.age.label}} <br>
           {{form.age(size=40,style='height: 30px')}}
         </div>
-        <div class="container my-4 col-3">
+        <div class="container my-4 col-8">
           {{form.destination.label}} <br>
-          {{form.destination(size=40,style='height: 30px')}}          
+          {{form.destination(size=40,style='height: 30px', type='name')}}          
         </div>
 
         <p class="container my-4 col-1" style="text-align: center; font-size: medium;">

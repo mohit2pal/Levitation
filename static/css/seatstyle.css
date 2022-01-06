@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #5f9ea0;
+  background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -133,7 +133,7 @@ p.text span{
 
 .navbar {
   width: 1536px;
-  height: 56px;
+  height: 66px;
   padding: 14px 16px;
   color: #212529;
   background: #212529;
