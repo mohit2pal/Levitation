@@ -37,7 +37,15 @@ def check_json(t):
 
     
 def check(l):
-    dmg = l.split()
+    dmg = []
+    # dmg = l.split()
+    for j in l:
+        dmg_string = ""
+        j+=1
+        dmg_string = dmg_string + str(chr(int(j/6)+65))
+        dmg_string = dmg_string + str(j%6)
+        dmg.append(dmg_string)
+    print("The processed dmaged pods are:", dmg)
     pid = allot()
     pidd = pid[:2]
     for i in dmg:
