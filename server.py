@@ -107,9 +107,11 @@ def log():
 def aboutus():
         return render_template("aboutus.html")
     
-@app.route('/worker/login', methods=['GET', 'POST'])
-def login():     
-    return render_template("waccess.html") 
+@app.route('/loginfo', methods=['GET', 'POST'])
+def inlog():
+    if request.method == 'POST':
+        print("yes")
+    return render_template('waccess.html') 
 
 if __name__ == '__main__':
     app.run()

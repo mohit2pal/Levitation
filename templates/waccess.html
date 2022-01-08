@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Worker Access</title>
     <link rel="stylesheet" href="/static/css/stylewaccess.css">
+    <script defer src="/static/js/login.js"></script>
   </head>
   <body>
     <div class="center">
@@ -19,24 +20,12 @@
           <span></span>
           <label>Password</label>
         </div>
-        
-        <input id="submit" type="submit" href="index.html" value="Login">
-        
       </form>
-    </div>
-    <script>
-      document.getElementById("submit").addEventListener("click", submitted)
-
-    function submitted() {
-      if (document.getElementById("login").value == 'levitation' && document.getElementById("password").value == '222553') {
-        window.open("/worker","_self")
-    } 
-      else {
-        alert("Please enter proper username and password")
-    }
-}
-    </script>
-
-
-  </body>
+      
+        <button id="submit" class="submit">Login</button>
+      
+       
+      </div>
+      
+</body>
 </html>
