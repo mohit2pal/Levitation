@@ -111,7 +111,7 @@ def aboutus():
 @app.route('/loginfo', methods=['GET', 'POST'])
 def inlog():
     if request.method == 'POST':
-        //print("yes")
+        print("yes")
     return render_template('waccess.html') 
 
 if __name__ == '__main__':
