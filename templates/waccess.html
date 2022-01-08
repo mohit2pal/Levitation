@@ -8,7 +8,7 @@
   <body>
     <div class="center">
       <h1>Login</h1>
-      <form method="post">
+      <form>
         <div class="txt_field">
           <input id="login" type="text" required>
           <span></span>
@@ -24,59 +24,19 @@
         
       </form>
     </div>
-<script>
-
-<<<<<<< Updated upstream
     <script>
+      document.getElementById("submit").addEventListener("click", submitted)
 
-      document.getElementById("submit").addEventListener("click", loginid)
-
-
-      function loginid() {
-        let formt = document.getElementById("submit").value
-        let user = document.getElementById("login").value
-        let pass = document.getElementById("password").value
-
-        let check = 0
-        console.log(formt)
-        console.log(user)
-        console.log(pass)
-
-        if (user === "levitation" && pass === "222553") {
-          let check = 1
-        }
-        else {
-          alert('Please enter the correct username and password')
-          let check = 0
-        }
-      }
-
-      function ajaxx() {
-        var xhr = new XMLHttpRequest()
-        xhr.open('POST', '/worker/login', true)
-
-        xhr=send(check)
-      }
-
+    function submitted() {
+      if (document.getElementById("login").value == 'levitation' && document.getElementById("password").value == '222553') {
+        window.open("/worker","_self")
+    } 
+      else {
+        alert("Please enter proper username and password")
+    }
+}
     </script>
 
 
-=======
-  document.getElementById("submit").addEventListener("click", myfunction())
-  function myfunction()
-  {
-    var username = document.form["Username"].value;
-    var password = document.form["Password"].value;
-    if(username == 'levitation' && password == '222553')
-    {
-      window.location.href='worker.html';
-    }
-    else
-    {
-      alert("Invalid Username or Password")
-    }
-  }
-</script>
->>>>>>> Stashed changes
   </body>
 </html>

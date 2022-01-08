@@ -108,14 +108,7 @@ def aboutus():
         return render_template("aboutus.html")
     
 @app.route('/worker/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        if(check == 1):
-            return redirect("/worker")
-        elif(check == 0):
-            return render_template('waccess.html')
-            
-        return redirect("/worker")      
+def login():     
     return render_template("waccess.html") 
 
 if __name__ == '__main__':
