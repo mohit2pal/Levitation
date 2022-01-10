@@ -26,7 +26,7 @@ function updateUI() {
             var change = JSON.parse(this.responseText)
 
             if (change['change'] == "true") {
-                const bookedSeats = document.querySelectorAll(".row .seat.hooked")
+                const bookedSeats = document.querySelectorAll(".row .seat.booked")
                 const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
                 localStorage.setItem("bookedSeats", JSON.stringify(seatsIndex))
                 populateUI()
@@ -53,15 +53,17 @@ function store() {
     const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
 
     localStorage.setItem("bookedSeats", JSON.stringify(seatsIndex))
-}
+} 
+
+
 // used to listen seat clicking and toggling color
-container.addEventListener("click", (e) => {
+container.addEventListener("click",(e) => {
     if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
         if( document.querySelectorAll(".row .seat.booked").length < 5) {
            e.target.classList.toggle("booked")
         }
         else {
-            if(e.target.classList.contains("booked")){
+            if(e.target.classList.contains("booked")){ 
               e.target.classList.toggle("booked")
             }
             // else {
@@ -79,8 +81,15 @@ container.addEventListener("click", (e) => {
     // console.log(seatsIndex)
 })
 
-button.addEventListener("click", () => {
+var audio = new Audio('tune.mp3')
+function myplay(){
+    if(audio.play()){  alert("ok")}
+}
 
+container.addEventListener("click",myplay) 
+
+
+button.addEventListener("click", () => {
     store()
     current_store()
     const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats"))

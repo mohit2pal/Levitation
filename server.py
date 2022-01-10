@@ -48,6 +48,7 @@ def rticket():
        rage =request.form['age']
        rmobile =request.form['mobile']
        rentry(rname,rage,rmobile)
+       return redirect("/thank you")
     return render_template('reciever.html', form=form)
 
 @app.route('/seat_selection', methods=['GET', 'POST'])
@@ -113,6 +114,10 @@ def inlog():
     if request.method == 'POST':
         print("yes")
     return render_template('waccess.html') 
+
+@app.route('/thank you', methods=['GET', 'POST'])
+def final():
+    return render_template("ty.html")
 
 if __name__ == '__main__':
     port = os.environ.get("PORT", 5000)

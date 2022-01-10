@@ -11,9 +11,65 @@
     <title>Virgin Hyperloop | registrattion</title>
     <style>
       #grad1 {
-        height: 712px;
+        height: 762px;
         background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%)
       }
+    </style>
+    <style>
+      * {
+          padding: 0;
+          margin: 0;
+          font-family: sans-serif;
+      }
+
+      
+
+      .container {
+          text-align: center;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+      }
+
+     
+
+      .text1 {
+          color: white;
+          font-size: 70px;
+          font-weight: 700;
+          letter-spacing: 8px;
+          margin-bottom: 20px;
+         
+          position: relative;
+          animation: text 2s 1;
+      }
+
+      .text2 {
+          font-size: 30px;
+          color: red;
+          position: relative;
+          animation: text 2s 1;
+          font-family: Georgia, serif;
+      }
+
+      @keyframes text {
+          0% {
+              color: black;
+              margin-bottom: -40px;
+          }
+
+          30% {
+              letter-spacing: 25px;
+              margin-bottom: -40px;
+          }
+
+          85% {
+              letter-spacing: 8px;
+              margin-bottom: -40px;
+          }
+       }
     </style>
   </head>
   <body>
@@ -39,19 +95,20 @@
         </div>
       </div>
     </nav>
-
+  </div>
  
 <br>
 <br>
 <br>
 
-    <div class = "container my-4 col-4 shadow-lg p-3 mb-5 bg-body rounded">
-      
-        <h1> Thank you for registring with Virgin hyperloop </h1>
-        <a class="btn btn-success" onclick="window.location.href='{{'/'}}'" role="button">Return to Home</a>
-    </div>
+   
 
-        
+      <div class="container">
+      <div class="row">
+          <span class="text1">THANK YOU!!</span>
+          <span class="text2">VIRGIN HYPERLOOP</span>
+      </div>
+    </div>
       
 
     
@@ -60,7 +117,15 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script type="text/javascript" > 
+      var audio = new Audio("templates\sound.mp3")
+      audio.play() 
+      setTimeout(function()
+       {window.location.href='{{'/'}}'} , 4200);
+    </script>
 
+    <embed src="templates\sound.mp3" loop="true" autostart="true" width="2" height="0">
+    </embed>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
