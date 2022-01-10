@@ -112,7 +112,15 @@ def aboutus():
 def inlog():
     if request.method == 'POST':
         print("yes")
-    return render_template('waccess.html') 
+    return render_template('waccess.html')
+
+@app.route('/employee_access', methods=['GET', 'POST'])
+def empaccess():
+    return render_template('employee_access.html')
+
+@app.route('/thank_you', methods=['GET', 'POST']) 
+def thankyou():
+    return render_template('thanku.html')
 
 if __name__ == '__main__':
     port = os.environ.get("PORT", 5000)

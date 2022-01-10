@@ -11,8 +11,11 @@
     <title>Virgin Hyperloop | registrattion</title>
     <style>
       #grad1 {
-        height: 712px;
+        min-height: 100vh;
         background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%)
+      }
+      #grad2 {
+        text-align: center;
       }
     </style>
   </head>
@@ -45,25 +48,26 @@
 <br>
 
 
-    <div class = "container my-4 col-4 shadow-lg p-3 mb-5 bg-body rounded">
-        <h2 style = text-align:"center"><b>Registration Page</b> : </h2>
-         
+    <div class = "container my-4 col-4 shadow-lg p-3 mb-5 bg-body rounded position-absolute top-50 start-50 translate-middle">
+      <div id = "grad2">  
+        <h2><b>REGISTRATION</b></h2>
+      </div>
     
         <form action ="" method="post">
 
-        <div class="container my-4 col-8">
+        <div class="container my-4 col-9">
           {{form.name.label}} <br>
           {{form.name(size=40,style='height: 30px')}}          
         </div>
-        <div class="container my-4 col-8">
+        <div class="container my-4 col-9">
           {{form.mobile.label}} <br>
           {{form.mobile(size=40,style='height: 30px')}}
         </div>
-        <div class="container my-4 col-8">
+        <div class="container my-4 col-9">
           {{form.age.label}} <br>
           {{form.age(size=40,style='height: 30px')}}
         </div>
-        <div class="container my-4 col-8">
+        <div class="container my-4 col-9">
           {{form.destination.label}} <br>
           {{form.destination(size=40,style='height: 30px', type='name')}}          
         </div>
@@ -72,7 +76,7 @@
           {{form.submit()}}
         </p>
       
-  </div>  
+   
 
     <!-- Optional JavaScript; choose one of the two! -->
 

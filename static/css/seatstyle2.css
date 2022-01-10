@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #242333;
+  background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -38,7 +38,7 @@ body {
 }
 
 .seat {
-  background-color: #444451;
+  background-color: #737388;
   height: 70px;
   width: 40px;
   margin: 3px;
@@ -148,7 +148,7 @@ p.text span{
 
 .navbar {
   width: 1536px;
-  height: 56px;
+  height: 66px;
   padding: 8px 0px;
   color: #212529;
   background: #212529;
