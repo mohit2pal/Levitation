@@ -1,7 +1,5 @@
 
 // const excel_file = document.getElementById('excel_file');
-// const excel_file = document.getElementById('hello');
-
 // excel_file.addEventListener('click', loadcsv)
     // if(!['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.ms-excel'].includes(event.target.files[0].type))
     // {
@@ -11,7 +9,8 @@
 
     //     return false;
     // }
-    function loadcsv(){
+
+function loadcsv(){
         var xhr = new XMLHttpRequest()
         xhr.open('GET', './static/css/passengers_data.csv', true)
         // var reader = new FileReader();
@@ -75,4 +74,9 @@
 }
 
 loadcsv()
+
+
+
+
+
 

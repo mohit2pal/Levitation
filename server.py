@@ -1,10 +1,12 @@
 from flask import Flask, render_template, redirect
 from flask import request
 from forms import SignUpForm
+from datetime import date
 from log import * 
 from alllot import *
 from seat import *
 import os
+import datetime
 
 name2 = ""
 allot2 = ""
@@ -50,13 +52,17 @@ def rticket():
        rname =request.form['name']
        rage =request.form['age']
        rmobile =request.form['mobile']
-       rentry(rname,rage,rmobile)
+       a = datetime.datetime.now()
+       t=a.strftime("%H:%M:%S")
+       d=a.strftime("%d-%m-%Y")
+       save2(d,rname,rage,rmobile,t)
     return render_template('reciever.html', form=form)
 
 @app.route('/seat_selection', methods=['GET', 'POST'])
 def work():
     # global seat_ticket
     # global datatly
+    global dataty_len
     global pod_d
     if request.method == 'POST':
         # seat_ticket = ""
@@ -71,6 +77,7 @@ def work():
         print(type(dataty))
         # find(dataty)
         dataty_len = len(dataty)
+        print(dataty_len)
         dataty_length = dataty_len - 1
         for i in range(dataty_length):
             check(pod_d)
@@ -79,10 +86,13 @@ def work():
 
 @app.route('/print_ticket', methods=['GET', 'POST'])
 def output():
-    
+    a = datetime.datetime.now()
+    time=a.strftime("%H:%M:%S")
+    day=a.strftime("%d-%m-%Y")
     namet = name2
     allott = allot2
-    save(name2,age2,mobile2,destination2,allot2,dataty_len)
+    print(day)
+    save(day,name2,age2,mobile2,destination2,allot2,dataty_len,time)
     # seat_tickett = seat_ticket
     # print("This is in print_ticket:", datatly)
     return render_template('ticket.html', nameh=namet, alloth=allott)
@@ -110,6 +120,10 @@ def submit():
 @app.route('/log', methods=['GET', 'POST'])
 def log():
     return render_template("log.html")
+
+@app.route('/reclog', methods=['GET', 'POST'])
+def reclog():
+    return render_template("reclog.html")
 
 @app.route('/aboutus', methods=['GET', 'POST'])
 def aboutus():
