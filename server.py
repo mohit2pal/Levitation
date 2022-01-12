@@ -9,6 +9,7 @@ import os
 name2 = ""
 allot2 = ""
 pod_d=""
+dataty_len = 0
 # seat_ticket= ""
 # datatly = []
 
@@ -24,6 +25,9 @@ def index():
     global name2
     global allot2
     global pod_d
+    global age2
+    global mobile2
+    global destination2
     form = SignUpForm()
     if form.is_submitted():
        result= request.form
@@ -31,7 +35,6 @@ def index():
        age2 =request.form['age']
        mobile2 =request.form['mobile']
        destination2 =request.form['destination']
-       entry(name2,age2,mobile2,destination2)
        allot2 = check(pod_d)
        print(allot2)
        print(name2)
@@ -79,6 +82,7 @@ def output():
     
     namet = name2
     allott = allot2
+    save(name2,age2,mobile2,destination2,allot2,dataty_len)
     # seat_tickett = seat_ticket
     # print("This is in print_ticket:", datatly)
     return render_template('ticket.html', nameh=namet, alloth=allott)
@@ -99,10 +103,13 @@ def submit():
 # def log():
 #     return render_template("log.html")
 
-@app.route('/log', methods=['GET', 'POST']) 
-def log(): 
-	with open('log.txt', 'r') as f: 
-		return render_template('log.html', text=f.read())
+# @app.route('/log', methods=['GET', 'POST']) 
+# def log(): 
+# 	with open('log.txt', 'r') as f: 
+# 		return render_template('log.html', text=f.read())
+@app.route('/log', methods=['GET', 'POST'])
+def log():
+    return render_template("log.html")
 
 @app.route('/aboutus', methods=['GET', 'POST'])
 def aboutus():

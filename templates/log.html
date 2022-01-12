@@ -1,46 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log Sheet</title>
+	<meta charset="utf-8" />
+	<title>Convert Excel to HTML Table using JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+    <script src="./static/js/log.js"></script>
 </head>
-</style>
-
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-          <a class="navbar-brand" href="#">Virgin Hyperloop</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" type="button" aria-current="page" onclick="window.location.href='{{'/'}}'">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" active" type="button" aria-current="page" onclick="window.location.href='{{'/loginfo'}}'">Worker</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" active" type="button" aria-current="page" onclick="window.location.href='{{'/aboutus'}}'">About us</a>
-              </li>
-              
-            </ul>            
-          </div>
-        </div>
-      </nav>
-      <br>
-      
-    <div class="container"></div>
-    <div id="head">
-        <h1>This is the log file</h1>
+    <button id="hello">load data</button>
+    <div class="container">
+    	<h2 class="text-center mt-4 mb-4">Choose the file </h2>
+    	
+        <div id="excel_data" class="mt-5">Error</div>
     </div>
-    <button id="button" style="align-items:center">Save</button>
-    <div id="text">{{text}}</div>
 
 </body>
-
 </html>

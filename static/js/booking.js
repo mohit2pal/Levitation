@@ -83,7 +83,7 @@ container.addEventListener("click", (e) => {
 
 button.addEventListener("click", () => {
 
-    if(document.querySelectorAll(".row .seat.booked").length > 1) {
+    if(document.querySelectorAll(".row .seat.booked").length > 0) {
 
         store()
         current_store()
