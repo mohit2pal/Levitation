@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect
 from flask import request
-from forms import SignUpForm
+from forms import *
 from log import * 
 from alllot import *
 from seat import *
@@ -41,7 +41,7 @@ def index():
     
 @app.route('/pod_bay_ticket', methods=['GET', 'POST'])
 def rticket():
-    form = SignUpForm()
+    form = RecSignUpForm()
     if form.is_submitted():
        result= request.form
        rname =request.form['name']
