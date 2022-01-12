@@ -18,7 +18,7 @@ def save(name1,age1,mob1,dest1,bay,nseats):
     global df
     new_row={'NAME': name1, 'AGE': age1, 'MOBILE': mob1,'DESTINATION': dest1,'POD_BAY': bay,'NO. OF SEATS': nseats}
     df=df.append(new_row, ignore_index=True) 
-    df.to_csv("passengers_data.csv", header=True, index=True)
+    df.to_csv("./static/css/passengers_data.csv", header=True, index=False)
     
 
 def add():

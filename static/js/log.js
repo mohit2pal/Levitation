@@ -15,13 +15,13 @@
         var xhr = new XMLHttpRequest()
         xhr.open('GET', './static/css/passengers_data.csv', true)
         // var reader = new FileReader();
-        console.log(xhr)
+        xhr.responseType = "arraybuffer"
 
-        // reader.readAsArrayBuffer(event.target.files[0]);
+        // reader.readAsArrayBuffer(xhr.response);
 
         xhr.onload = function(){
 
-            var data = new Uint8Array(xhr.result);
+            var data = new Uint8Array(xhr.response);
 
             var work_book = XLSX.read(data, {type:'array'});
 
