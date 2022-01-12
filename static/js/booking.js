@@ -4,6 +4,8 @@ const button = document.querySelector(".button")
 
 updateUI()
 
+// button.disabled = true
+
 //To send and recieve data using ajax
 function ajaxx() {
     const markseat = localStorage.getItem("currentSeats")
@@ -81,21 +83,28 @@ container.addEventListener("click", (e) => {
 
 button.addEventListener("click", () => {
 
-    store()
-    current_store()
-    const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats"))
+    if(document.querySelectorAll(".row .seat.booked").length > 1) {
 
-    if (selectedSeats !== null && selectedSeats.length > 0) {
-        seats.forEach((seat, index) => {
-            if (selectedSeats.indexOf(index) > -1) {
-                seat.classList.add("sold")
-            }
-        })
+        store()
+        current_store()
+        const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats"))
+
+        if (selectedSeats !== null && selectedSeats.length > 0) {
+            seats.forEach((seat, index) => {
+                if (selectedSeats.indexOf(index) > -1) {
+                    seat.classList.add("sold")
+                }
+            })
+        }
+        // console.log(e)
+        // console.log(selectedSeats)
+        // console.log(typeof(selectedSeats))
+        ajaxx()
+        window.open("/print_ticket", "_self")
     }
-    // console.log(e)
-    // console.log(selectedSeats)
-    // console.log(typeof(selectedSeats))
-    ajaxx()
+    else {
+        pass
+    }
 })
 
 function populateUI() {
