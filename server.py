@@ -54,7 +54,7 @@ def rticket():
        rmobile =request.form['mobile']
        a = datetime.datetime.now()
        t=a.strftime("%H:%M:%S")
-       d=a.strftime("%d-%m-%Y")
+       d=a.strftime("%d|%m|%Y")
        save2(d,rname,rage,rmobile,t)
     return render_template('reciever.html', form=form)
 
@@ -86,9 +86,10 @@ def work():
 
 @app.route('/print_ticket', methods=['GET', 'POST'])
 def output():
+    global dataty_len
     a = datetime.datetime.now()
     time=a.strftime("%H:%M:%S")
-    day=a.strftime("%d-%m-%Y")
+    day=a.strftime("%d|%m|%Y")
     namet = name2
     allott = allot2
     print(day)
