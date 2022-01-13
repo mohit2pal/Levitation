@@ -9,6 +9,8 @@ import os
 name2 = ""
 allot2 = ""
 pod_d=""
+dataty_len=0
+
 # seat_ticket= ""
 # datatly = []
 
@@ -51,13 +53,37 @@ def rticket():
        return redirect("/thank you")
     return render_template('reciever.html', form=form)
 
+# @app.route('/postmethod', methods = ['GET','POST'])
+# def get_post_javascript_data():
+#    global jsdata
+#    jsdata = request.data
+#    print(jsdata)
+#    data = int(jsdata)
+#    print("abhi")
+#    return render_template('booking.html',pamount=data)
+ 
+  
+
 @app.route('/seat_selection', methods=['GET', 'POST'])
 def work():
     # global seat_ticket
     # global datatly
+    global dataty_len
+    global jsdata
     global pod_d
+    global jsdata
+   
+    # data = int(jsdata)
+    # print("abhi")
+    # jsdata = jsdata + 1
+   
+    # amount = jsdata
+    # print(amount)
     if request.method == 'POST':
+        # jsdata = request.data
+        # print(jsdata)
         # seat_ticket = ""
+        
         dataty = request.get_json()
         # datatly = dataty
         # for i in dataty:
@@ -69,20 +95,23 @@ def work():
         print(type(dataty))
         # find(dataty)
         dataty_len = len(dataty)
+        print(dataty_len)
         dataty_length = dataty_len - 1
         for i in range(dataty_length):
             check(pod_d)
         # seats(dataty)
+     
     return render_template('booking.html')
 
 @app.route('/print_ticket', methods=['GET', 'POST'])
 def output():
-    
+    global dataty_len
+    amount = int(500 * (dataty_len))
     namet = name2
     allott = allot2
     # seat_tickett = seat_ticket
     # print("This is in print_ticket:", datatly)
-    return render_template('ticket.html', nameh=namet, alloth=allott)
+    return render_template('ticket.html', nameh=namet, alloth=allott, amounth=amount)
 
 @app.route('/worker', methods=['GET', 'POST'])
 def worker():

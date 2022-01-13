@@ -1,6 +1,8 @@
 const container = document.querySelector(".container")
 const seats = document.querySelectorAll(".row .seat")
 const button = document.querySelector(".button")
+const button2 = document.getElementById("count")
+const seatsb = document.querySelectorAll(".row .seat.booked")
 
 updateUI()
 
@@ -55,15 +57,52 @@ function store() {
     localStorage.setItem("bookedSeats", JSON.stringify(seatsIndex))
 } 
 
+// function famount(){
+//     const URL = '/seat_selection'
+//     const xhr = new XMLHttpRequest();
+//     // sender = JSON.stringify(amount)
+//     amount = amount + 1
+//     xhr.open('POST', URL);
+//     xhr.send(amount);
+// }
+
+function sound() {
+    var audio = new Audio('./static/js/tune.mp3');
+    audio.play();
+}
+
+var amount = 0
+function add() {
+    amount += 200;
+    button2.innerHTML = "TOTAL AMOUNT:" + amount;
+    
+}
+
+function sub() {
+    amount -= 100;
+    button2.innerHTML = "TOTAL AMOUNT:" + amount;
+    
+}
 
 // used to listen seat clicking and toggling color
 container.addEventListener("click",(e) => {
     if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
+    //    add()
+       sound()
+        // amount = amount + 1
+        // $.post("/postmethod", {
+        //     javascript_data: amount
+        //  });
+        // famount() 
+        // window.alert(amount)
         if( document.querySelectorAll(".row .seat.booked").length < 5) {
+         
            e.target.classList.toggle("booked")
         }
         else {
+            // amount = amount - 1
             if(e.target.classList.contains("booked")){ 
+            
               e.target.classList.toggle("booked")
             }
             // else {
@@ -81,12 +120,29 @@ container.addEventListener("click",(e) => {
     // console.log(seatsIndex)
 })
 
-var audio = new Audio('tune.mp3')
-function myplay(){
-    if(audio.play()){  alert("ok")}
-}
+container.addEventListener("click",(e) => {
+    const currentSeats = document.querySelectorAll(".row .seat.booked")
+    const currentIndex = [...currentSeats].map((seat) => [...seats].indexOf(seat))
 
-container.addEventListener("click",myplay) 
+    const k = localStorage.setItem("currentSeats", JSON.stringify(currentIndex))
+    
+    if( e.target.classList.contains("seat") && (k==k)) {
+        add();
+    }
+    if( e.target.classList.contains("seat") && (k != k)) {
+        sub();
+    }
+})
+
+// var audio = new Audio('tune.mp3')
+// function myplay(){
+//    audio.play()
+
+
+// button.addEventListener("click", () => {
+//     var audio = new Audio('.\static\js\tune.mp3');
+//     audio.play();
+//  })
 
 
 button.addEventListener("click", () => {
@@ -102,7 +158,7 @@ button.addEventListener("click", () => {
         })
     }
     // console.log(e)
-    // console.log(selectedSeats)
+    console.log(selectedSeats)
     // console.log(typeof(selectedSeats))
     ajaxx()
 })
