@@ -10,12 +10,15 @@ import json
 
 seat_counter = 29
 pod_bay_counter = 6
+# pod_bay_counter = 5
 platform_counter = 12
+# platform_counter = 13
 time = 0
 time_rec = 0
 time_rechr = 0
 time_hourrecd = 0
 pod_rec = ""
+allot_time = 0
 #pod_d = 0
 pod_changed_count = 0
 
@@ -60,26 +63,30 @@ def sec():
   global time
   global time_hourrecd
   global time_rechr
+  global timesec
   a = datetime.datetime.now()
-  time=int(a.strftime("%M"))
+  timemin=int(a.strftime("%M"))
   timehr = int(a.strftime("%H"))
-  time_rechr = timehr - time_hourrecd
-  time_hourrecd = timehr
+  timesec = int(a.strftime("%S"))
+  time = (timehr*60*60) + (timemin*60) + timesec
+#   time_rechr = timehr - time_hourrecd
+#   time_hourrecd = timehr
   return (time)
 
 
 def counth():
-    timeh1 = sec()
-    timeh = (time_rechr*60) + timeh1
+    timeh = sec()
+    # timeh = (time_rechr*60*60) + (timeh1*60) + timesec
     global time_rec
     time_count = 0
     # if(time_rechr > 0):
     #     pass
     # else:
     for i in range(time_rec,timeh):
-       if(i%5 == 3):
+       if(i%90 == 30):
          time_count+=1
-    time_rec = timeh - (time_rechr*60)
+    # time_rec = timeh - (time_rechr*60)
+    time_rec = timeh
     return(time_count)
 
 def differ():
@@ -89,7 +96,8 @@ def differ():
     
     pod_changed = pod_differ - time_differ
     if(pod_changed < 0):
-        pod_changed_count = -1
+        # pod_changed_count = -1
+        pod_changed_count = 0
         j = 1
         return (j)
     # elif(pod_changed < 0):
@@ -101,6 +109,19 @@ def differ():
         k = 0
         return (k)
     
+def blocker():                               # 0 is blocked and 1 is allowed
+    global allot_time
+    time = sec()
+    if(seat_counter==29):
+      allot_time = time + 300
+      o = 1
+      return(o)
+    elif(time > allot_time):
+        p = 1
+        return(p)
+    else:
+        l=0
+        return(l)   
 
 def allot():
     global seat_counter
@@ -108,29 +129,45 @@ def allot():
     global platform_counter
     global pod_dmg
     timeal = differ()
+    block_code =  blocker()
     print("Timeal:", timeal)
+    # if(block_code == 1):
     if(seat_counter > 0):
         # if(seat_counter > 28):
         #     seat_counter = 28
         if ( timeal > 0):
             # pod_bay_counter-= timeal
             pod_bay_counter-= 1
-            if(pod_bay_counter < 0):
+            # platform_counter-=1
+            if(pod_bay_counter < 0 and block_code == 1):
+            # if(platform_counter < 0):
                 # pod_bay_counter = 6 + pod_bay_counter
-                platform_counter-= 1
+                # platform_counter-= 1
+                # pod_bay_counter-=1
+                # pod_bay_counter = 5
+                platform_counter = 12
                 pod_bay_counter = 5
+            else:
+                pass
             seat_counter = 28
         else:
             seat_counter-= 1
-    if(seat_counter == 0 and pod_bay_counter != 0):
-        pod_bay_counter-= 1
+    # if(seat_counter == 0 and pod_bay_counter != 0):
+    if(seat_counter == 0 and platform_counter != 0):
+        # pod_bay_counter-= 1
+        platform_counter-= 1
         seat_counter = 28
-    if(seat_counter == 0 and pod_bay_counter == 0):
-        platform_counter-=1
-        pod_bay_counter = 5
-        seat_counter = 28
-    if(platform_counter < 0):
+    # if(seat_counter == 0 and pod_bay_counter == 0):
+    if(seat_counter == 0 and platform_counter == 0):
+        # platform_counter-=1
+        pod_bay_counter-=1
+        # pod_bay_counter = 5
         platform_counter = 12
+        seat_counter = 28
+    # if(platform_counter < 0):
+    if(pod_bay_counter < 0):
+        # platform_counter = 12
+        pod_bay_counter = 5
     # if(seat_counter == 28 and pod_bay_counter < 0):
     #     platform_counter-= 1
     #     pod_bay_counter = 5
@@ -152,12 +189,15 @@ def allot():
     # check_json(str3)
     
     return (str2)
+    # else:
+    #     pass
 
 
 
-# for i in range(100): 
+for i in range(2184): 
 #   a =check("0")
-#   print(a)
+  a = allot()
+  print(a)
 
 
 # def find(u):
