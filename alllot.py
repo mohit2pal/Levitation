@@ -128,7 +128,7 @@ def blocker():                               # 0 is blocked and 1 is allowed
     elif(time > allot_time):
         p = 1
         return(p)
-    elif(time < allot_time and pod_bay_counter != 0 and platform_counter != 0 and seat_counter != 1):
+    elif(time < allot_time and (pod_bay_counter != 0 or platform_counter != 0 or seat_counter != 1)):
          u = 1 
          return(u)
     else:
@@ -209,7 +209,7 @@ def allot():
 
 
 # for i in range(5):
-for i in range(2184): 
+for i in range(2200): 
     #   a =check("0")
     a = allot()
     print(a)
