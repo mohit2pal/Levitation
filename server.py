@@ -88,10 +88,11 @@ def work():
 def output():
     global dataty_len
     a = datetime.datetime.now()
-    time=a.strftime("%H:%M:%S")
-    day=a.strftime("%d|%m|%Y")
+    time=a.strftime("%H:%M:%S") 
+    day=str(a.day) + "-" + str(a.month) + "-" + str(a.year)
     namet = name2
     allott = allot2
+    print(a.day, "-", a.month, "-", a.year)
     print(day)
     save(day,name2,age2,mobile2,destination2,allot2,dataty_len,time)
     # seat_tickett = seat_ticket
