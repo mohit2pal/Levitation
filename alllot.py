@@ -28,13 +28,13 @@ def check_json(t):
     if(t != pod_rec):
         dicto = {"change": 'true'}
         json_object = json.dumps(dicto, indent = 1)
-        with open("./static/js/change.json", "w") as outfile:
+        with open("/static/js/change.json", "w") as outfile:
            outfile.write(json_object)
         pod_changed_count+=1
     else:
         dicto = {"change": 'false'}
         json_object = json.dumps(dicto, indent = 1)
-        with open("./static/js/change.json", "w") as outfile:
+        with open("/static/js/change.json", "w") as outfile:
             outfile.write(json_object)
     pod_rec = t
 
@@ -209,10 +209,10 @@ def allot():
 
 
 # for i in range(5):
-for i in range(2200): 
-    #   a =check("0")
-    a = allot()
-    print(a)
+# for i in range(2200): 
+#     #   a =check("0")
+#     a = allot()
+#     print(a)
 
 
 # def find(u):
