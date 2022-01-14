@@ -109,6 +109,15 @@ def differ():
         k = 0
         return (k)
     
+# def reset_pod():
+#     global pod_bay_counter
+#     global platform_counter
+#     global seat_counter
+#     if(pod_bay_counter == 0 and platform_counter == 0 and seat_counter == 1):
+#         seat_counter = 29
+#         pod_bay_counter = 6
+#         platform_counter = 12
+    
 def blocker():                               # 0 is blocked and 1 is allowed
     global allot_time
     time = sec()
@@ -119,8 +128,12 @@ def blocker():                               # 0 is blocked and 1 is allowed
     elif(time > allot_time):
         p = 1
         return(p)
+    elif(time < allot_time and pod_bay_counter != 0 and platform_counter != 0 and seat_counter != 1):
+         u = 1 
+         return(u)
     else:
         l=0
+        # l=1
         return(l)   
 
 def allot():
@@ -131,6 +144,10 @@ def allot():
     timeal = differ()
     block_code =  blocker()
     print("Timeal:", timeal)
+    if(block_code == 1):
+        pass
+    elif(block_code == 0):
+        return("Blocked")
     # if(block_code == 1):
     if(seat_counter > 0):
         # if(seat_counter > 28):
@@ -139,7 +156,7 @@ def allot():
             # pod_bay_counter-= timeal
             pod_bay_counter-= 1
             # platform_counter-=1
-            if(pod_bay_counter < 0 and block_code == 1):
+            if(pod_bay_counter < 0):
             # if(platform_counter < 0):
                 # pod_bay_counter = 6 + pod_bay_counter
                 # platform_counter-= 1
@@ -147,8 +164,6 @@ def allot():
                 # pod_bay_counter = 5
                 platform_counter = 12
                 pod_bay_counter = 5
-            else:
-                pass
             seat_counter = 28
         else:
             seat_counter-= 1
@@ -193,11 +208,11 @@ def allot():
     #     pass
 
 
-
+# for i in range(5):
 for i in range(2184): 
-#   a =check("0")
-  a = allot()
-  print(a)
+    #   a =check("0")
+    a = allot()
+    print(a)
 
 
 # def find(u):
