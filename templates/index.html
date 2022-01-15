@@ -71,6 +71,14 @@
           {{form.destination.label}} <br>
           {{form.destination(size=40,style='height: 30px', type='name')}}          
         </div>
+        <div class="container my-4 col-9">
+          Destination : 
+          <select >
+            <option value="">--Select--</option>
+            <option value="mumbai">MUMBAI</option>
+            <option value="pune">PUNE</option>
+          </select>
+        </div>
 
         <p class="container my-4 col-1" style="text-align: center; font-size: medium;">
           {{form.submit()}}
