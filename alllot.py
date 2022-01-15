@@ -209,10 +209,10 @@ def allot():
 
 
 # for i in range(5):
-# for i in range(2200): 
-#     #   a =check("0")
-#     a = allot()
-#     print(a)
+for i in range(2200): 
+    #   a =check("0")
+    a = allot()
+    print(a)
 
 
 # def find(u):
