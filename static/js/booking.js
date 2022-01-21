@@ -72,35 +72,16 @@ function sound() {
 }
 
 var amount = 0
-function add() {
-    amount += 200;
-    button2.innerHTML = "TOTAL AMOUNT:" + amount;
-    
-}
 
-function sub() {
-    amount -= 100;
-    button2.innerHTML = "TOTAL AMOUNT:" + amount;
-    
-}
 
 // used to listen seat clicking and toggling color
 container.addEventListener("click",(e) => {
     if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
-    //    add()
        sound()
-        // amount = amount + 1
-        // $.post("/postmethod", {
-        //     javascript_data: amount
-        //  });
-        // famount() 
-        // window.alert(amount)
         if( document.querySelectorAll(".row .seat.booked").length < 5) {
-         
            e.target.classList.toggle("booked")
         }
         else {
-            // amount = amount - 1
             if(e.target.classList.contains("booked")){ 
             
               e.target.classList.toggle("booked")
@@ -109,7 +90,11 @@ container.addEventListener("click",(e) => {
             //     pass
             // }
         }
+
+        
     }
+
+    submission()
     // const bookedSeats = document.querySelectorAll(".row .seat.booked")
     // const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
 
@@ -120,29 +105,14 @@ container.addEventListener("click",(e) => {
     // console.log(seatsIndex)
 })
 
-container.addEventListener("click",(e) => {
-    const currentSeats = document.querySelectorAll(".row .seat.booked")
-    const currentIndex = [...currentSeats].map((seat) => [...seats].indexOf(seat))
 
-    const k = localStorage.setItem("currentSeats", JSON.stringify(currentIndex))
-    
-    if( e.target.classList.contains("seat") && (k==k)) {
-        add();
-    }
-    if( e.target.classList.contains("seat") && (k != k)) {
-        sub();
-    }
-})
-
-// var audio = new Audio('tune.mp3')
-// function myplay(){
-//    audio.play()
+function submission(){
+   var a = document.querySelectorAll(".row .seat.booked").length
+   amount = 500 * a
+   button2.innerHTML = "TOTAL AMOUNT:" + amount;
+}
 
 
-// button.addEventListener("click", () => {
-//     var audio = new Audio('.\static\js\tune.mp3');
-//     audio.play();
-//  })
 
 
 button.addEventListener("click", () => {

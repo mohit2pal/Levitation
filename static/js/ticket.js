@@ -21,6 +21,12 @@ function date() {
     document.getElementById("datetoday").innerHTML = today
 }
 
+function amount(){
+    var amounth = 0 
+    var amount = localStorage.getItem("currentSeats").length 
+    amounth = ((amount - 1) / 2) * 500
+    document.getElementById("money").innerHTML = amounth + "Rs."
+}
 // function printPage()
 // {
 // window.print()
@@ -30,6 +36,7 @@ function date() {
 
 seat_ticket()
 date()
+amount()
 
 
     // //to force refresh the page for seat booking
