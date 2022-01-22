@@ -108,8 +108,9 @@ container.addEventListener("click",(e) => {
 
 function submission(){
    var a = document.querySelectorAll(".row .seat.booked").length
-   amount = 500 * a
+   amount = 500 * a;  
    button2.innerHTML = "TOTAL AMOUNT:" + amount;
+   localStorage.setItem("moneystore", amount); 
 }
 
 

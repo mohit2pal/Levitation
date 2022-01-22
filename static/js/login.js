@@ -24,5 +24,10 @@ function functionAlert(msg, myYes) {
     });
     confirmBox.find(".yes").click(myYes);
     confirmBox.show();
-
+    
 }
+
+function toggle(){
+    var blur = document.getElementById('blur');
+    blur.classList.togggle('active')
+  }

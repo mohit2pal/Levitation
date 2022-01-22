@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>Worker Access</title>
     <link rel="stylesheet" href="/static/css/stylewaccess.css">
-    <script defer src="/static/js/login.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
       #confirm {
@@ -50,10 +49,17 @@
           opacity: 0;
         }
       }
+      .container#blurn.active
+      {
+        filter: blur(20px);
+        pointer-events: none;
+        user-select: none;
+      }
    </style>
   </head>
   <body>
-    <div class="center">
+  <div id="grade">
+    <div class="center" id="popup">
       <h1>Login</h1>
       <form>
         <div class="txt_field">
@@ -67,15 +73,40 @@
           <label>Password</label>
         </div>
       </form>
-      <div id="confirm">
-        <div class="message">Please enter correct username and password</div><br>
-        <button class="yes">OK</button>
-     </div>
       <div class="sub">
         <button id="submit" class="submit">Login</button>
       </div>
-       
-      </div>
-      
+    </div>
+    <div id="popup2">
+      <h2> PLEASE ENTER CORRECT PASSWORD AND USERNAME </h2>
+      <a href="#" onclick="check()" role="button">OK</a>
+    </div>
+    <script>
+      document.getElementById("submit").addEventListener("click", submitted)
+
+      function submitted() {
+    // check = 0
+
+        if (document.getElementById("login").value == 'levitation' && document.getElementById("password").value == '222553') {
+        // var xhr = new XMLHttpRequest()
+        // xhr.open('POST', '/loginfo', true)
+        // xhr.setRequestHeader('Content-Type', 'application/json')
+
+        // xhr.send(check)
+         window.open("/worker","_self")
+        } else {
+         check();
+        }
+      }
+
+      function check(){
+        var popup = document.getElementById("grade");
+        popup.classList.toggle("active");
+        var popup2 = document.getElementById("popup2");
+        popup2.classList.toggle("active");
+        
+      }
+    </script>
+
 </body>
 </html>

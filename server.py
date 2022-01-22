@@ -126,7 +126,7 @@ def inlog():
 
 @app.route('/thank you', methods=['GET', 'POST'])
 def final():
-    return render_template("ty.html")
+    return render_template("recthanku.html")
 
 if __name__ == '__main__':
     port = os.environ.get("PORT", 5000)
