@@ -33,13 +33,13 @@
       box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
       visibility: hidden;
       opacity: 0;
-      transition: 0s;
+      transition: 0.5s;
     }
     #popup2.active{
       top: 60%;
       visibility: visible;
       opacity: 1;
-      transition: 0s;
+      transition: 0.5s;
     }
     #popup2 h2{
       text-align: center;
@@ -141,14 +141,14 @@
 
             </p>
 
-            <p style="margin:0; padding:0; font-size:30px; text-align:left;" >
-              21:40
+            <p id="timestart" style="margin:0; padding:0; font-size:30px; text-align:left;" >
+              Error
               <span style="padding-bottom:50px; font-size:15px;" >
                 ---------------------------30 min---------------------------->
               </span>
-              <span style="float:right;" >
-                22:10
-              </span>
+            </p>
+            <p id="timestop" style="float:right;" >
+              Error
             </p>
             <p style="margin:0; padding:0; font-size:15px; text-align: left">
               Departure
@@ -189,7 +189,7 @@
 
       </div>
       <div class="d-grid gap-2 col-4 mx-auto my-4">
-        <button onclick="printPage()">Print Ticket</button>
+        <a class="btn btn-secondary" id = "prn"  role="button">Print Ticket</a>
         <a class="btn btn-success" id="fin" onclick="ok()" role="button">FINISH</a>
       </div>
     </form>
@@ -208,9 +208,6 @@
   </div>
   <script>
     const targetDiv = document.getElementById("mark");
-    function printPage() {
-      window.print();
-    }
     function ticks(){
       if (targetDiv.style.display !== "none") {
         targetDiv.style.display = "none";

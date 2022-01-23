@@ -68,12 +68,18 @@
           {{form.destination(size=40,style='height: 30px', type='name')}}          
         </div>
 
-        <p class="container my-4 col-1" style="text-align: center; font-size: medium;">
+        <p class="container my-4 col-1" onclick="sound()" role="button" style="text-align: center; font-size: medium;">
           {{form.submit()}}
         </p>
       
   </div>  
-
+    
+    <script>
+      function sound() {
+        var audio = new Audio('./static/js/tune.mp3');
+        audio.play();
+      }
+    </script> 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

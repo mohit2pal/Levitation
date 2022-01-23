@@ -1,6 +1,7 @@
 const button = document.getElementById("fin");
 // const targetDiv = document.getElementById("mark");
 const button2 = document.getElementById("cool");
+const button3 = document.getElementById("prn");
 
 
 function seat_ticket() {
@@ -9,9 +10,7 @@ function seat_ticket() {
 
     const markseat = localStorage.getItem("currentSeats")
     console.log(markseat);
-    console.log(typeof markseat);
     const check=  markseat.split('');
-    console.log(check.length);
 
     document.getElementById("seat_ticket").innerHTML = markseat
 
@@ -27,6 +26,34 @@ function date() {
     document.getElementById("datetoday").innerHTML = today
 }
 
+function show(){
+    var today = new Date();
+    var h = String(today.getHours())
+    var m = String(today.getMinutes());
+
+    today = h + ':' + m ;
+    // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    // console.log(time)
+    document.getElementById("timestart").innerHTML = today
+}
+
+function showend(){
+    var today = new Date();
+    var hint = parseInt(today.getHours())
+    mint = parseInt(today.getMinutes() + 30);
+    if(mint>60){
+        hint = parseInt(today.getHours() + 1);
+        if(hint>23){
+            hint = 0
+        }
+        mint = mint - 60;
+    }
+    mm = String(mint);
+    h = String(hint);
+    end = h + ':' + mm;
+    console.log(end) 
+    document.getElementById("timestop").innerHTML = end
+}
 function amount(){
     var amount = localStorage.getItem("moneystore");
     var amounth = 0 
@@ -89,7 +116,19 @@ function nparty(){
  stop();
 } 
 
+function sound() {
+    var audio = new Audio('./static/js/tune.mp3');
+    audio.play();
+}
+
+function printPage() {
+    setTimeout(function() {
+        window.print();
+     }, 500);
+  }
+
 button.addEventListener("click", () => {
+    sound();
     check();
     party(); 
     // sentence();
@@ -103,9 +142,18 @@ button2.addEventListener("click", () => {
 
 })
 
+button3.addEventListener("click", () => {
+    sound();
+    printPage();  
+    // sentence();
+
+})
+
 seat_ticket()
 date()
 amount()
+show()
+showend()
 
 
 

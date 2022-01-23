@@ -2,6 +2,7 @@ const container = document.querySelector(".container")
 const seats = document.querySelectorAll(".row .seat")
 const button = document.querySelector(".button")
 const button2 = document.getElementById("count")
+const button3 = document.getElementById("prn")
 const seatsb = document.querySelectorAll(".row .seat.booked")
 
 updateUI()
@@ -114,7 +115,13 @@ function submission(){
 }
 
 
+button3.addEventListener("click", () => {
+    sound();
+    setTimeout(
+        function()
+        { window.open("/print_ticket","_self");}, 480); 
 
+})
 
 button.addEventListener("click", () => {
     store()

@@ -66,12 +66,17 @@
           {{form.age(size=40,style='height: 30px')}}
         </div>
 
-        <p class="container my-4 col-1" style="text-align: center; font-size: medium;">
+        <p class="container my-4 col-1" onclick="sound()" role="button" style="text-align: center; font-size: medium;">
           {{form.submit()}}
         </p>
     </div>
 
-        
+    <script>
+      function sound() {
+        var audio = new Audio('./static/js/tune.mp3');
+        audio.play();
+      }
+    </script> 
       
 
     

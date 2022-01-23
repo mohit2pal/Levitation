@@ -169,3 +169,134 @@ def allot():
 #  return c
 
 
+n=1
+bay_ascii = 65
+seats=29
+allot_time=0
+print_time=0
+
+def allot2():
+  global timehr
+  global time
+  global second
+  global seats
+  global n
+  global allot_time
+  global bay_ascii
+  global print_time
+  a = datetime.datetime.now()
+  time=int(a.strftime("%M"))
+  timehr = int(a.strftime("%H"))
+ 
+  if(seats==29):
+      allot_time = time + 3
+      print_time = time + 5
+     
+
+  seats= seats - 1
+  
+  
+  if(time>allot_time):
+        # machine_time(timehr,print_time,"00")
+        n=n+1
+        seats=29
+        if(n>6):
+            bay_ascii = bay_ascii + 1
+            n=1
+            if(bay_ascii>77):
+                bay_ascii=65
+                
+#   if(seats<1):
+       
+     
+  if(seats<1):
+       allot_time = time + 3
+       n=n+1
+       seats=29
+       if(n>6):
+            bay_ascii = bay_ascii + 1
+            n=1
+            if(bay_ascii>77):
+                bay_ascii=65
+    #    print_time = second + 30
+    #    machine_time(timehr,time,print_time)
+#   print(time)
+  bay=chr(bay_ascii)
+  pod_bay=str(bay)
+  bay_no=str(n)
+  str2=pod_bay + bay_no
+  print(str2,seats)
+  
+      
+#   print(str2,seats)
+  return (str2)
+
+# for i in range (2300):
+#   allot2().
+def givetime():
+    allot_times2 = time + 90
+    allot_timeend2 = allot_times2 + 300
+    dept_time2 = allot_times2 + 360
+    allot_times3 = time + 180
+    allot_timeend3 = allot_times3 + 300
+    dept_time3 = allot_times3 + 360
+    # allot_times3 = time + 180
+    # allot_times4 = time + 270
+    # allot_times5 = time + 360
+    # allot_times6 = time + 450
+    # dept_time = time + 360
+    
+    
+grp_count = 0
+dept_time = 0
+allot_times2 = 0
+allot_timeend2 = 0
+dept_time2 = 0
+allot_times3 = 0
+allot_timeend3 = 0
+dept_time3 = 0
+
+def allot3():
+  global seats
+  global grp_count
+  global allot_time
+  global dept_time
+  global allot_times2 
+  global  allot_timeend2 
+  global  dept_time2 
+  global  allot_times3 
+  global  allot_timeend3 
+  global  dept_time3
+    
+  a = datetime.datetime.now()
+  time=int(a.strftime("%S"))
+  timehr = int(a.strftime("%H")) 
+  grp_1 = ['A1','B1','C1','D1','E1']
+  grp_2 = ['A2','B2','C2','D2','E2']
+  grp_3 = ['A3','B3','C3','D3','E3']
+#   grp_4 = ['A4','B4','C4','D4','E4']
+#   grp_5 = ['A5','B5','C5','D5','E5']
+#   grp_6 = ['A6','B6','C6','D6','E6']
+  
+  if(seats==29 and grp_count==0):
+      allot_time = time + 300
+      dept_time = time + 360
+      
+      allot_times2 = time + 90
+      allot_timeend2 = allot_times2 + 300
+      dept_time2 = allot_times2 + 360
+      
+      allot_times3 = time + 180
+      allot_timeend3 = allot_times3 + 300
+      dept_time3 = allot_times3 + 360
+      
+  seats = seats - 1
+      
+  print(allot_times2,dept_time2,time)
+  
+  
+  
+  
+  
+# allot3()
+# allot3()

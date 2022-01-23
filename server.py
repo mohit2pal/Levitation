@@ -4,6 +4,7 @@ from forms import *
 from log import * 
 from alllot import *
 from seat import *
+import time
 import os
 
 name2 = ""
@@ -84,7 +85,7 @@ def work():
         for i in range(dataty_length):
             check(pod_d)
         # seats(dataty)
-     
+    time.sleep(0.6) 
     return render_template('booking.html')
 
 @app.route('/print_ticket', methods=['GET', 'POST'])
@@ -126,6 +127,7 @@ def inlog():
 
 @app.route('/thank you', methods=['GET', 'POST'])
 def final():
+    time.sleep(0.6)
     return render_template("recthanku.html")
 
 if __name__ == '__main__':
