@@ -1,10 +1,17 @@
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+
 const container = document.querySelector(".container")
 const seats = document.querySelectorAll(".row .seat")
 const button = document.querySelector(".button")
 
 updateUI()
-
-// button.disabled = true
 
 //To send and recieve data using ajax
 function ajaxx() {
@@ -59,12 +66,12 @@ function store() {
 // used to listen seat clicking and toggling color
 container.addEventListener("click", (e) => {
     if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
-        if( document.querySelectorAll(".row .seat.booked").length < 5) {
-           e.target.classList.toggle("booked")
+        if (document.querySelectorAll(".row .seat.booked").length < 5) {
+            e.target.classList.toggle("booked")
         }
         else {
-            if(e.target.classList.contains("booked")){
-              e.target.classList.toggle("booked")
+            if (e.target.classList.contains("booked")) {
+                e.target.classList.toggle("booked")
             }
             // else {
             //     pass
@@ -83,28 +90,21 @@ container.addEventListener("click", (e) => {
 
 button.addEventListener("click", () => {
 
-    if(document.querySelectorAll(".row .seat.booked").length > 0) {
+    store()
+    current_store()
+    const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats"))
 
-        store()
-        current_store()
-        const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats"))
-
-        if (selectedSeats !== null && selectedSeats.length > 0) {
-            seats.forEach((seat, index) => {
-                if (selectedSeats.indexOf(index) > -1) {
-                    seat.classList.add("sold")
-                }
-            })
-        }
-        // console.log(e)
-        // console.log(selectedSeats)
-        // console.log(typeof(selectedSeats))
-        ajaxx()
-        window.open("/print_ticket", "_self")
+    if (selectedSeats !== null && selectedSeats.length > 0) {
+        seats.forEach((seat, index) => {
+            if (selectedSeats.indexOf(index) > -1) {
+                seat.classList.add("sold")
+            }
+        })
     }
-    else {
-        pass
-    }
+    // console.log(e)
+    // console.log(selectedSeats)
+    // console.log(typeof(selectedSeats))
+    ajaxx()
 })
 
 function populateUI() {

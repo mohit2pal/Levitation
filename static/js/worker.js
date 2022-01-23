@@ -1,106 +1,106 @@
-const container = document.querySelector(".container")
-const seats = document.querySelectorAll(".row .seat")
-const button = document.querySelector(".button")
+// const container = document.querySelector(".container")
+// const seats = document.querySelectorAll(".row .seat")
+// const button = document.querySelector(".button")
 
-// updateUI()
+// // updateUI()
 
-//To send and recieve data using ajax
-function ajaxx() {
-    const markseat = localStorage.getItem("bookedSeats2")
-    console.log(markseat)
-    console.log(typeof markseat)
-    var xhr = new XMLHttpRequest()
-    xhr.open('POST', '/worker', true)
-    xhr.setRequestHeader('Content-Type', 'application/json')
-
-    xhr.send(markseat)
-}
-
-//A functio to update the UI
-// function updateUI() {
+// //To send and recieve data using ajax
+// function ajaxx() {
+//     const markseat = localStorage.getItem("bookedSeats2")
+//     console.log(markseat)
+//     console.log(typeof markseat)
 //     var xhr = new XMLHttpRequest()
-//     xhr.open('GET', './static/js/change.json', true)
+//     xhr.open('POST', '/worker', true)
+//     xhr.setRequestHeader('Content-Type', 'application/json')
 
-//     xhr.onload = function () {
-//         if (this.status == 200) {
-//             var change = JSON.parse(this.responseText)
-
-//             if (change['change'] == "true") {
-//                 const bookedSeats = document.querySelectorAll(".row .seat.hooked")
-//                 const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
-//                 localStorage.setItem("bookedSeats", JSON.stringify(seatsIndex))
-//                 populateUI()
-//             }
-//             else {
-//                 populateUI()
-//             }
-//         }
-//     }
-//     xhr.send()
-
+//     xhr.send(markseat)
 // }
 
-//to store data of the current seats booked
-function current_store() {
-    const currentSeats = document.querySelectorAll(".row .seat.booked")
-    const currentIndex = [...currentSeats].map((seat) => [...seats].indexOf(seat))
+// //A functio to update the UI
+// // function updateUI() {
+// //     var xhr = new XMLHttpRequest()
+// //     xhr.open('GET', './static/js/change.json', true)
 
-    localStorage.setItem("currentSeats2", JSON.stringify(currentIndex))
-}
-// for storing value in local storage
-function store() {
-    const bookedSeats = document.querySelectorAll(".row .seat.booked, .row .seat.sold")
-    const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
+// //     xhr.onload = function () {
+// //         if (this.status == 200) {
+// //             var change = JSON.parse(this.responseText)
 
-    localStorage.setItem("bookedSeats2", JSON.stringify(seatsIndex))
-}
-// used to listen seat clicking and toggling color
-container.addEventListener("click", (e) => {
-    if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
-        e.target.classList.toggle("booked")
-            // else {
-            //     pass
-            // }
-        }
-    // const bookedSeats = document.querySelectorAll(".row .seat.booked")
-    // const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
+// //             if (change['change'] == "true") {
+// //                 const bookedSeats = document.querySelectorAll(".row .seat.hooked")
+// //                 const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
+// //                 localStorage.setItem("bookedSeats", JSON.stringify(seatsIndex))
+// //                 populateUI()
+// //             }
+// //             else {
+// //                 populateUI()
+// //             }
+// //         }
+// //     }
+// //     xhr.send()
 
-    // localStorage.setItem("bookedSeats", JSON.stringify(seatsIndex))
-    // const selectedSeatsCount = selectedSeats.length;
+// // }
 
-    // console.log(bookedSeats)
-    // console.log(seatsIndex)
-})
+// //to store data of the current seats booked
+// function current_store() {
+//     const currentSeats = document.querySelectorAll(".row .seat.booked")
+//     const currentIndex = [...currentSeats].map((seat) => [...seats].indexOf(seat))
 
-button.addEventListener("click", () => {
+//     localStorage.setItem("currentSeats2", JSON.stringify(currentIndex))
+// }
+// // for storing value in local storage
+// function store() {
+//     const bookedSeats = document.querySelectorAll(".row .seat.booked, .row .seat.sold")
+//     const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
 
-    store()
-    current_store()
-    const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats2"))
+//     localStorage.setItem("bookedSeats2", JSON.stringify(seatsIndex))
+// }
+// // used to listen seat clicking and toggling color
+// container.addEventListener("click", (e) => {
+//     if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
+//         e.target.classList.toggle("booked")
+//             // else {
+//             //     pass
+//             // }
+//         }
+//     // const bookedSeats = document.querySelectorAll(".row .seat.booked")
+//     // const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
 
-    if (selectedSeats !== null && selectedSeats.length > 0) {
-        seats.forEach((seat, index) => {
-            if (selectedSeats.indexOf(index) > -1) {
-                seat.classList.add("sold")
-            }
-        })
-    }
-    // console.log(e)
-    // console.log(selectedSeats)
-    // console.log(typeof(selectedSeats))
-    ajaxx()
-})
+//     // localStorage.setItem("bookedSeats", JSON.stringify(seatsIndex))
+//     // const selectedSeatsCount = selectedSeats.length;
 
-function populateUI() {
-    const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats2"))
+//     // console.log(bookedSeats)
+//     // console.log(seatsIndex)
+// })
 
-    if (selectedSeats !== null && selectedSeats.length > 0) {
-        seats.forEach((seat, index) => {
-            if (selectedSeats.indexOf(index) > -1) {
-                seat.classList.add("sold")
-            }
-        })
-    }
-}
+// button.addEventListener("click", () => {
 
-populateUI()
+//     store()
+//     current_store()
+//     const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats2"))
+
+//     if (selectedSeats !== null && selectedSeats.length > 0) {
+//         seats.forEach((seat, index) => {
+//             if (selectedSeats.indexOf(index) > -1) {
+//                 seat.classList.add("sold")
+//             }
+//         })
+//     }
+//     // console.log(e)
+//     // console.log(selectedSeats)
+//     // console.log(typeof(selectedSeats))
+//     ajaxx()
+// })
+
+// function populateUI() {
+//     const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats2"))
+
+//     if (selectedSeats !== null && selectedSeats.length > 0) {
+//         seats.forEach((seat, index) => {
+//             if (selectedSeats.indexOf(index) > -1) {
+//                 seat.classList.add("sold")
+//             }
+//         })
+//     }
+// }
+
+// populateUI()
