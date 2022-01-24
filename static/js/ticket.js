@@ -10,7 +10,6 @@ function seat_ticket() {
 
     const markseat = localStorage.getItem("currentSeats")
     console.log(markseat);
-    const check=  markseat.split('');
 
     document.getElementById("seat_ticket").innerHTML = markseat
 
@@ -28,8 +27,8 @@ function date() {
 
 function show(){
     var today = new Date();
-    var h = String(today.getHours())
-    var m = String(today.getMinutes());
+    var h = String(today.getHours()).padStart(2,'0')
+    var m = String(today.getMinutes()).padStart(2,'0');
 
     today = h + ':' + m ;
     // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
@@ -40,20 +39,21 @@ function show(){
 function showend(){
     var today = new Date();
     var hint = parseInt(today.getHours())
-    mint = parseInt(today.getMinutes() + 30);
+    mint = parseInt(today.getMinutes() + 30)
     if(mint>60){
-        hint = parseInt(today.getHours() + 1);
+        hint = parseInt(today.getHours() + 1)
         if(hint>23){
             hint = 0
         }
         mint = mint - 60;
     }
-    mm = String(mint);
-    h = String(hint);
+    mm = String(mint).padStart(2,'0');
+    h = String(hint).padStart(2,'0');
     end = h + ':' + mm;
-    console.log(end) 
     document.getElementById("timestop").innerHTML = end
 }
+
+
 function amount(){
     var amount = localStorage.getItem("moneystore");
     var amounth = 0 
@@ -104,7 +104,7 @@ function party(){
 //  } else {
 //    targetDiv.style.display = "inline";
 //  }
-// }; 
+// }
 
 //  for stopping the confetti 
 function nparty(){
@@ -116,10 +116,12 @@ function nparty(){
  stop();
 } 
 
+
 function sound() {
     var audio = new Audio('./static/js/tune.mp3');
     audio.play();
 }
+
 
 function printPage() {
     setTimeout(function() {
