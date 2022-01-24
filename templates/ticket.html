@@ -192,7 +192,7 @@
       </div>
       <div class="d-grid gap-2 col-4 mx-auto my-4">
         <a class="btn btn-secondary" id = "prn"  role="button">Print Ticket</a>
-        <a class="btn btn-success" id="fin"  role="button">FINISH</a>
+        <a class="btn btn-success" id="fin"  onclick = "ticks()" role="button">FINISH</a>
       </div>
     </form>
   </div>
@@ -212,7 +212,7 @@
     const targetDiv = document.getElementById("mark");
     function ticks(){
       if (targetDiv.style.display !== "none") {
-        targetDiv.style.display = "inline";
+        targetDiv.style.display = "none";
       } else {
         targetDiv.style.display = "inline";
       }
