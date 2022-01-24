@@ -114,7 +114,7 @@
     transform: translate(-50%, -50%);
     height: 200px;
     width: 500px;
-    background: #2691d9;
+    background: transparent;
     border-radius: 20px;
     box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
     visibility: hidden;
