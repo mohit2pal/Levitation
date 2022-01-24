@@ -6,6 +6,8 @@ from wtforms.validators import Length, DataRequired
 
 
 
+##########   PASSENGER FILL-UP FORM FUNCTION    #############
+
 
 class SignUpForm(FlaskForm):
     name = StringField('Customer Name*')
@@ -14,6 +16,10 @@ class SignUpForm(FlaskForm):
     destination = StringField('Destination*' )
     submit = SubmitField('Next')
     
+    
+##########   RECIEVER FILL-UP FORM FUNCTION    ##############
+
+
 class RecSignUpForm(FlaskForm):
     name = StringField('Customer Name*', validators=[DataRequired(), Length(max = 20)])
     age = StringField('Enter your age*', validators=[DataRequired(), Length(max = 3)])

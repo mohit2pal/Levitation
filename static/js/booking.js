@@ -2,12 +2,15 @@ const container = document.querySelector(".container")
 const seats = document.querySelectorAll(".row .seat")
 const button = document.querySelector(".button")
 const button2 = document.getElementById("count")
-const button3 = document.getElementById("prn")
+const final = document.getElementById("prn")
 const seatsb = document.querySelectorAll(".row .seat.booked")
 
 updateUI()
 
-//To send and recieve data using ajax
+
+/*******   TO SEND AND RECIEVE DATA USING AJAX     ************/
+
+
 function ajaxx() {
     const markseat = localStorage.getItem("currentSeats")
     console.log(markseat)
@@ -19,7 +22,10 @@ function ajaxx() {
     xhr.send(markseat)
 }
 
-//A functio to update the UI
+
+/*******   A FUNCTION TO UPDATE THE UI     ************/
+
+
 function updateUI() {
     var xhr = new XMLHttpRequest()
     xhr.open('GET', './static/js/change.json', true)
@@ -43,14 +49,21 @@ function updateUI() {
 
 }
 
-//to store data of the current seats booked
+
+/*******   TO STORE DATA OF THE CURRENT SEATS BOOKED     ************/
+
+
 function current_store() {
     const currentSeats = document.querySelectorAll(".row .seat.booked")
     const currentIndex = [...currentSeats].map((seat) => [...seats].indexOf(seat))
 
     localStorage.setItem("currentSeats", JSON.stringify(currentIndex))
 }
-// for storing value in local storage
+
+
+/*******   FOR STORING VALUE IN LOCAL STORAGE     ************/
+
+
 function store() {
     const bookedSeats = document.querySelectorAll(".row .seat.booked, .row .seat.sold")
     const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
@@ -67,6 +80,10 @@ function store() {
 //     xhr.send(amount);
 // }
 
+
+/*******   FUNCTION TO GIVE SOUND ON EACH CLICK     ************/
+
+
 function sound() {
     var audio = new Audio('./static/js/tune.mp3');
     audio.play();
@@ -75,7 +92,9 @@ function sound() {
 var amount = 0
 
 
-// used to listen seat clicking and toggling color
+/*******   USED TO LISTEN SEAT CLICKING AND TOGGLING COLOUR     ************/
+
+
 container.addEventListener("click",(e) => {
     if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
        sound()
@@ -107,6 +126,9 @@ container.addEventListener("click",(e) => {
 })
 
 
+/*******   CALCULATES AMOUNT ON EACH SELECT OF SEAT     ************/
+
+
 function submission(){
    var a = document.querySelectorAll(".row .seat.booked").length
    amount = 500 * a;  
@@ -115,13 +137,20 @@ function submission(){
 }
 
 
-button3.addEventListener("click", () => {
+/*******   AFTER CLICKING SUBMIT BUTTON     ************/
+
+
+final.addEventListener("click", () => {
     sound();
     setTimeout(
         function()
         { window.open("/print_ticket","_self");}, 480); 
 
 })
+
+
+
+
 
 button.addEventListener("click", () => {
     store()
@@ -140,6 +169,11 @@ button.addEventListener("click", () => {
     // console.log(typeof(selectedSeats))
     ajaxx()
 })
+
+
+
+
+
 
 function populateUI() {
     const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats"))

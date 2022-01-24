@@ -1,21 +1,22 @@
-const button = document.getElementById("fin");
-// const targetDiv = document.getElementById("mark");
-const button2 = document.getElementById("cool");
-const button3 = document.getElementById("prn");
+const finish = document.getElementById("fin");
+const printbutton = document.getElementById("prn");
+
+
+/*******   TAKING OUT CURRENT BOOKED SEATS FROM LOCAL STORAGE   **************/ 
 
 
 function seat_ticket() {
-    // var xhr = new XMLHttpRequest()
-    // xhr.open('POST', )
-
     const markseat = localStorage.getItem("currentSeats")
-    console.log(markseat);
 
     document.getElementById("seat_ticket").innerHTML = markseat
-
 }
 
+
+/*******   CALCULATING CURRENT DATE OF BOOKING TO PRINT IN TICKET   **************/ 
+
+
 function date() {
+
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -23,20 +24,29 @@ function date() {
 
     today = mm + '/' + dd + '/' + yyyy;
     document.getElementById("datetoday").innerHTML = today
+
 }
 
+
+/*******   DEPARTURE TIME CALCULATED TO PRINT IN TICKET   **************/ 
+
+
 function show(){
+
     var today = new Date();
     var h = String(today.getHours()).padStart(2,'0')
     var m = String(today.getMinutes()).padStart(2,'0');
 
     today = h + ':' + m ;
-    // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    // console.log(time)
     document.getElementById("timestart").innerHTML = today
 }
 
+
+/*******   ARRIVAL TIME CALCULATED TO PRINT IN TICKET   **************/ 
+
+
 function showend(){
+
     var today = new Date();
     var hint = parseInt(today.getHours())
     mint = parseInt(today.getMinutes() + 30)
@@ -54,67 +64,76 @@ function showend(){
 }
 
 
+/*******   TOTAL AMOUNT CALCULATED TO PRINT IN TICKET   **************/ 
+
+
 function amount(){
+
     var amount = localStorage.getItem("moneystore");
     var amounth = 0 
     amounth = amount;
     document.getElementById("money").innerHTML = amounth + "Rs."
 }
-// function printPage()
-// {
-// window.print()
-// }
 
-// document.getElementById("button_print").addEventListener("click", printPage)
+
+
+/*******   MAKING BACKGROUND BLUR WHEN THANK YOU POPUP COMES   **************/ 
+
+
 function check(){
+
     var popup = document.getElementById("grad1");
     popup.classList.toggle("active");
     var popup2 = document.getElementById("popup2");
     popup2.classList.toggle("active");
 }
 
+
+
+/*******   TIMER TO RETURN HOME PAGE AFTER CLICKING FINISH BUTTON   **************/ 
+
+
 async function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
   
 async function sentence(){
+
      document.getElementById("sen").innerHTML = "3s";
      await sleep(1000);
      document.getElementById("sen").innerHTML = "2s";
      await sleep(1000);
      document.getElementById("sen").innerHTML = "1s";
-     await sleep(2000);
+     await sleep(1500);
      window.open("/","_self");
 }
 
 
+
+/*******   CONFETTI STARTED ON CLICKING FINISH BUTTON   **************/ 
+
+
 function party(){ 
+    
   const start = () => {
    setTimeout(function() {
      confetti.start()
-    }, 100); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+    }, 100); 
  };
  start();
 } 
 
 
-// function ticks(){
-//  if (targetDiv.style.display !== "none") {
-//    targetDiv.style.display = "none";
-//  } else {
-//    targetDiv.style.display = "inline";
-//  }
-// }
+/*******   TO DISPLAY TICK SIGN ON THANK YOU POPUP   **************/ 
 
-//  for stopping the confetti 
-function nparty(){
-  const stop = () => {
-   setTimeout(function() {
-       confetti.stop()
-    }, 100); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
-  };
- stop();
-} 
+
+function ticks(){
+    document.getElementById('mark').style.display = "inline";
+}
+
+
+
+/*******   SOUND FOR BUTTONS   **************/ 
 
 
 function sound() {
@@ -123,33 +142,41 @@ function sound() {
 }
 
 
+
+/*******   PRINTING TICKET FUNCTION   **************/ 
+
+
 function printPage() {
     setTimeout(function() {
         window.print();
      }, 500);
-  }
+}
 
-button.addEventListener("click", () => {
+
+
+/*******   CALLING FUNCTIONS ON CLICK OF FINISH BUTTON   **************/ 
+
+
+finish.addEventListener("click", () => {
     sound();
     check();
+    ticks();
     party(); 
-    // sentence();
+    sentence();
 
 })
 
-button2.addEventListener("click", () => {
-    check();
-    nparty();  
-    // sentence();
 
-})
+/*******   CALLING FUNCTIONS ON CLICK OF PRINT TICKET BUTTON   **************/ 
 
-button3.addEventListener("click", () => {
+
+printbutton.addEventListener("click", () => {
     sound();
-    printPage();  
-    // sentence();
+    printPage(); 
 
 })
+
+
 
 seat_ticket()
 date()
@@ -157,11 +184,4 @@ amount()
 show()
 showend()
 
-
-
-    // //to force refresh the page for seat booking
-    // setInterval('refresh()', 200) // refresh at every 200ms
-    // function refresh() {
-    //   form.reload()
-    // }
 

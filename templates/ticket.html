@@ -14,7 +14,7 @@
   <title>Virgin Hyperloop | Ticket</title>
   <style>
     #grad1 {
-      height: 730px;
+      height: 100vh;
       background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%)
     }
     #grad1.active div:not(#popup2){
@@ -23,13 +23,15 @@
     #popup2{
       position: absolute;
       top: 50%;
-      bottom: 200%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 400px;
-      height: 350px;
+      width: 350px;
+      height: 320px;
       background: white;
-      border-radius: 50px;
+      border-radius: 25px;
+      border-style: solid;
+      border-width: 0.5mm;
+      border-color: #7ac142;
       box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
       visibility: hidden;
       opacity: 0;
@@ -46,6 +48,17 @@
       padding: 20px 0;
       border-bottom: 1px solid silver;
     }
+
+    #popup2 p:nth-of-type(1) {
+      position: relative;
+      left: 70px;
+    }
+
+    #popup2 p:nth-of-type(2) {
+      position: relative;
+      left: 70px;
+    }
+
     .checkmark__circle {
       stroke-dasharray: 166;
       stroke-dashoffset: 166;
@@ -192,7 +205,7 @@
       </div>
       <div class="d-grid gap-2 col-4 mx-auto my-4">
         <a class="btn btn-secondary" id = "prn"  role="button">Print Ticket</a>
-        <a class="btn btn-success" id="fin"  onclick = "ticks()" role="button">FINISH</a>
+        <a class="btn btn-success" id="fin"  role="button">FINISH</a>
       </div>
     </form>
   </div>
@@ -204,24 +217,12 @@
         <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
       </svg>
     </div>
-    <p>Returning to Home page....</p><p id="sen"></p>
-    
-    <button id="cool"> ENTER </button>
+    <p id ="L1" style = "font-size: 18px; ">    Your Submission is recieved</p>
+    <p id = "L2" style = "font-size: 18px; " >   Returning to Home page....
+      <span id ="sen" style = "font-size: 18px" >
+      </span>
+  
   </div>
-  <script>
-    const targetDiv = document.getElementById("mark");
-    function ticks(){
-      if (targetDiv.style.display !== "none") {
-        targetDiv.style.display = "none";
-      } else {
-        targetDiv.style.display = "inline";
-      }
-    }
-    function ok(){
-      document.getElementById('mark').style.display = "inline";
-    }
-
-  </script>
 
 
   <!-- Optional JavaScript; choose one of the two! -->
