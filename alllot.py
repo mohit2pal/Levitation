@@ -21,16 +21,22 @@ pod_rec = ""
 allot_time = 0
 #pod_d = 0
 pod_changed_count = 0
+bay_rec = -1
 
 def check_json(t):
     global pod_rec
     global pod_changed_count
+    global bay_rec
+    # bay2 = pod_rec
+    bay = int(t[1:2])
     if(t != pod_rec):
         dicto = {"change": 'true'}
         json_object = json.dumps(dicto, indent = 1)
         with open("./static/js/change.json", "w") as outfile:
            outfile.write(json_object)
-        pod_changed_count+=1
+        if(bay != bay_rec):
+           pod_changed_count+=1
+           bay_rec = bay
     else:
         dicto = {"change": 'false'}
         json_object = json.dumps(dicto, indent = 1)
@@ -39,23 +45,31 @@ def check_json(t):
     pod_rec = t
 
     
-def check(l):
+def check(l,sto):
     dmg = []
     # dmg = l.split()
     for j in l:
         dmg_string = ""
-        j+=1
-        dmg_string = dmg_string + str(chr(int(j/6)+65))
-        dmg_string = dmg_string + str(j%6)
+        g = j
+        g+=1
+        counter_j =  int(j/6)
+        dmg_string = dmg_string + str(chr(counter_j+65))
+        dmg_string = dmg_string + str(g-(counter_j*6))
         dmg.append(dmg_string)
     print("The processed dmaged pods are:", dmg)
-    pid = allot()
+    pid = allot(sto)
     pidd = pid[:2]
-    for i in dmg:
-      while(pidd == i):
-         pid = allot()
-         pidd = pid[:2]
-    check_json(pidd)
+    while(1 != 0):
+        if(pidd in dmg):
+            pid = allot(sto)
+            pidd = pid[:2]
+        else:
+            break
+    # for i in dmg:
+    #   while(pidd == i):
+    #      pid = allot(sto)
+    #      pidd = pid[:2]
+    # check_json(pidd)
     return pidd
        
         
@@ -96,8 +110,8 @@ def differ():
     
     pod_changed = pod_differ - time_differ
     if(pod_changed < 0):
-        # pod_changed_count = -1
-        pod_changed_count = 0
+        pod_changed_count = -1
+        # pod_changed_count = 0
         j = 1
         return (j)
     # elif(pod_changed < 0):
@@ -136,13 +150,17 @@ def blocker():                               # 0 is blocked and 1 is allowed
         # l=1
         return(l)   
 
-def allot():
+def allot(res):
     global seat_counter
     global pod_bay_counter
     global platform_counter
     global pod_dmg
-    timeal = differ()
-    block_code =  blocker()
+    if(res == 0):
+        timeal = differ()
+        block_code =  blocker()
+    elif(res == 1):
+        timeal = 0
+        block_code = 1
     print("Timeal:", timeal)
     if(block_code == 1):
         pass
@@ -155,6 +173,7 @@ def allot():
         if ( timeal > 0):
             # pod_bay_counter-= timeal
             pod_bay_counter-= 1
+            platform_counter = 12
             # platform_counter-=1
             if(pod_bay_counter < 0):
             # if(platform_counter < 0):
@@ -199,20 +218,20 @@ def allot():
     pod_bay = pod_change +1
     pod = str(pod_bay)
     seat = str(seat_counter)
-    # str3 = platform + pod
+    str3 = platform + pod
     str2 = platform + pod + " " + seat
-    # check_json(str3)
-    
+    check_json(str3)
+    print(str2)
     return (str2)
     # else:
     #     pass
 
 
 # for i in range(5):
-for i in range(2200): 
-    #   a =check("0")
-    a = allot()
-    print(a)
+# for i in range(2200): 
+#     #   a =check("0")
+#     a = check([0,1,2],0)
+#     print(a)
 
 
 # def find(u):
