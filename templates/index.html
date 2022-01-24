@@ -11,9 +11,23 @@
     <title>Virgin Hyperloop | registrattion</title>
     <style>
       #grad1 {
-        height: 712px;
+        height: 100vh;
         background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%)
       }
+      .alltext {
+        position:absolute;
+        width: 600px;
+        height: 150px;
+        background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+        margin: 20px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(10px);
+        padding: 0 0 15px 15px;
+        padding-bottom: 50px;
     </style>
   </head>
   <body>
@@ -45,7 +59,7 @@
 <br>
 
 
-    <div class = "container my-4 col-4 shadow-lg p-3 mb-5 bg-body rounded">
+    <div class = "container shadow-lg p-3 mb-5 bg-body rounded">
         <h2 style = text-align:"center"><b>Registration Page</b> : </h2>
          
     
@@ -72,7 +86,13 @@
           {{form.submit()}}
         </p>
       
-  </div>  
+        <div class= "container my-4 col-4 "> 
+          <div class= "alltext">
+           hello
+          </div>  
+        </div>
+  </div>
+ 
 
     <!-- Optional JavaScript; choose one of the two! -->
 
