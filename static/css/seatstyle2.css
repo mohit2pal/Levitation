@@ -31,7 +31,7 @@
         }
 
         
-        .seat2 {
+        .seat {
             background-color: #444451;
             height: 40px;
             width: 47px;
@@ -42,36 +42,36 @@
             border-top-right-radius: 10px;
         }
 
-        .seat2.booked {
+        .seat.booked {
             background-color: green;
         }
 
-        .seat2.sold {
+        .seat.sold {
             background-color: #fff;
         }
 
-        /* .seat2:nth-of-type(2) {
+        /* .seat:nth-of-type(2) {
   margin-right: 30px;
 } */
 
-        .seat2:nth-last-of-type(6) {
+        .seat:nth-last-of-type(6) {
             margin-left: 30px;
         }
 
-        .seat2:nth-last-of-type(12) {
+        .seat:nth-last-of-type(12) {
             margin-left: 30px;
         }
 
-        .seat2:nth-last-of-type(18) {
+        .seat:nth-last-of-type(18) {
             margin-left: 30px;
         }
 
-        .seat2:not(.sold):hover {
+        .seat:not(.sold):hover {
             cursor: pointer;
             transform: scale(1.2);
         }
 
-        .showcase .seat2:not(.sold):hover {
+        .showcase .seat:not(.sold):hover {
             cursor: default;
             transform: scale(1);
         }

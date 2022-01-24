@@ -1,5 +1,5 @@
 const container = document.querySelector(".container2")
-const seats = document.querySelectorAll(".row2 .seat2")
+const seats = document.querySelectorAll(".row2 .seat")
 const button = document.querySelector(".button")
 
 // updateUI()
@@ -42,21 +42,21 @@ function ajaxx() {
 
 //to store data of the current seats booked
 function current_store() {
-    const currentSeats = document.querySelectorAll(".row2 .seat2.booked")
+    const currentSeats = document.querySelectorAll(".row2 .seat.booked")
     const currentIndex = [...currentSeats].map((seat) => [...seats].indexOf(seat))
 
     localStorage.setItem("currentSeats2", JSON.stringify(currentIndex))
 }
 // for storing value in local storage
 function store() {
-    const bookedSeats = document.querySelectorAll(".row2 .seat2.booked, .row2 .seat2.sold")
+    const bookedSeats = document.querySelectorAll(".row2 .seat.booked, .row2 .seat.sold")
     const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
 
     localStorage.setItem("bookedSeats2", JSON.stringify(seatsIndex))
 }
 // used to listen seat clicking and toggling color
 container.addEventListener("click", (e) => {
-    if (e.target.classList.contains("seat2") && !e.target.classList.contains("sold")) {
+    if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
         e.target.classList.toggle("booked")
         // else {
         //     pass
@@ -79,7 +79,7 @@ button.addEventListener("click", () => {
     const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats2"))
 
     if (selectedSeats !== null && selectedSeats.length > 0) {
-        seats.forEach((seat2, index) => {
+        seats.forEach((seat, index) => {
             if (selectedSeats.indexOf(index) > -1) {
                 seat.classList.add("sold")
             }
