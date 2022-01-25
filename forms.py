@@ -10,10 +10,10 @@ from wtforms.validators import Length, DataRequired
 
 
 class SignUpForm(FlaskForm):
-    name = StringField('Customer Name*')
-    age = StringField('Enter your age*')
-    mobile = StringField('Mobile Number*')
-    destination = StringField('Destination*' )
+    name = StringField('Customer Name*', validators=[DataRequired(), Length(max = 20)])
+    age = StringField('Enter your age*', validators=[DataRequired(), Length(max = 3)])
+    mobile = StringField('Mobile Number*', validators=[DataRequired(), Length(max = 10,min = 10)])
+    destination = StringField('Destination*', validators=[DataRequired(), Length(max = 30)] )
     submit = SubmitField('Next')
     
     
