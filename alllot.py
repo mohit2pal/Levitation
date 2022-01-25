@@ -3,10 +3,11 @@
 #Platform pod alotment counter = 6 each
 #Seat counter = 28 each
 
-
+from blockerallot import variable_edit
 import datetime
 import json
 
+default_time = 0
 
 seat_counter = 29
 pod_bay_counter = 6
@@ -14,7 +15,7 @@ pod_bay_counter = 6
 platform_counter = 12
 # platform_counter = 13
 time = 0
-time_rec = 0
+time_rec = default_time
 time_rechr = 0
 time_hourrecd = 0
 pod_rec = ""
@@ -70,6 +71,7 @@ def check(l,sto):
     #      pid = allot(sto)
     #      pidd = pid[:2]
     # check_json(pidd)
+    variable_edit(seat_counter,pod_bay_counter,platform_counter,time,time_rec,time_rechr,time_hourrecd,pod_rec,allot_time,pod_changed_count,bay_rec,default_time)
     return pidd
        
         
@@ -100,7 +102,10 @@ def counth():
        if(i%90 == 30):
          time_count+=1
     # time_rec = timeh - (time_rechr*60)
-    time_rec = timeh
+    if(seat_counter == 29):
+        time_count = 10
+    if(time_rec < timeh):
+        time_rec = timeh
     return(time_count)
 
 def differ():

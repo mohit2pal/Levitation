@@ -3,6 +3,7 @@ from flask import request
 from forms import SignUpForm
 from log import * 
 from alllot import *
+from blockerallot import *
 from seat import *
 import os
 
@@ -24,6 +25,7 @@ def index():
     global name2
     global allot2
     global pod_d
+    check2(pod_d,0)
     form = SignUpForm()
     if form.is_submitted():
        result= request.form
