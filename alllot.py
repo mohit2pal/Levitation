@@ -3,7 +3,9 @@
 #Platform pod alotment counter = 6 each
 #Seat counter = 28 each
 
+
 from blockerallot import variable_edit
+
 import datetime
 import json
 
@@ -246,5 +248,3 @@ def allot(res):
 #    print(c) 
 
 #  return c
-
-

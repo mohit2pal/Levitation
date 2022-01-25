@@ -4,7 +4,9 @@ const button = document.querySelector(".button")
 
 // updateUI()
 
-//To send and recieve data using ajax
+/*******   TO SEND AND RECIEVE DATA USING AJAX     ************/
+
+
 function ajaxx() {
     const markseat = localStorage.getItem("bookedSeats2")
     console.log(markseat)
@@ -40,21 +42,32 @@ function ajaxx() {
 
 // }
 
-//to store data of the current seats booked
+/*******   TO STORE DATA OF THE CURRENT SEATS BOOKED     ************/
+
+
+
 function current_store() {
     const currentSeats = document.querySelectorAll(".row2 .seat.booked")
     const currentIndex = [...currentSeats].map((seat) => [...seats].indexOf(seat))
 
     localStorage.setItem("currentSeats2", JSON.stringify(currentIndex))
 }
-// for storing value in local storage
+
+
+/*******   FOR STORING VALUE IN LOCAL STORAGE     ************/
+
+
 function store() {
     const bookedSeats = document.querySelectorAll(".row2 .seat.booked, .row2 .seat.sold")
     const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
 
     localStorage.setItem("bookedSeats2", JSON.stringify(seatsIndex))
 }
-// used to listen seat clicking and toggling color
+
+
+/*******   USED TO LISTEN SEAT CLICKING AND TOGGLING COLOUR     ************/
+
+
 container.addEventListener("click", (e) => {
     if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
         e.target.classList.toggle("booked")
@@ -71,6 +84,10 @@ container.addEventListener("click", (e) => {
     // console.log(bookedSeats)
     // console.log(seatsIndex)
 })
+
+
+/*******   CALLING FUNCTIONS ON CLICK OF SUBMIT BUTTON   **************/ 
+
 
 button.addEventListener("click", () => {
 

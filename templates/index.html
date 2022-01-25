@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -95,6 +96,7 @@
 
 <body>
 
+
   <div id="grad1">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
@@ -135,26 +137,26 @@
 
           <form action="" method="post">
 
-            <div class="container my-4 col-8">
+            <div class="container my-4 col-8" style='display:flex; flex-direction:column;'>
               {{form.name.label}} <br>
               {{form.name(size=40,style='height: 30px')}}
             </div>
-            <div class="container my-4 col-8">
+            <div class="container my-4 col-8" style='display:flex; flex-direction:column;'>
               {{form.mobile.label}} <br>
               {{form.mobile(size=40,style='height: 30px')}}
             </div>
-            <div class="container my-4 col-8">
+            <div class="container my-4 col-8" style='display:flex; flex-direction:column;'>
               {{form.age.label}} <br>
               {{form.age(size=40,style='height: 30px')}}
             </div>
-            <div class="container my-4 col-8">
+            <div class="container my-4 col-8" style='display:flex; flex-direction:column;'>
               {{form.destination.label}} <br>
               {{form.destination(size=40,style='height: 30px', type='name')}}
             </div>
 
-            <p class="container my-4 col-1" style="text-align: center; font-size: medium;">
-              {{form.submit()}}
-            </p>
+             <p class="container my-4 col-1" onclick="sound()" role="button" style="text-align: center; font-size: medium;  margin: 24px 190px; padding: 0px 0px">
+                {{form.submit(class="btn btn-secondary btn-lg")}}
+             </p>
           </form>
         </div>
         <div class="container my-5 mx-5 col-4 ">
@@ -164,9 +166,16 @@
 
         </div>
       </div>
-
+  
+       <script>
+         function sound() {
+           var audio = new Audio('./static/js/tune.mp3');
+           audio.play();
+          }
+       </script> 
 
       <!-- Optional JavaScript; choose one of the two! -->
+
 
       <!-- Option 1: Bootstrap Bundle with Popper -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

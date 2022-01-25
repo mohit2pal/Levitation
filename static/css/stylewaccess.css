@@ -4,12 +4,16 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
   }
-  body{
+  #grade{
     margin: 0;
     padding: 0;
-    background: linear-gradient(120deg,#003399 0%, #ff99cc 100%);
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
     height: 100vh;
     overflow: hidden;
+    
+  }
+  #grade.active div:not(#popup2){
+    filter: blur(5px);
   }
   .center{
     position: absolute;
@@ -103,3 +107,49 @@
     padding: 0 40px;
     box-sizing: border-box;
   }
+  #popup2{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 150px;
+    width: 500px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  #popup2.active{
+    top: 60%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+  }
+  a.btn.btn-secondary {
+    margin: 0 210px;
+    width: 60px;
+  }
+  /* a{
+    position: relative;
+    font-size: 20px;
+    left: 45%; 
+    width: 100px;
+    padding:  20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+    background: rgb(185, 182, 182);
+  } */
+  h2{
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid silver;
+    font-size: 20px;
+  } 
+  

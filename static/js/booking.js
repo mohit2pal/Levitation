@@ -10,10 +10,16 @@ function myFunction() {
 const container = document.querySelector(".container")
 const seats = document.querySelectorAll(".row .seat")
 const button = document.querySelector(".button")
+const button2 = document.getElementById("count")
+const final = document.getElementById("prn")
+const seatsb = document.querySelectorAll(".row .seat.booked")
 
 updateUI()
 
-//To send and recieve data using ajax
+
+/*******   TO SEND AND RECIEVE DATA USING AJAX     ************/
+
+
 function ajaxx() {
     const markseat = localStorage.getItem("currentSeats")
     console.log(markseat)
@@ -25,7 +31,10 @@ function ajaxx() {
     xhr.send(markseat)
 }
 
-//A functio to update the UI
+
+/*******   A FUNCTION TO UPDATE THE UI     ************/
+
+
 function updateUI() {
     var xhr = new XMLHttpRequest()
     xhr.open('GET', './static/js/change.json', true)
@@ -49,35 +58,73 @@ function updateUI() {
 
 }
 
-//to store data of the current seats booked
+
+/*******   TO STORE DATA OF THE CURRENT SEATS BOOKED     ************/
+
+
 function current_store() {
     const currentSeats = document.querySelectorAll(".row .seat.booked")
     const currentIndex = [...currentSeats].map((seat) => [...seats].indexOf(seat))
 
     localStorage.setItem("currentSeats", JSON.stringify(currentIndex))
 }
-// for storing value in local storage
+
+
+/*******   FOR STORING VALUE IN LOCAL STORAGE     ************/
+
+
 function store() {
     const bookedSeats = document.querySelectorAll(".row .seat.booked, .row .seat.sold")
     const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
 
     localStorage.setItem("bookedSeats", JSON.stringify(seatsIndex))
+} 
+
+// function famount(){
+//     const URL = '/seat_selection'
+//     const xhr = new XMLHttpRequest();
+//     // sender = JSON.stringify(amount)
+//     amount = amount + 1
+//     xhr.open('POST', URL);
+//     xhr.send(amount);
+// }
+
+
+/*******   FUNCTION TO GIVE SOUND ON EACH CLICK     ************/
+
+
+function sound() {
+    var audio = new Audio('./static/js/tune.mp3');
+    audio.play();
 }
-// used to listen seat clicking and toggling color
-container.addEventListener("click", (e) => {
+
+var amount = 0
+
+
+/*******   USED TO LISTEN SEAT CLICKING AND TOGGLING COLOUR     ************/
+
+
+container.addEventListener("click",(e) => {
     if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
-        if (document.querySelectorAll(".row .seat.booked").length < 5) {
-            e.target.classList.toggle("booked")
+       sound()
+        if( document.querySelectorAll(".row .seat.booked").length < 5) {
+           e.target.classList.toggle("booked")
         }
         else {
-            if (e.target.classList.contains("booked")) {
-                e.target.classList.toggle("booked")
+            if(e.target.classList.contains("booked")){ 
+            
+              e.target.classList.toggle("booked")
+
             }
             // else {
             //     pass
             // }
         }
+
+        
     }
+
+    submission()
     // const bookedSeats = document.querySelectorAll(".row .seat.booked")
     // const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
 
@@ -87,6 +134,34 @@ container.addEventListener("click", (e) => {
     // console.log(bookedSeats)
     // console.log(seatsIndex)
 })
+
+
+
+/*******   CALCULATES AMOUNT ON EACH SELECT OF SEAT     ************/
+
+
+function submission(){
+   var a = document.querySelectorAll(".row .seat.booked").length
+   amount = 500 * a;  
+   button2.innerHTML = "TOTAL AMOUNT:" + amount;
+   localStorage.setItem("moneystore", amount); 
+}
+
+
+/*******   AFTER CLICKING SUBMIT BUTTON     ************/
+
+
+final.addEventListener("click", () => {
+    sound();
+    setTimeout(
+        function()
+        { window.open("/print_ticket","_self");}, 480); 
+
+})
+
+
+
+
 
 // button.addEventListener("click", () => {
 
@@ -111,6 +186,7 @@ button.addEventListener("click", button_click)
 
 function button_click() {
   
+
     store()
     current_store()
     const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats"))
@@ -123,11 +199,16 @@ function button_click() {
         })
     }
     // console.log(e)
-    // console.log(selectedSeats)
+    console.log(selectedSeats)
     // console.log(typeof(selectedSeats))
     ajaxx() 
     window.open("/print_ticket","_self") 
 }
+
+
+
+
+
 
 function populateUI() {
     const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats"))
@@ -142,6 +223,7 @@ function populateUI() {
 }
 
 // populateUI()
+
 
 // timer
 const FULL_DASH_ARRAY = 283;
@@ -261,3 +343,4 @@ function setCircleDasharray() {
 
 
 const myTimeout = setTimeout(button_click, 21000)
+

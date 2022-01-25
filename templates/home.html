@@ -49,19 +49,18 @@
 <form>
 
     
-    <div class = "container my-4 col-12">
+    <div class = "container my-4 mx-5 col-12">
         <h1  class="text-white">Welcome to Virgin Hyperloop</h2>
         </div>
         
-        <div class = "container my-4 col-12">
+        <div class = "container my-4 mx-4 col-12">
             <h3 class="text-white">Click on the below buttons to generate a Ticket</h3>
         </div>
         
         <div class="d-grid gap-2 col-4 mx-auto my-4">
-        <a class="btn btn-success" onclick="window.location.href='{{'pod_bay_ticket'}}'" role="button">Platfrom Acess zone</a>
-        <a class="btn btn-success" onclick="window.location.href='{{'pod_ticket'}}'" role="button">Pod Journey ticket</a>
+         <a class="btn btn-success" onclick= "one(); two();  " role="button">Platfrom Acess zone</a>
+         <a class="btn btn-success" onclick="one(); three();" role="button">Pod Journey ticket</a>
         </div>
-    
 
 </form>
 
@@ -73,6 +72,27 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+      function one(){
+        var audio = new Audio("./static/js/tune.mp3");
+        audio.play();
+       }
+    
+       function two(){
+        setTimeout(
+          function()
+          { window.open("/pod_bay_ticket","_self");}, 480);
+       }
+
+       function three(){
+        setTimeout(
+          function()
+          { window.open("/pod_ticket","_self");}, 480);
+       }
+   
+    </script>
+      
+    
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

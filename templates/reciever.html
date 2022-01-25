@@ -11,8 +11,10 @@
     <title>Virgin Hyperloop | Registrattion</title>
     <style>
       #grad1 {
+
         min-height: 100vh;
         background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%)
+
       }
       #grad2 {
         text-align: center;
@@ -57,28 +59,34 @@
       <div id = "grad2"> 
         <h1>REGISTRATION</h2>
       </div>  
+
         
         <form action ="" method="post">
     
-        <div class="container my-4 col-9">
-          {{form.name.label}} <br>
+        <div class="container-sm my-4  col-9 fs-5 " style='display:flex; flex-direction:column;'>
+          {{form.name.label}} 
           {{form.name(size=40,style='height: 30px', validators = 'validators')}}          
         </div>
-        <div class="container my-4 col-9">
-          {{form.mobile.label}} <br>
+        <div class="container-sm my-4  col-9 fs-5" style='display:flex; flex-direction:column;'>
+          {{form.mobile.label}} 
           {{form.mobile(size=40,style='height: 30px')}}
         </div>
-        <div class="container my-4 col-9">
-          {{form.age.label}} <br>
+        <div class="container-sm my-4  col-9 fs-5" style='display:flex; flex-direction:column;'>
+          {{form.age.label}} 
           {{form.age(size=40,style='height: 30px')}}
         </div>
 
-        <p class="container my-4 col-1" style="text-align: center; font-size: medium;">
-          {{form.submit()}}
+        <p class="container my-4 col-1" onclick="sound()" role="button" style="text-align: center; font-size: medium; align-items:center; margin: 24px 190px; padding: 0px 0px">
+          {{form.submit(class="btn btn-secondary ")}}
         </p>
     </div>
 
-        
+    <script>
+      function sound() {
+        var audio = new Audio('./static/js/tune.mp3');
+        audio.play();
+      }
+    </script> 
       
 
     

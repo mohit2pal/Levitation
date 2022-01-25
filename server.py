@@ -1,12 +1,17 @@
 from flask import Flask, render_template, redirect
 from flask import request
-from forms import SignUpForm
+
+from forms import *
+
 from datetime import date
+
 from log import * 
 from alllot import *
 from blockerallot import *
 from seat import *
+import time
 from index import blockermat
+
 import os
 import datetime
 
@@ -14,6 +19,7 @@ name2 = ""
 allot2 = ""
 dataty_len = 0
 pod_d={-69}
+
 
 # seat_ticket= ""
 # datatly = []
@@ -24,6 +30,7 @@ app.config['SECRET_KEY'] = 'levetation'
 @app.route('/')
 def home():
     return render_template('home.html')
+
 
 @app.route('/pod_ticket', methods=['GET', 'POST'])
 def index():
@@ -48,10 +55,11 @@ def index():
        #seat(allot2)
        return redirect("/seat_selection")
     return render_template('index.html', form=form)
+ 
     
 @app.route('/pod_bay_ticket', methods=['GET', 'POST'])
 def rticket():
-    form = SignUpForm()
+    form = RecSignUpForm()
     if form.is_submitted():
        result= request.form
        rname =request.form['name']
@@ -61,7 +69,9 @@ def rticket():
        t=a.strftime("%H:%M:%S")
        d=a.strftime("%d|%m|%Y")
        save2(d,rname,rage,rmobile,t)
+      return redirect("/thank you")
     return render_template('reciever.html', form=form)
+
 
 @app.route('/seat_selection', methods=['GET', 'POST'])
 def work():
@@ -69,8 +79,12 @@ def work():
     # global datatly
     global dataty_len
     global pod_d
+    
     if request.method == 'POST':
+        # jsdata = request.data
+        # print(jsdata)
         # seat_ticket = ""
+        
         dataty = request.get_json()
         # datatly = dataty
         # for i in dataty:
@@ -87,6 +101,7 @@ def work():
         for i in range(dataty_length):
             check(pod_d,1)
         # seats(dataty)
+    time.sleep(0.5) 
     return render_template('booking.html')
 
 @app.route('/print_ticket', methods=['GET', 'POST'])
@@ -198,6 +213,11 @@ def select_pod_selector():
         # print(pod_d)
     return render_template("pod_selector.html") 
 
+
+@app.route('/thank you', methods=['GET', 'POST'])
+def final():
+    time.sleep(0.5)
+    return render_template("recthanku.html")
 
 if __name__ == '__main__':
     port = os.environ.get("PORT", 5000)
