@@ -49,6 +49,7 @@ def blockermat():
         json_object = json.dumps(dicto, indent = 1)
         with open("./static/js/theblocker.json", "w") as outfile:
            outfile.write(json_object)
+        print("Blocked")
     elif(timet >block_timer_array[o2] and seat == 28):
         dicto = {"status": 1}
         json_object = json.dumps(dicto, indent = 1)
@@ -57,11 +58,13 @@ def blockermat():
         block_timer_array[o2] = default2 + (o*60)+ (180*count) + (360*depa)
         depa+=1
         count+=1
+        print("Allowed")
     else:
         dicto = {"status": 1}
         json_object = json.dumps(dicto, indent = 1)
         with open("./static/js/theblocker.json", "w") as outfile:
            outfile.write(json_object)
+        print("Allowed")
         
         
 
