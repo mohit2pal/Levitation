@@ -246,3 +246,4 @@ def allot(res):
 #    print(c) 
 
 #  return c
+#new
