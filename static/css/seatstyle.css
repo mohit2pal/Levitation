@@ -123,6 +123,18 @@ p.text span{
   padding: 5px 5px;
   color: rgb(12, 8, 19);
   outline: none;
+  
+}
+.amount {
+  
+  text-align: center;
+  background-color: rgb(181, 247, 219);
+  border: 1px solid hsl(216, 65%, 58%);
+  border-radius: 5px;
+  padding: 5px 5px;
+  color: rgb(12, 8, 19);
+  outline: none;
+
 }
 
 .button:hover {

@@ -57,21 +57,21 @@
         
         <form action ="" method="post">
     
-        <div class="container my-4 col-9">
-          {{form.name.label}} <br>
+        <div class="container-sm my-4  col-9 fs-5 " style='display:flex; flex-direction:column;'>
+          {{form.name.label}} 
           {{form.name(size=40,style='height: 30px', validators = 'validators')}}          
         </div>
-        <div class="container my-4 col-9">
-          {{form.mobile.label}} <br>
+        <div class="container-sm my-4  col-9 fs-5" style='display:flex; flex-direction:column;'>
+          {{form.mobile.label}} 
           {{form.mobile(size=40,style='height: 30px')}}
         </div>
-        <div class="container my-4 col-9">
-          {{form.age.label}} <br>
+        <div class="container-sm my-4  col-9 fs-5" style='display:flex; flex-direction:column;'>
+          {{form.age.label}} 
           {{form.age(size=40,style='height: 30px')}}
         </div>
 
-        <p class="container my-4 col-1" onclick="sound()" role="button" style="text-align: center; font-size: medium; align-items:center">
-          {{form.submit(class="btn btn-secondary btn")}}
+        <p class="container my-4 col-1" onclick="sound()" role="button" style="text-align: center; font-size: medium; align-items:center; margin: 24px 190px; padding: 0px 0px">
+          {{form.submit(class="btn btn-secondary ")}}
         </p>
     </div>
 
