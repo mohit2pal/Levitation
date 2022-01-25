@@ -14,7 +14,7 @@ body {
 }
 .topnav {
     overflow: hidden;
-    background-color: #333;
+    background-color: #212529;
 }
 
 .fullnavbar {
@@ -222,9 +222,9 @@ section::after {
 }
 .container .card .content .imgBx {
     position: relative;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50px;
     overflow: hidden;
     /* border: 10px solid rgba(0, 0, 0, 0.25); */
 
@@ -235,6 +235,7 @@ section::after {
     left: 0;
     width: 100%;
     height:100%;
+    align-items: center;
     object-fit: cover;
 }
 .container .card .content .contentBx h1 {

@@ -32,7 +32,8 @@
 
         
         .seat {
-            background-color: #444451;
+            background-color: #3c3747;
+            color: #ffffff;
             height: 40px;
             width: 47px;
             margin: 2px;
@@ -127,7 +128,7 @@
             background-color: cornsilk;
             border: 1px solid hsl(216, 65%, 58%);
             border-radius: 5px;
-            padding: 15px 5px;
+            padding: 5px 10px;
             color: rgb(12, 8, 19);
             outline: none;
         }
