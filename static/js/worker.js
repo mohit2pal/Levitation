@@ -71,10 +71,10 @@ function store() {
 container.addEventListener("click", (e) => {
     if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
         e.target.classList.toggle("booked")
-            // else {
-            //     pass
-            // }
-        }
+        // else {
+        //     pass
+        // }
+    }
     // const bookedSeats = document.querySelectorAll(".row .seat.booked")
     // const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
 

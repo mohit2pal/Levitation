@@ -3,7 +3,9 @@
 #Platform pod alotment counter = 6 each
 #Seat counter = 28 each
 
-# from blockerallot import variable_edit
+
+from blockerallot import variable_edit
+
 import datetime
 import json
 
@@ -71,7 +73,7 @@ def check(l,sto):
     #      pid = allot(sto)
     #      pidd = pid[:2]
     # check_json(pidd)
-    # variable_edit(seat_counter,pod_bay_counter,platform_counter,time,time_rec,time_rechr,time_hourrecd,pod_rec,allot_time,pod_changed_count,bay_rec,default_time)
+    variable_edit(seat_counter,pod_bay_counter,platform_counter,time,time_rec,time_rechr,time_hourrecd,pod_rec,allot_time,pod_changed_count,bay_rec,default_time)
     return pidd
        
         
