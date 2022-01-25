@@ -5,7 +5,7 @@ ADD . /levitation
 WORKDIR /levitation
 
 RUN pip install -r requirements.txt
-Run pip install --upgrade pip
-Run pip install pandas
+RUN pip install --upgrade pip
+RUN pip install pandas
 
 ENTRYPOINT ["python", "server.py"]
