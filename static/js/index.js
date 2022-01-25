@@ -1,78 +1,78 @@
 
-var counter = 1
-var block_timer_array = []
-var t = new Date()
-var hr = parseInt(t.getHours())
-var minutes = parseInt(t.getMinutes())
-var seconds = parseInt(t.getSeconds())
-var default_time2 = 0
-var default_time = 0
+// var counter = 1
+// var block_timer_array = []
+// var t = new Date()
+// var hr = parseInt(t.getHours())
+// var minutes = parseInt(t.getMinutes())
+// var seconds = parseInt(t.getSeconds())
+// var default_time2 = 0
+// var default_time = 0
 
-time = (hr * 60 * 60) + (minutes * 60) + (seconds)
+// time = (hr * 60 * 60) + (minutes * 60) + (seconds)
 
-console.log(time)
+// console.log(time)
 
-var xhr = new XMLHttpRequest()
-xhr.open('GET', './static/js/block.json', true)
+// var xhr = new XMLHttpRequest()
+// xhr.open('GET', './static/js/block.json', true)
 
-xhr.onload = function(){
+// xhr.onload = function(){
 
-  var block = JSON.parse(this.responseText)
+//   var block = JSON.parse(this.responseText)
 
-    default_time = block['time_recod']
-    for (var j = default_time; j<-1 ;j++){
-        if(j%90 == 30){
-        default_time2 = j
-        break 
-        }
-    }
-    for (var i = 0; i < 6 ; i++) {
-        block_timer_array.push(default_time2 - ((i*90)+180000))
-    }
-    i = block['pod']
-    seat = block['seats']
-    console.log("i",i)
-    console.log("seat",seat)
-    console.log("block_timer_array",block_timer_array)
-    if(time < block_timer_array[i] && seat == 28) {
-        //not allowed
-        console.log("blocked")
-        document.getElementById('app').innerHTML = "Blocked"
-    }
-    else if(time > block_timer_array[i] && seat ==28){
-        //allowed
-        console.log("1 allowed")
-        document.getElementById('app').innerHTML = "Allowed"
-        block_timer_array[i] = default_time2 + (i*90)+ (180*counter)
-        counter+=1
-    }
-    else{
-        //allowed
-        console.log("2 allowed")
-        document.getElementById('app').innerHTML = "Allowed"
-    }
-    // elif(time < block_timer_array[i] && ((pod_bay_counter != 0 || platform_counter != 0 || seat_counter != 1))){
-    //     //allow
-    // }
-    // for (var i = 0; i <6; i++) {
-    //     if (time < block_timer_array[i]){
-    //         //block
-    //     }
-    //     else if(time > block_timer_array[i]) {
+//     default_time = block['time_recod']
+//     for (var j = default_time; j<-1 ;j++){
+//         if(j%90 == 30){
+//         default_time2 = j
+//         break 
+//         }
+//     }
+//     for (var i = 0; i < 6 ; i++) {
+//         block_timer_array.push(default_time2 - ((i*90)+180000))
+//     }
+//     i = block['pod']
+//     seat = block['seats']
+//     console.log("i",i)
+//     console.log("seat",seat)
+//     console.log("block_timer_array",block_timer_array)
+//     if(time < block_timer_array[i] && seat == 28) {
+//         //not allowed
+//         console.log("blocked")
+//         document.getElementById('app').innerHTML = "Blocked"
+//     }
+//     else if(time > block_timer_array[i] && seat ==28){
+//         //allowed
+//         console.log("1 allowed")
+//         document.getElementById('app').innerHTML = "Allowed"
+//         block_timer_array[i] = default_time2 + (i*90)+ (180*counter)
+//         counter+=1
+//     }
+//     else{
+//         //allowed
+//         console.log("2 allowed")
+//         document.getElementById('app').innerHTML = "Allowed"
+//     }
+//     // elif(time < block_timer_array[i] && ((pod_bay_counter != 0 || platform_counter != 0 || seat_counter != 1))){
+//     //     //allow
+//     // }
+//     // for (var i = 0; i <6; i++) {
+//     //     if (time < block_timer_array[i]){
+//     //         //block
+//     //     }
+//     //     else if(time > block_timer_array[i]) {
 
-    //     }
-    // }
-    // if(time > allot_time){
-    //     //not blocked
-    // }
-    // else if(time < allot_time && ((pod_bay_counter != 0 || platform_counter != 0 || seat_counter != 1))) {
-    //     //not blocked
-    // }
-    // else {
-    //     //blocked
-    // }
-}
-xhr.send()
+//     //     }
+//     // }
+//     // if(time > allot_time){
+//     //     //not blocked
+//     // }
+//     // else if(time < allot_time && ((pod_bay_counter != 0 || platform_counter != 0 || seat_counter != 1))) {
+//     //     //not blocked
+//     // }
+//     // else {
+//     //     //blocked
+//     // }
+// }
+// xhr.send()
 
 
 //}
@@ -265,3 +265,24 @@ xhr.send()
 // const myTimeout = setTimeout(button_click, 21000)
 
 // blocker()
+
+
+function status_update() {
+    var xhr = new XMLHttpRequest()
+    xhr.open('GET', './static/js/theblocker.json', true)
+
+    xhr.onload = function() {
+        var block = JSON.parse(this.responseText)
+
+        if(block['status' === 1]){
+            document.getElementById('app').innerHTML = "Allowed"
+        }
+        else if(block['status' === 0]) {
+            document.getElementById('app').innerHTML = "Blocked"
+        }
+    }
+
+    xhr.send()
+}
+
+status_update()

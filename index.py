@@ -4,6 +4,7 @@ import datetime
 block_timer_array = []
 count = 1
 default2 = 0
+depa = 0
 
 def sec2():
     global time2
@@ -19,22 +20,50 @@ def sec2():
     #   time2_hourrecd = time2hr
     return (time2)
 
-def blocker():
+def blockermat():
+    global depa
+    global count
     global default2
     timet = sec2()
+    print(timet)
     default = 0
     if(count == 1):
-        for i in range(0,1,-1):
+        default = timet
+        i = default
+        while(1 != 0):
             if(i%90 == 30):
                 default2 = i
                 break
+            i+=1
+        print("default2",default2)
         for j in range(6):
             block_timer_array.append(default2 - ((j*90)+180000))
-    with open('/static/js/block.json', 'r') as f:
-       data = json.load(f)
-    
-    for i in data:
-        print(i)
+    print(block_timer_array)
+    with open('static/js/block.json', 'r') as f:
+      data = json.load(f)
+    o = data['pod']
+    o2 =o-1
+    seat = data['seats']
+    if(timet < block_timer_array[o2] and seat == 28):
+        dicto = {"status": 0}
+        json_object = json.dumps(dicto, indent = 1)
+        with open("./static/js/theblocker.json", "w") as outfile:
+           outfile.write(json_object)
+    elif(timet >block_timer_array[o2] and seat == 28):
+        dicto = {"status": 1}
+        json_object = json.dumps(dicto, indent = 1)
+        with open("./static/js/theblocker.json", "w") as outfile:
+           outfile.write(json_object)
+        block_timer_array[o2] = default2 + (o*60)+ (180*count) + (360*depa)
+        depa+=1
+        count+=1
+    else:
+        dicto = {"status": 1}
+        json_object = json.dumps(dicto, indent = 1)
+        with open("./static/js/theblocker.json", "w") as outfile:
+           outfile.write(json_object)
+        
         
 
-blocker()
+# for i in range(250):
+#     blocker()

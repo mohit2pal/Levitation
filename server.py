@@ -5,6 +5,7 @@ from log import *
 from alllot import *
 from blockerallot import *
 from seat import *
+from index import blockermat
 import os
 
 name2 = ""
@@ -26,6 +27,7 @@ def index():
     global allot2
     global pod_d
     check2(pod_d,0)
+    blockermat()
     form = SignUpForm()
     if form.is_submitted():
        result= request.form
