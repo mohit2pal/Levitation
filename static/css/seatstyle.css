@@ -11,16 +11,16 @@ body {
 }
 
 .fullnavbar {
-  width: 1320px;
+  width: 1519.2px;
   height: 40px;
-  margin: 0 108px;
+  margin: 0 12px;
   padding: 0 12px;
 }
 
 .everything {
   width: 1320px;
   height: auto;
-  margin: 0 108px;
+  margin: 0 110px;
   padding: 0 12px;
 
 }
@@ -28,11 +28,12 @@ body {
 .show {
   width: 750px;
   height: 40px;
-  padding: 0px 280px;
+  padding: 0px 250px;
+  margin: 0 5px;
 }
 
 .alltext {
-  padding: 0 300px;
+  padding: 0 320px;
   align-items: center;
 }
 .text2 {
@@ -217,9 +218,9 @@ body {
 }
 
 .showcase {
-  width: auto;
+  width: 800px;
   background: rgba(0, 0, 0, 0.1);
-  padding: 0px 30px;
+  padding: 0px 5px;
   border-radius: 5px;
   color: #ffffff;
   list-style-type: none;
@@ -275,6 +276,8 @@ p.text span {
   padding: 5px 5px;
   color: rgb(12, 8, 19);
   outline: none;
+  margin: 0 600px;
+  width: 80px;
   
 }
 .amount {
@@ -286,6 +289,9 @@ p.text span {
   padding: 5px 5px;
   color: rgb(12, 8, 19);
   outline: none;
+  margin: 0 580px;
+  width: auto;
+  margin-bottom: 5px;
 
 }
 
@@ -296,17 +302,11 @@ p.text span {
 }
 /* Timer */
 
-body {
-  font-family: sans-serif;
-  display: grid;
-  height: 100vh;
-  place-items: center;
-}
 
 .base-timer {
   position: relative;
-  width: 75px;
-  height: 75px;
+  width: 50px;
+  height: 50px;
 }
 
 .base-timer__svg {
@@ -347,12 +347,12 @@ body {
 
 .base-timer__label {
   position: absolute;
-  width: 75px;
-  height: 75px;
+  width: 50px;
+  height: 50px;
   top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 20px;
 }
 
