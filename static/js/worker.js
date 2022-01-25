@@ -65,11 +65,22 @@ function store() {
 }
 
 
+
+/*******   FUNCTION TO GIVE SOUND ON EACH CLICK     ************/
+
+
+function sound() {
+    var audio = new Audio('./static/js/tune.mp3');
+    audio.play();
+}
+
+
 /*******   USED TO LISTEN SEAT CLICKING AND TOGGLING COLOUR     ************/
 
 
 container.addEventListener("click", (e) => {
     if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
+        sound()
         e.target.classList.toggle("booked")
         // else {
         //     pass
@@ -86,11 +97,35 @@ container.addEventListener("click", (e) => {
 })
 
 
+function dmgpage(){
+    setTimeout(
+       function()
+         { window.open("/damage_submit","_self");}, 1000);
+}
+
+
+function refresh(){
+    console.log(0)
+    const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats2"))
+    localStorage.getItem("bookedSeats2").clear()
+    console.log(selectedSeats)
+    // window.open("/employee_access","_self")
+    seats.forEach((seat, index) => {
+        if (selectedSeats.indexOf(index) > -1) {
+            seat.classList.remove("sold")
+        }
+    })
+    window.onload()
+    console.log(1)
+}
+
+
 /*******   CALLING FUNCTIONS ON CLICK OF SUBMIT BUTTON   **************/ 
 
 
 button.addEventListener("click", () => {
-
+    sound()
+    dmgpage()
     store()
     current_store()
     const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats2"))

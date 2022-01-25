@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+onclick="sound(); end(); send_group();"<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,24 +39,23 @@
       </nav>
     <div class = "container my-4 col-12">
         <div class="d-grid gap-2 col-4 mx-auto my-4">
-            <button class="btn btn-success" id="button" role="button">Group 1</button>
-            <button class="btn btn-success" id="button1" role="button">Group 2</button>
-            <button class="btn btn-success" id="button2" role="button">Group 3</button>
-            <button class="btn btn-success" id="button3" role="button">Group 4</button>
-            <button class="btn btn-success" id="button4" role="button">Group 5</button>
-            <button class="btn btn-success" id="button5" role="button">Group 6</button>
-            <button class="btn btn-success" id="button6" role="button">Group 7</button>
-            <button class="btn btn-success" id="button7" role="button">Group 8</button>
-            <button class="btn btn-success" id="button8" role="button">Group 9</button>
-            <button class="btn btn-success" id="button9" role="button">Group 10</button>
-            <button class="btn btn-success" id="button10" role="button">Group 11</button>
-            <button class="btn btn-success" id="button11" role="button">Group 12</button>
-            <button class="btn btn-success" id="button12" role="button">Group 13</button>
+            <button class="btn btn-success" id="button" onclick="sound(); end(); send_group();"role="button">Group 1</button>
+            <button class="btn btn-success" id="button1" onclick="sound(); end(); send_group();"role="button">Group 2</button>
+            <button class="btn btn-success" id="button2"onclick="sound(); end(); send_group();" role="button">Group 3</button>
+            <button class="btn btn-success" id="button3" onclick="sound(); end(); send_group();"role="button">Group 4</button>
+            <button class="btn btn-success" id="button4" onclick="sound(); end(); send_group();"role="button">Group 5</button>
+            <button class="btn btn-success" id="button5" onclick="sound(); end(); send_group();"role="button">Group 6</button>
+            <button class="btn btn-success" id="button6"onclick="sound(); end(); send_group();" role="button">Group 7</button>
+            <button class="btn btn-success" id="button7"onclick="sound(); end(); send_group();" role="button">Group 8</button>
+            <button class="btn btn-success" id="button8" onclick="sound(); end(); send_group();"role="button">Group 9</button>
+            <button class="btn btn-success" id="button9" onclick="sound(); end(); send_group();"role="button">Group 10</button>
+            <button class="btn btn-success" id="button10" onclick="sound(); end(); send_group();"role="button">Group 11</button>
+            <button class="btn btn-success" id="button11" onclick="sound(); end(); send_group();"role="button">Group 12</button>
+            <button class="btn btn-success" id="button12" onclick="sound(); end(); send_group();"role="button">Group 13</button>
         </div>
     </div>
 
     <script>
-        document.getElementById("button").addEventListener("click", send_group)
 
         function send_group() {
             const data = 'A,C,D,E,F,G,H,I,J,K,L,M'
@@ -66,6 +65,17 @@
             xhr.setRequestHeader('Content-Type', 'text/plain')
             
             xhr.send(data)
+        }
+
+        function sound() {
+          var audio = new Audio('./static/js/tune.mp3');
+          audio.play();
+        }
+
+        function end(){
+          setTimeout(
+        function()
+        { window.open("/platform_submit","_self");}, 1000);
         }
     </script>
 

@@ -135,6 +135,10 @@ def worker():
 def submit():
     return render_template("dmg_submit.html")
 
+@app.route('/platform_submit', methods=['GET', 'POST'])
+def sub():
+    return render_template("podselector_sub.html")
+
 # @app.route('/log', methods=['GET', 'POST'])
 # def log():
 #     return render_template("log.html")

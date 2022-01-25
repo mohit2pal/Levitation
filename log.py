@@ -35,7 +35,11 @@ def save2(date2,name2,age2,mob2,time2):
     new_row={'DATE': date2,'NAME': name2,'AGE': age2, 'MOBILE': mob2,'TIME': time2}
     
     df2=df2.append(new_row, ignore_index=True) 
-    df2.to_csv("./static/css/recievers_data.csv",mode='a', header=False, index=False)  
+    df2.to_csv("./static/css/recievers_data.csv", mode='a', header=False, index=False) 
+     
+    # data = pd.read_csv("./static/css/recievers_data.csv")
+
+# df2.drop_duplicates(subset ='TIME' ,keep=False,inplace=True)
 
 
     
