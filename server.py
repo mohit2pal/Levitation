@@ -94,6 +94,7 @@ def output():
     allott = allot2
     print(a.day, "-", a.month, "-", a.year)
     print(day)
+    print(dataty_len)
     save(day,name2,age2,mobile2,destination2,allot2,dataty_len,time)
     # seat_tickett = seat_ticket
     # print("This is in print_ticket:", datatly)

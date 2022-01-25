@@ -33,22 +33,23 @@ df2 = pd.DataFrame(data2)
 def save2(date2,name2,age2,mob2,time2):
     global df2
     new_row={'DATE': date2,'NAME': name2,'AGE': age2, 'MOBILE': mob2,'TIME': time2}
+    
     df2=df2.append(new_row, ignore_index=True) 
     df2.to_csv("./static/css/recievers_data.csv",mode='a', header=False, index=False)  
 
 
     
 
-def add():
-    c= 'POD_BAY'
-    if(df[c].get()=='A1'):
-     column='NO. OF SEATS'
-     total=df[column].sum()
-     print(total)
+# def add():
+#     c= 'POD_BAY'
+#     if(df[c].get()=='A1'):
+#      column='NO. OF SEATS'
+#      total=df[column].sum()
+#      print(total)
     
-def baysave(bay):
-    global df
-    new_row={'POD_BAY': bay}
-    df=df.append(new_row, ignore_index=True) 
-    df.to_csv("passengers_data.csv", header=True, index=True)
+# def baysave(bay):
+#     global df
+#     new_row={'POD_BAY': bay}
+#     df=df.append(new_row, ignore_index=True) 
+#     df.to_csv("passengers_data.csv", header=True, index=True)
     
