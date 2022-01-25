@@ -69,7 +69,7 @@ def rticket():
        t=a.strftime("%H:%M:%S")
        d=a.strftime("%d|%m|%Y")
        save2(d,rname,rage,rmobile,t)
-      return redirect("/thank you")
+       return redirect("/thank you")
     return render_template('reciever.html', form=form)
 
 
