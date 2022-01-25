@@ -57,7 +57,7 @@ function store() {
 // used to listen seat clicking and toggling color
 container.addEventListener("click", (e) => {
     if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
-        if( document.querySelectorAll(".row .seat.booked").length < 25) {
+        if( document.querySelectorAll(".row .seat.booked").length < 5) {
            e.target.classList.toggle("booked")
         }
         else {
