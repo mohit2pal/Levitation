@@ -1,5 +1,5 @@
-const container = document.querySelector(".container")
-const seats = document.querySelectorAll(".row .seat")
+const container = document.querySelector(".container2")
+const seats = document.querySelectorAll(".row2 .seat")
 const button = document.querySelector(".button")
 
 // updateUI()
@@ -47,7 +47,7 @@ function ajaxx() {
 
 
 function current_store() {
-    const currentSeats = document.querySelectorAll(".row .seat.booked")
+    const currentSeats = document.querySelectorAll(".row2 .seat.booked")
     const currentIndex = [...currentSeats].map((seat) => [...seats].indexOf(seat))
 
     localStorage.setItem("currentSeats2", JSON.stringify(currentIndex))
@@ -58,7 +58,7 @@ function current_store() {
 
 
 function store() {
-    const bookedSeats = document.querySelectorAll(".row .seat.booked, .row .seat.sold")
+    const bookedSeats = document.querySelectorAll(".row2 .seat.booked, .row2 .seat.sold")
     const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
 
     localStorage.setItem("bookedSeats2", JSON.stringify(seatsIndex))
