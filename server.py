@@ -167,7 +167,7 @@ def empaccess():
     return render_template('employee_access.html')
   
 @app.route('/pod_selector', methods=['GET', 'POST'])
-def select_pod_selector():
+def pod_selector():
     global pod_d
     if request.method == 'POST':
         select_data = request.get_data()
