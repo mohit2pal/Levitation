@@ -35,7 +35,7 @@ function updateUI() {
             var change = JSON.parse(this.responseText)
 
             if (change['change'] == "true") {
-                const bookedSeats = document.querySelectorAll(".row .seat.booked")
+                const bookedSeats = document.querySelectorAll(".row .seat.hooked")
                 const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
                 localStorage.setItem("bookedSeats", JSON.stringify(seatsIndex))
                 populateUI()
