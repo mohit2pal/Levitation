@@ -1,3 +1,12 @@
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+
 const container = document.querySelector(".container")
 const seats = document.querySelectorAll(".row .seat")
 const button = document.querySelector(".button")
@@ -57,12 +66,12 @@ function store() {
 // used to listen seat clicking and toggling color
 container.addEventListener("click", (e) => {
     if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
-        if( document.querySelectorAll(".row .seat.booked").length < 5) {
-           e.target.classList.toggle("booked")
+        if (document.querySelectorAll(".row .seat.booked").length < 5) {
+            e.target.classList.toggle("booked")
         }
         else {
-            if(e.target.classList.contains("booked")){
-              e.target.classList.toggle("booked")
+            if (e.target.classList.contains("booked")) {
+                e.target.classList.toggle("booked")
             }
             // else {
             //     pass

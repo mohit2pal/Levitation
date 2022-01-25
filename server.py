@@ -1,16 +1,20 @@
 from flask import Flask, render_template, redirect
 from flask import request
 from forms import SignUpForm
+from datetime import date
 from log import * 
 from alllot import *
 from blockerallot import *
 from seat import *
 from index import blockermat
 import os
+import datetime
 
 name2 = ""
 allot2 = ""
+dataty_len = 0
 pod_d={-69}
+
 # seat_ticket= ""
 # datatly = []
 
@@ -26,6 +30,9 @@ def index():
     global name2
     global allot2
     global pod_d
+    global age2
+    global mobile2
+    global destination2
     check2(pod_d,0)
     blockermat()
     form = SignUpForm()
@@ -35,7 +42,6 @@ def index():
        age2 =request.form['age']
        mobile2 =request.form['mobile']
        destination2 =request.form['destination']
-       entry(name2,age2,mobile2,destination2)
        allot2 = check(pod_d,0)
        print(allot2)
        print(name2)
@@ -51,13 +57,17 @@ def rticket():
        rname =request.form['name']
        rage =request.form['age']
        rmobile =request.form['mobile']
-       rentry(rname,rage,rmobile)
+       a = datetime.datetime.now()
+       t=a.strftime("%H:%M:%S")
+       d=a.strftime("%d|%m|%Y")
+       save2(d,rname,rage,rmobile,t)
     return render_template('reciever.html', form=form)
 
 @app.route('/seat_selection', methods=['GET', 'POST'])
 def work():
     # global seat_ticket
     # global datatly
+    global dataty_len
     global pod_d
     if request.method == 'POST':
         # seat_ticket = ""
@@ -72,6 +82,7 @@ def work():
         print(type(dataty))
         # find(dataty)
         dataty_len = len(dataty)
+        print(dataty_len)
         dataty_length = dataty_len - 1
         for i in range(dataty_length):
             check(pod_d,1)
@@ -80,9 +91,16 @@ def work():
 
 @app.route('/print_ticket', methods=['GET', 'POST'])
 def output():
-    
+    global dataty_len
+    a = datetime.datetime.now()
+    time=a.strftime("%H:%M:%S") 
+    day=str(a.day) + "-" + str(a.month) + "-" + str(a.year)
     namet = name2
     allott = allot2
+    print(a.day, "-", a.month, "-", a.year)
+    print(day)
+    print(dataty_len)
+    save(day,name2,age2,mobile2,destination2,allot2,dataty_len,time)
     # seat_tickett = seat_ticket
     # print("This is in print_ticket:", datatly)
     return render_template('ticket.html', nameh=namet, alloth=allott)
@@ -106,10 +124,17 @@ def submit():
 # def log():
 #     return render_template("log.html")
 
-@app.route('/log', methods=['GET', 'POST']) 
-def log(): 
-	with open('log.txt', 'r') as f: 
-		return render_template('log.html', text=f.read())
+# @app.route('/log', methods=['GET', 'POST']) 
+# def log(): 
+# 	with open('log.txt', 'r') as f: 
+# 		return render_template('log.html', text=f.read())
+@app.route('/log', methods=['GET', 'POST'])
+def log():
+    return render_template("log.html")
+
+@app.route('/reclog', methods=['GET', 'POST'])
+def reclog():
+    return render_template("reclog.html")
 
 @app.route('/aboutus', methods=['GET', 'POST'])
 def aboutus():
@@ -121,6 +146,11 @@ def inlog():
         print("yes")
     return render_template('waccess.html')
 
+
+@app.route('/employee_access', methods=['GET', 'POST'])
+def empaccess():
+    return render_template('employee_access.html')
+  
 @app.route('/pod_selector', methods=['GET', 'POST'])
 def select_pod_selector():
     global pod_d
@@ -167,6 +197,7 @@ def select_pod_selector():
         # pod_d.append(select_data)
         # print(pod_d)
     return render_template("pod_selector.html") 
+
 
 if __name__ == '__main__':
     port = os.environ.get("PORT", 5000)

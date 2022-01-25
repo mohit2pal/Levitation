@@ -10,7 +10,7 @@ function submitted() {
         // xhr.setRequestHeader('Content-Type', 'application/json')
 
         // xhr.send(check)
-        window.open("/worker","_self")
+        window.open("/employee_access","_self")
     } else {
         alert("Please enter proper username and password")
     }

@@ -1,99 +1,150 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>About Us Section</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="./static/css/aboutus.css">
-</head>	
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="./static/logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./static/logo/favicon-16x16.png">
+    <link rel="manifest" href="./static/logo/site.webmanifest">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        #grad1 {
+            background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+            min-height: 100vh;
+        }
+    </style>
+    <link rel="stylesheet" href="./static/css/aboutus.css">
+</head>
 <body>
-  <div class="navbar ">
-    <div class="topnav" id="myTopnav">
-      <a href="">Virgin Hyperloop</a>
-      <a onclick="window.location.href='{{'/'}}'">Home</a>
-      <a onclick="window.location.href='{{'/loginfo'}}'">Worker</a>
-      <a onclick="window.location.href='{{'/aboutus'}}'">About Us</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
+    <div id="grad1">
+        <div class="topnav" id="myTopnav">
+            <div class="fullnavbar">
+                <a href="#home" class="active">Virgin Hyperloop</a>
+                <a  onclick="window.location.href='{{'/'}}'">Home</a>
+                <a  onclick="window.location.href='{{'/loginfo'}}'">Employee Access</a>
+                <a  onclick="window.location.href='{{'/aboutus'}}'">About Us</a>
+                <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+            </div>
+        </div>
+        <section>
+            <div class="container">
+
+
+                <div class="alltext">
+                    <p>Team LEVITATION feels glad to contribute idea of management for
+                        Virgin Hyperloop in INDIA for Mumbai-Pune route. We have
+                        analyzed and tried to give solutions for various problems which
+                        can occur during passengers journey. Passenger flow is prepared in
+                        such a way that no crowd gathering occurs. Our idea totally
+                        focuses on saving time of passengers and providing them comfort
+                        during their journey.</p>
+                </div>
+                <br>
+
+                <div class="img-wrap" id="picture">
+                    <img src="./static/bg/3.jpg">
+                </div>
+                <div class="team">
+                    <h1>OUR TEAM</h1>
+                </div>
+                <br>
+                <br>
+                <br>    
+                <div class="card">
+                    <div class="content">
+                        <div class="imgBx">
+                            <img src="./static/bg/subha.jpeg">
+                        </div>
+                        <br>
+                        <div class="contentBx">
+                            <h3><b>Mr. Subha Bal Pal</b><br><span>Mai coding ki duniya </span></h3>
+                        </div>
+                    </div>
+                    <ul class="sci">
+                        <li style="--i:1">
+                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> </a>
+                        </li>
+                        <li style="--i:2">
+                            <a href="#"><i class="fa fa-github" aria-hidden="true"></i> </a>
+                        </li>
+                        <li style="--i:3">
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="content">
+                        <div class="imgBx">
+                            <img src="./static/bg/abhishek.jpeg">
+                        </div>
+                        <br>
+                        <div class="contentBx">
+                            <h3><b>Mr. Abhishe Yadav</b><br><span>Once a leader </span></h3>
+                        </div>
+                    </div>
+                    <ul class="sci">
+                        <li style="--i:1">
+                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> </a>
+                        </li>
+                        <li style="--i:2">
+                            <a href="#"><i class="fa fa-github" aria-hidden="true"></i> </a>
+                        </li>
+                        <li style="--i:3">
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> </a>
+                        </li>
+                    </ul>
+                </div>
+
+                
+
+                <div class="card">
+                    <div class="content">
+                        <div class="imgBx">
+                            <img src="./static/bg/shubhanshu.jpeg">
+                        </div>
+                        <br>
+                        <div class="contentBx">
+                            <h3><b>Mr. Shubhanshu Tiwari</b><br><span>Kya hi kahe aadmi 1 no hai</span></h3>
+                        </div>
+                    </div>
+                    <ul class="sci">
+                        <li style="--i:1">
+                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> </a>
+                        </li>
+                        <li style="--i:2">
+                            <a href="#"><i class="fa fa-github" aria-hidden="true"></i> </a>
+                        </li>
+                        <li style="--i:3">
+                            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <br>
+            <div class="line">
+                <hr>
+            </div>
+            <br>
+            <br>
+        </section>
     </div>
-  </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
 
-	<div class="section">
-		<div class="container">
-			<div class="content-section">
-				<div class="title">
-					<h1>About Us</h1>
-				</div>
-				<div class="content">
-					
-					<p>Team LEVITATION feels glad to contribute idea of management for
-            Virgin Hyperloop in INDIA for Mumbai-Pune route. We have
-            analyzed and tried to give solutions for various problems which
-            can occur during passengers journey. Passenger flow is prepared in
-            such a way that no crowd gathering occurs. Our idea totally
-            focuses on saving time of passengers and providing them comfort
-            during their journey.
-          </p>
-					
-				</div>
-			</div>
-			<div class="image-section">
-				<img src="./static/bg/img 2.jpg">
-			</div>
-		</div>
-	</div>
-	
-	<div class="container2">
-		<div class="header">
-			<h1>Our Team</h1>
-		</div>
-		<div class="sub-container">
-		<div class="teams">
-			<img src = "./static/bg/2.jpg" alt = "">
-			<div class="names">Name 1</div>
-			<div class="desig">Developer</div>
-			<div class="about">Helloo im name 1hellllllllllllllllllll</div>
-
-			<div class="social-links">
-				<a href="#"><i class="fa-fa-facebook"></i></a>
-				<a href="#"><i class="fa-fa-instagram"></i></a>
-				<a href="#"><i class="fa-fa-twitter"></i></a>
-				<a href="#"><i class="fa-fa-github"></i></a>
-			</div>
-		</div>
-		<div class="teams">
-			<img src = "./static/bg/2.jpg" alt = "">
-			<div class="names">Name 2</div>
-			<div class="desig">Developer</div>
-			<div class="about">Helloo im name 1</div>
-
-			<div class="social-links">
-				<a href="#"><i class="fa-fa-facebook"></i></a>
-				<a href="#"><i class="fa-fa-instagram"></i></a>
-				<a href="#"><i class="fa-fa-twitter"></i></a>
-				<a href="#"><i class="fa-fa-github"></i></a>
-			</div>
-		</div>
-		<div class="teams">
-			<img src = "./static/bg/2.jpg" alt = "">
-			<div class="names">Name 3</div>
-			<div class="desig">Developer</div>
-			<div class="about">Helloo im name 1</div>
-
-			<div class="social-links">
-				<a href="#"><i class="fa-fa-facebook"></i></a>
-				<a href="#"><i class="fa-fa-instagram"></i></a>
-				<a href="#"><i class="fa-fa-twitter"></i></a>
-				<a href="#"><i class="fa-fa-github"></i></a>
-			</div>
-		</div>
-		</div>
-		</div>
-	</div>
-
-	
 </body>
+
 </html>
