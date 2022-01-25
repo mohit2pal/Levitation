@@ -4,14 +4,17 @@ from forms import SignUpForm
 from datetime import date
 from log import * 
 from alllot import *
+from blockerallot import *
 from seat import *
+from index import blockermat
 import os
 import datetime
 
 name2 = ""
 allot2 = ""
-pod_d=""
 dataty_len = 0
+pod_d={-69}
+
 # seat_ticket= ""
 # datatly = []
 
@@ -30,6 +33,8 @@ def index():
     global age2
     global mobile2
     global destination2
+    check2(pod_d,0)
+    blockermat()
     form = SignUpForm()
     if form.is_submitted():
        result= request.form
@@ -37,7 +42,7 @@ def index():
        age2 =request.form['age']
        mobile2 =request.form['mobile']
        destination2 =request.form['destination']
-       allot2 = check(pod_d)
+       allot2 = check(pod_d,0)
        print(allot2)
        print(name2)
        #seat(allot2)
@@ -80,7 +85,7 @@ def work():
         print(dataty_len)
         dataty_length = dataty_len - 1
         for i in range(dataty_length):
-            check(pod_d)
+            check(pod_d,1)
         # seats(dataty)
     return render_template('booking.html')
 
@@ -104,7 +109,10 @@ def output():
 def worker():
     global pod_d
     if request.method == 'POST':
-        pod_d = request.get_json()
+        pod_a = request.get_json()
+        for i in pod_a:
+            pod_d.add(i)
+        print(pod_d)
         print("This is the damaged pods:", pod_d)
     return render_template("worker.html")
 
@@ -138,13 +146,58 @@ def inlog():
         print("yes")
     return render_template('waccess.html')
 
+
 @app.route('/employee_access', methods=['GET', 'POST'])
 def empaccess():
     return render_template('employee_access.html')
+  
+@app.route('/pod_selector', methods=['GET', 'POST'])
+def select_pod_selector():
+    global pod_d
+    if request.method == 'POST':
+        select_data = request.get_data()
+        select = select_data.decode("utf-8")
+        print(select)
+        print(type(select))
+        select_list = select.split(',')
+        print(select_list)
+        for x in select_list:
+            if(x == 'A'):
+                t3 = -1
+            elif(x == 'B'):
+                t3 = 5
+            elif(x == 'C'):
+                t3 = 11
+            elif(x == 'D'):
+                t3 = 17
+            elif(x == 'E'):
+                t3 = 23
+            elif(x == 'F'):
+                t3 = 29
+            elif(x == 'G'):
+                t3 = 35
+            elif(x == 'H'):
+                t3 = 41
+            elif(x == 'I'):
+                t3 = 47
+            elif(x == 'J'):
+                t3 = 53
+            elif(x == 'K'):
+                t3 = 59
+            elif(x == 'L'):
+                t3 = 65
+            elif(x == 'M'):
+                t3 = 71
+            for v in range(6):
+                # v1 = v+1
+                # t3 = x+str(v1)
+                t3+=1
+                pod_d.add(t3)
+        print(pod_d)
+        # pod_d.append(select_data)
+        # print(pod_d)
+    return render_template("pod_selector.html") 
 
-@app.route('/thank_you', methods=['GET', 'POST']) 
-def thankyou():
-    return render_template('thanku.html')
 
 if __name__ == '__main__':
     port = os.environ.get("PORT", 5000)
