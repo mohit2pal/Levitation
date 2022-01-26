@@ -14,6 +14,10 @@ const button2 = document.getElementById("count")
 const final = document.getElementById("prn")
 const seatsb = document.querySelectorAll(".row .seat.booked")
 
+// seats.forEach((seat,index) => {
+//   console.log(seat.classList)
+// })
+
 updateUI()
 
 
@@ -107,9 +111,11 @@ var amount = 0
 container.addEventListener("click",(e) => {
     if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
       //  sound()
+      console.log(e)
         if( document.querySelectorAll(".row .seat.booked").length < 5) {
           sound()
           e.target.classList.toggle("booked")
+          
         }
         else {
             if(e.target.classList.contains("booked")){ 
@@ -186,8 +192,7 @@ final.addEventListener("click", () => {
 button.addEventListener("click", button_click)
 
 function button_click() {
-  
-
+  populator()
     store()
     current_store()
     const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats"))
@@ -206,7 +211,24 @@ function button_click() {
     window.open("/print_ticket","_self") 
 }
 
-
+function populator(){
+  tututu = 0
+  if(document.querySelectorAll(".row .seat.booked").length < 1 ){
+    // const seatt = document.querySelectorAll(".row .seat")
+    seats.forEach((seat, index) => {
+      if(seat.classList.contains("sold")){
+        //pass
+      }
+      else{
+      if(tututu != 1){
+        seat.classList.add("booked")
+        tututu = 1
+        submission()
+      }
+    }
+    })
+  }
+}
 
 
 
