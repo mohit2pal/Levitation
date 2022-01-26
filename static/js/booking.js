@@ -106,13 +106,14 @@ var amount = 0
 
 container.addEventListener("click",(e) => {
     if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
-       sound()
+      //  sound()
         if( document.querySelectorAll(".row .seat.booked").length < 5) {
-           e.target.classList.toggle("booked")
+          sound()
+          e.target.classList.toggle("booked")
         }
         else {
             if(e.target.classList.contains("booked")){ 
-            
+              sound()
               e.target.classList.toggle("booked")
 
             }
