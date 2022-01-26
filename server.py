@@ -8,6 +8,7 @@ from datetime import date
 from log import * 
 from alllot import *
 from blockerallot import *
+
 import time
 from index import blockermat
 

@@ -5,10 +5,7 @@
     font-family: 'Poppins', sans-serif;
 }
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    
     background: #161623;
     min-height: 100vh;
 }
@@ -24,7 +21,7 @@ body {
     padding: 0 12px;
 }
 #myTopnav.topnav {
-    width: 1519.2px;
+    width: 1536px;
     height: 56px;
 }
 
@@ -149,7 +146,7 @@ section::before {
     top: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    background: linear-gradient(#f00 , #f0f);
     clip-path: circle(30% at right 70%);
 }
 section::after {
@@ -158,8 +155,8 @@ section::after {
     top: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
-    clip-path: circle(20% at 10% right 10%);
+    background: linear-gradient(#219653 , #e91e63);
+    clip-path: circle(20% at 10% 10%);
 }
 .container {
     position: relative;
@@ -168,24 +165,27 @@ section::after {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin: 0px 0;
+    margin-top: 20px;
     
-
 }
 .container .alltext {
     position:relative;
     width: 600px;
-    height: 150px;
-    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    height: 80px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 35px;
+    color: #fff;
+    background: rgba(255, 255, 255,0.05);
     margin: 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    border-radius: 15px;
+    border-radius: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(10px);
-    padding: 0 0 15px 15px;
-    padding-bottom: 50px;
+    backdrop-filter: blur(30px);
+    padding: 0 0 10px 10px;
+    padding-bottom: 10px;
 
 }
 .container .team {
@@ -196,16 +196,18 @@ section::after {
 }
 .container .card {
     position: relative;
-    width: 300px;
+    width: 320px;
     height: 400px;
-    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    margin-top: 40px;;
+    background: rgba(255, 255, 255,0.05);
     margin: 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(30px);
+    
 }
 .container .card .content {
     position: relative;
@@ -222,10 +224,11 @@ section::after {
 }
 .container .card .content .imgBx {
     position: relative;
-    width: 200px;
-    height: 200px;
-    border-radius: 50px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
     overflow: hidden;
+    align-items: center;
     /* border: 10px solid rgba(0, 0, 0, 0.25); */
 
 }
@@ -233,17 +236,17 @@ section::after {
     position: absolute;
     top: 0;
     left: 0;
+    align-items: center;
     width: 100%;
     height:100%;
-    align-items: center;
     object-fit: cover;
 }
-.container .card .content .contentBx h1 {
+.container .card .content .contentBx b {
     color: #fff;
     align-items: center;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-weight: 500;
+    font-weight: 50px;
     font-size: 18px;
     text-align: center;
     margin: 20px 0 10px;
@@ -254,8 +257,17 @@ section::after {
     font-size: 16px;
     font-weight: 300;
     text-align: center;
-    margin: 5px 0 10px;
-    text-transform: initial;
+    margin: 0px 5px ;
+    text-transform:initial;
+    color: #ffffff;
+}
+.container .card .about {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 19px;
+    color: #fff;
+    text-align: center;
+    margin: 5px;
+    font-style: oblique;
 }
 .container .card .sci {
     position: absolute;
@@ -282,15 +294,23 @@ section::after {
     font-size: 24px;
 }
 #picture {
-    width: auto;
+    width: 150px;
+    height: 150px;
 }
 
 #picture img {
-    width: 100%;
-    padding: 10px;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #1b2a2e;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-top: 5px;;
+    margin: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(30px);
+    
 }
+    
 .container .line hr {
     width: 1320px;
 }

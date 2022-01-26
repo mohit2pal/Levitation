@@ -157,14 +157,16 @@ function printPage() {
 /*******   CALLING FUNCTIONS ON CLICK OF FINISH BUTTON   **************/ 
 
 
-finish.addEventListener("click", () => {
+finish.addEventListener("click", finishfun)
+
+function finishfun() {
     sound();
     check();
     ticks();
     party(); 
     sentence();
 
-})
+}
 
 
 /*******   CALLING FUNCTIONS ON CLICK OF PRINT TICKET BUTTON   **************/ 
@@ -185,3 +187,5 @@ show()
 showend()
 
 
+
+const myTimeout = setTimeout(finishfun, 7000)
