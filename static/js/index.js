@@ -59,6 +59,8 @@ function timer(){
     let remainingPathColor = COLOR_CODES.info.color;
 
     document.getElementById("app").innerHTML = `
+    <div id="box">
+    <h2> Booking will assume in: </h2>
     <div class="base-timer">
     <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <g class="base-timer__circle">
@@ -80,19 +82,30 @@ function timer(){
         timeLeft
     )}</span>
     </div>
+    </div>
     `;
 
     startTimer();
 
     function onTimesUp() {
-        document.getElementById('app').innerHTML = "Allowed"
+        document.getElementById('app').innerHTML =   `<div>
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+          <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+          <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+        <h2> Booking is Allowed </h2>
+      </div>
+      `;
     clearInterval(timerInterval);
     }
+
+
 
     function startTimer() {
     timerInterval = setInterval(() => {
         timePassed = timePassed += 1;
         timeLeft = TIME_LIMIT - timePassed;
+       
         document.getElementById("base-timer-label").innerHTML = formatTime(
         timeLeft
         );
