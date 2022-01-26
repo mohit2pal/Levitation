@@ -1,4 +1,4 @@
-var work_book2 = [''];
+
 
 function recloadcsv(){
     var xhr = new XMLHttpRequest()
@@ -15,14 +15,6 @@ function recloadcsv(){
         var work_book = XLSX.read(data, {type:'array'});
         console.log(work_book)
 
-
-
-        if(work_book == work_book2){
-            console.log(work_book2)
-            break;
-        }
-
-        else{
 
           var sheet_name = work_book.SheetNames;
 
@@ -68,8 +60,7 @@ function recloadcsv(){
 
         // excel_file.value = '';
 
-         work_book2 = work_book;
-         console.log(work_book2)
+         
         
         }
         xhr.send()
@@ -77,6 +68,6 @@ function recloadcsv(){
     }
 
 
-}
+
 
 recloadcsv()
