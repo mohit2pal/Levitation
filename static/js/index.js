@@ -60,7 +60,7 @@ function timer(){
 
     document.getElementById("app").innerHTML = `
     <div id="box">
-    <h2> Booking will assume in: </h2>
+    <h2> Booking will resume in: </h2>
     <div class="base-timer">
     <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <g class="base-timer__circle">
