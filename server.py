@@ -27,6 +27,11 @@ pod_d={-69}
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'levetation'
 
+dicto = {"selector": 0}
+json_object = json.dumps(dicto, indent = 1)
+with open("./static/js/damage.json", "w") as outfile:
+   outfile.write(json_object)
+
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -213,6 +218,11 @@ def pod_selector():
                 t3+=1
                 pod_d.add(t3)
         print(pod_d)
+        
+        dicto = {"selector": 1}
+        json_object = json.dumps(dicto, indent = 1)
+        with open("./static/js/damage.json", "w") as outfile:
+           outfile.write(json_object)      
         # pod_d.append(select_data)
         # print(pod_d)
     return render_template("pod_selector.html") 
