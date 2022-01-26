@@ -231,7 +231,7 @@ function populateUI() {
 
 
 function sound2() {
-  var aud = new Audio('./static/js/Warning.mp3');
+  var aud = new Audio('./static/js/timeend.mp3');
   aud.play();
 }
 

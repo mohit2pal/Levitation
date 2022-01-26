@@ -11,7 +11,7 @@
           height: 100vh;
           background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%)
         }
-        #grad1.active div:not(#popup2 , #popup3 , #popup4){
+        #grad1.active div:not(#popup2 , #popup4){
           filter: blur(5px);
         }
         #popup2{
@@ -36,32 +36,6 @@
           transition: 0.5s;
         }
         #popup2 h2{
-          text-align: center;
-          padding: 20px 0;
-          border-bottom: 1px solid silver;
-        }
-        #popup3{
-          position: absolute;
-          top: 30%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          height: 200px;
-          width: 300px;
-          background: #ffffff;
-          border-radius: 20px;
-          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-          backdrop-filter: blur(10px);
-          visibility: hidden;
-          opacity: 0;
-          transition: 0.5s;
-        }
-        #popup3.active{
-          top: 60%;
-          visibility: visible;
-          opacity: 1;
-          transition: 0.5s;
-        }
-        #popup3 h2{
           text-align: center;
           padding: 20px 0;
           border-bottom: 1px solid silver;
@@ -144,12 +118,6 @@
       <button class="btn btn-secondary" onclick="sound(); check();" style="margin: 0 210px;"> OK </button> 
     </div>
 
-    <div id="popup3">
-      <h2> ALERT!!!! </h2>
-      <p style = "font-size: 18px; text-align:center "> ARE YOU SURE? </p>
-      <button class="btn btn-secondary" onclick="sound(); check3(); end();" style="margin: 0 120px;"> OK </button> 
-    </div>
-
     <div id="popup4">
       <h2> ALERT!!!! </h2>
       <p style = "font-size: 18px; text-align:center "> Platform is already assigned!!! </p>
@@ -185,12 +153,6 @@
         popup.classList.toggle("active");
         var popup4 = document.getElementById("popup4");
         popup4.classList.toggle("active");
-      }
-
-      function end(){
-        setTimeout(
-      function()
-      { window.open("/platform_submit","_self");}, 1000);
       }
 
       check();

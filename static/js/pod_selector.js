@@ -13,7 +13,6 @@ const b12 = document.getElementById("button12").addEventListener("click", send_g
 const b13 = document.getElementById("button13").addEventListener("click", send_group13)
 
 
-var clicks = 0;
 
 function caller(){
 
@@ -25,8 +24,7 @@ function caller(){
    
   if(dmg['selector'] == 0){
     sound();
-    check3();
-    clicks = 1
+    end();
 
   }  
   else if(dmg['selector'] == 1){
@@ -187,14 +185,6 @@ function sound() {
 
 
 
-function check3(){
-    var popup = document.getElementById("grad1");
-    popup.classList.toggle("active");
-    var popup3 = document.getElementById("popup3");
-    popup3.classList.toggle("active");
-    
-}
-
 function check4(){
   var popup = document.getElementById("grad1");
   popup.classList.toggle("active");
@@ -202,7 +192,11 @@ function check4(){
   popup4.classList.toggle("active");
 }
 
-
+function end(){
+  setTimeout(
+function()
+{ window.open("/platform_submit","_self");}, 1000);
+}
 
 /************* CALLING FUNCTIONS STARTED ******************/
 
