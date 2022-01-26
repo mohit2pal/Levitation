@@ -11,9 +11,9 @@ body {
 }
 
 .fullnavbar {
-  width: 1519.2px;
-  height: 40px;
-  margin: 0 12px;
+  width: 1320px;
+  height: 56px;
+  margin: 0 108px;
   padding: 0 12px;
 }
 
@@ -278,6 +278,7 @@ p.text span {
   outline: none;
   margin: 0 600px;
   width: 80px;
+  cursor: pointer;
   
 }
 .amount {
