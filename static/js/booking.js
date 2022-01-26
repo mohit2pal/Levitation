@@ -112,7 +112,7 @@ container.addEventListener("click",(e) => {
     if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
       //  sound()
       console.log(e)
-        if( document.querySelectorAll(".row .seat.booked").length < 5) {
+        if( document.querySelectorAll(".row .seat.booked").length < 28) {
           sound()
           e.target.classList.toggle("booked")
           

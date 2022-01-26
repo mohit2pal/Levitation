@@ -6,6 +6,8 @@ block_timer_array = []
 count = 1
 default2 = 0
 depa = 0
+isAllowed = -1
+o2 = -1
 
 def variedit():
     global canter
@@ -27,6 +29,8 @@ def sec2():
 
 def blockermat():
     global canter
+    global o2
+    global isAllowed
     if(canter != 1):
         global depa
         global count
@@ -53,12 +57,16 @@ def blockermat():
         seat = data['seats']
         canter = 1
         if(timet < block_timer_array[o2] and seat == 28):
-            dicto = {"status": 0}
+            remain_timer = block_timer_array[o2] - timet
+            print(remain_timer)
+            isAllowed = 0
+            dicto = {"status": 0, "timer": remain_timer}
             json_object = json.dumps(dicto, indent = 1)
             with open("./static/js/theblocker.json", "w") as outfile:
                outfile.write(json_object)
             print("Blocked")
         elif(timet >block_timer_array[o2] and seat == 28):
+            isAllowed = 1
             dicto = {"status": 1}
             json_object = json.dumps(dicto, indent = 1)
             with open("./static/js/theblocker.json", "w") as outfile:
@@ -68,11 +76,22 @@ def blockermat():
             count+=1
             print("Allowed")
         else:
+            isAllowed = 1
             dicto = {"status": 1}
             json_object = json.dumps(dicto, indent = 1)
             with open("./static/js/theblocker.json", "w") as outfile:
                outfile.write(json_object)
             print("Allowed")
+    else:
+        timet = sec2()
+        new_remain_timer = block_timer_array[o2] - timet
+        if(new_remain_timer < 0):
+            isAllowed = 1
+        dicto = {"status": isAllowed, "timer": new_remain_timer}
+        json_object = json.dumps(dicto, indent = 1)
+        with open("./static/js/theblocker.json", "w") as outfile:
+            outfile.write(json_object)
+        
         
         
 
