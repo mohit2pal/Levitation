@@ -29,10 +29,10 @@
     .alltext {
       position: absolute;
       width: 400px;
-      height: 100px;
-      background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+      height: 300px;
+      background: linear-gradient(to bottom, #d3cce3, #e9e4f0);
       margin: 20px 150px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
       border-radius: 15px;
       display: flex;
       justify-content: center;
@@ -94,6 +94,55 @@
       justify-content: center;
       font-size: 30px;
     }
+
+    .checkmark__circle {
+      stroke-dasharray: 166;
+      stroke-dashoffset: 166;
+      stroke-width: 2;
+      stroke-miterlimit: 10;
+      stroke: #7ac142;
+      fill: none;
+      animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+    }
+    
+    .checkmark {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: block;
+      stroke-width: 2;
+      stroke: #fff;
+      stroke-miterlimit: 10;
+      margin: 10% auto;
+      box-shadow: inset 0px 0px 0px #7ac142;
+      animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+    }
+    
+    .checkmark__check {
+      transform-origin: 50% 50%;
+      stroke-dasharray: 48;
+      stroke-dashoffset: 48;
+      animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+    }
+    
+    @keyframes stroke {
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+    @keyframes scale {
+      0%, 100% {
+        transform: none;
+      }
+      50% {
+        transform: scale3d(1.1, 1.1, 1);
+      }
+    }
+    @keyframes fill {
+      100% {
+        box-shadow: inset 0px 0px 0px 30px #7ac142;
+      }
+    }
   </style>
 </head>
 
@@ -134,10 +183,9 @@
     <div class="container" style="margin: 0 150px">
       <div class="row">
         <div class="container col-5 mx-5 shadow-lg p-3 mb-5 bg-body rounded" >
-          <div id = "grad2">
+          <div id="grad2">
             <h2><b>REGISTRATION</b></h2>
           </div>
-
 
 
           <form action="" method="post">
@@ -159,14 +207,14 @@
               {{form.destination(size=40,style='height: 30px', type='name')}}
             </div>
 
-             <p class="container my-4 col-1" onclick="sound()" role="button" style="text-align: center; font-size: medium;  margin: 24px 190px; padding: 0px 0px">
+             <p class="container my-4 col-1"onclick="sound()" role="button" style="font-size: medium;  margin: 24px 195px; padding: 0px 0px">
                 {{form.submit(class="btn btn-secondary btn-lg")}}
              </p>
           </form>
         </div>
         <div class="container my-5 mx-5 col-4 ">
-          <div class="alltext">
-            <div id="app" style="font-size: 20px;"></div>
+          <div id="box" class="alltext">
+            <div id="app" style="font-size:30px"></div>
           </div>
 
         </div>

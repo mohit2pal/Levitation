@@ -14,6 +14,10 @@ const button2 = document.getElementById("count")
 const final = document.getElementById("prn")
 const seatsb = document.querySelectorAll(".row .seat.booked")
 
+// seats.forEach((seat,index) => {
+//   console.log(seat.classList)
+// })
+
 updateUI()
 
 
@@ -105,34 +109,37 @@ var amount = 0
 
 
 container.addEventListener("click",(e) => {
-  if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
-     sound()
-      if( document.querySelectorAll(".row .seat.booked").length < 5) {
-         e.target.classList.toggle("booked")
-      }
-      else {
-          if(e.target.classList.contains("booked")){ 
+    if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
+      //  sound()
+      console.log(e)
+        if( document.querySelectorAll(".row .seat.booked").length < 28) {
+          sound()
+          e.target.classList.toggle("booked")
           
-            e.target.classList.toggle("booked")
+        }
+        else {
+            if(e.target.classList.contains("booked")){ 
+              sound()
+              e.target.classList.toggle("booked")
 
-          }
-          // else {
-          //     pass
-          // }
-      }
+            }
+            // else {
+            //     pass
+            // }
+        }
 
-      
-  }
+        
+    }
 
-  submission()
-  // const bookedSeats = document.querySelectorAll(".row .seat.booked")
-  // const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
+    submission()
+    // const bookedSeats = document.querySelectorAll(".row .seat.booked")
+    // const seatsIndex = [...bookedSeats].map((seat) => [...seats].indexOf(seat))
 
-  // localStorage.setItem("bookedSeats", JSON.stringify(seatsIndex))
-  // const selectedSeatsCount = selectedSeats.length;
+    // localStorage.setItem("bookedSeats", JSON.stringify(seatsIndex))
+    // const selectedSeatsCount = selectedSeats.length;
 
-  // console.log(bookedSeats)
-  // console.log(seatsIndex)
+    // console.log(bookedSeats)
+    // console.log(seatsIndex)
 })
 
 
@@ -185,27 +192,43 @@ final.addEventListener("click", () => {
 button.addEventListener("click", button_click)
 
 function button_click() {
+  populator()
+    store()
+    current_store()
+    const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats"))
 
-
-  store()
-  current_store()
-  const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats"))
-
-  if (selectedSeats !== null && selectedSeats.length > 0) {
-      seats.forEach((seat, index) => {
-          if (selectedSeats.indexOf(index) > -1) {
-              seat.classList.add("sold")
-          }
-      })
-  }
-  // console.log(e)
-  console.log(selectedSeats)
-  // console.log(typeof(selectedSeats))
-  ajaxx() 
-  window.open("/print_ticket","_self") 
+    if (selectedSeats !== null && selectedSeats.length > 0) {
+        seats.forEach((seat, index) => {
+            if (selectedSeats.indexOf(index) > -1) {
+                seat.classList.add("sold")
+            }
+        })
+    }
+    // console.log(e)
+    console.log(selectedSeats)
+    // console.log(typeof(selectedSeats))
+    ajaxx() 
+    window.open("/print_ticket","_self") 
 }
 
-
+function populator(){
+  tututu = 0
+  if(document.querySelectorAll(".row .seat.booked").length < 1 ){
+    // const seatt = document.querySelectorAll(".row .seat")
+    seats.forEach((seat, index) => {
+      if(seat.classList.contains("sold")){
+        //pass
+      }
+      else{
+      if(tututu != 1){
+        seat.classList.add("booked")
+        tututu = 1
+        submission()
+      }
+    }
+    })
+  }
+}
 
 
 
