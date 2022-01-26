@@ -106,6 +106,8 @@ var amount = 0
 
 container.addEventListener("click",(e) => {
     if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
+       console.log(e)
+       console.log(document.querySelectorAll(".row .seat.booked"))
        sound()
         if( document.querySelectorAll(".row .seat.booked").length < 5) {
            e.target.classList.toggle("booked")
@@ -225,6 +227,15 @@ function populateUI() {
 // populateUI()
 
 
+/*******   FUNCTION TO GIVE SOUND FROM 3s TIMER     ************/
+
+
+function sound2() {
+  var aud = new Audio('./static/js/Warning.mp3');
+  aud.play();
+}
+
+
 // timer
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
@@ -289,6 +300,10 @@ function startTimer() {
     );
     setCircleDasharray();
     setRemainingPathColor(timeLeft);
+
+    if (timeLeft === 3) {
+      sound2();
+    }
 
     if (timeLeft === 0) {
       onTimesUp();

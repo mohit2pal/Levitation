@@ -18,7 +18,7 @@ function ajaxx() {
     xhr.send(markseat)
 }
 
-//A functio to update the UI
+// // A functio to update the UI
 // function updateUI() {
 //     var xhr = new XMLHttpRequest()
 //     xhr.open('GET', './static/js/change.json', true)
@@ -105,18 +105,18 @@ function dmgpage(){
 
 
 function refresh(){
-    console.log(0)
-    const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats2"))
-    localStorage.getItem("bookedSeats2").clear()
-    console.log(selectedSeats)
-    // window.open("/employee_access","_self")
-    seats.forEach((seat, index) => {
-        if (selectedSeats.indexOf(index) > -1) {
-            seat.classList.remove("sold")
-        }
-    })
-    window.onload()
-    console.log(1)
+    // const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats2"))
+    // seats.forEach((seat, index) => {
+    //     if (selectedSeats.indexOf(index) > -1) {
+    //         seat.classList.remove("sold")
+    //     }
+    // })
+    const bookedSeats2 = document.querySelectorAll(".row2 .seat.hooked")
+    const seatsIndex = [...bookedSeats2].map((seat) => [...seats].indexOf(seat))
+    localStorage.setItem("bookedSeats2", JSON.stringify(seatsIndex))
+    populateUI()
+    window.location.reload()
+
 }
 
 
