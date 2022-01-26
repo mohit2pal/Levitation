@@ -33,6 +33,7 @@ function caller(){
       ok();
   }
 }
+chr.send()
 }
 
 function send_group1() {
