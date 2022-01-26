@@ -26,15 +26,15 @@
     <h2 class="text-center mt-4 mb-4"><b>RECEIVERS DATA</b></h2>
     <div class="row">
       <div class="col">
-        <a class="btn btn-success" onclick="window.location.href='{{'employee_access'}}'" role="button" style="color:#ffffff"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+        <a class="btn btn-success" onclick="sound(); back();" role="button" style="color:#ffffff"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
           <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
         </svg> Employee Access</a>
-        <a class="btn btn-success" onclick="window.location.href='{{'/'}}'" role="button" style="color:#ffffff"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+        <a class="btn btn-success" onclick="sound(); home();" role="button" style="color:#ffffff"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
           <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
         </svg> Home</a>
       </div>
       <div class="col col-lg-2">
-        <a class="btn btn-info" onclick="window.location.href = '{{'reclog'}}'" role="button" style="color:#ffffff"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+        <a class="btn btn-info" onclick="sound(); refresh();" role="button" style="color:#ffffff"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
           <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
         </svg> Refresh Page</a>
@@ -45,7 +45,31 @@
 
 
     <!-- Optional JavaScript; choose one of the two! -->
+    <script>
 
+      function sound() {
+        var audio = new Audio('./static/js/tune.mp3');
+        audio.play();
+      }
+  
+      function back(){
+        setTimeout(
+          function()
+            { window.open("/employee_access","_self");}, 1000);
+      }
+  
+      function home(){
+          setTimeout(
+           function()
+              { window.open("/","_self");}, 1000);
+      }
+
+      function refresh(){
+          setTimeout(
+            function()
+              { window.open("/reclog","_self");}, 1000);
+      }
+    </script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

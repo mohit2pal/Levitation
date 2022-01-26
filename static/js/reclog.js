@@ -1,3 +1,5 @@
+
+
 function recloadcsv(){
     var xhr = new XMLHttpRequest()
     xhr.open('GET', './static/css/recievers_data.csv', true)
@@ -11,53 +13,61 @@ function recloadcsv(){
         var data = new Uint8Array(xhr.response);
 
         var work_book = XLSX.read(data, {type:'array'});
+        console.log(work_book)
 
-        var sheet_name = work_book.SheetNames;
 
-        var sheet_data = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[0]], {header:1});
+          var sheet_name = work_book.SheetNames;
 
-        if(sheet_data.length > 0)
-        {
-            var table_output = '<table class="table table-striped table-bordered">';
+          var sheet_data = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[0]], {header:1});
 
-            for(var row = 0; row < sheet_data.length; row++)
-            {
+          if(sheet_data.length > 0)
+          {
+             var table_output = '<table class="table table-striped table-bordered">';
 
-                table_output += '<tr>';
+             for(var row = 0; row < sheet_data.length; row++)
+             {
 
-                for(var cell = 0; cell < sheet_data[row].length; cell++)
-                {
+                 table_output += '<tr>';
 
-                    if(row == 0)
-                    {
+                 for(var cell = 0; cell < sheet_data[row].length; cell++)
+                 {
 
-                        table_output += '<th>'+sheet_data[row][cell]+'</th>';
+                     if(row == 0)
+                     {
 
-                    }
-                    else
-                    {
+                         table_output += '<th>'+sheet_data[row][cell]+'</th>';
 
-                        table_output += '<td>'+sheet_data[row][cell]+'</td>';
+                      }
+                     else
+                     {
 
-                    }
+                         table_output += '<td>'+sheet_data[row][cell]+'</td>';
 
-                }
+                     }
 
-                table_output += '</tr>';
+                 }
 
-            }
+                 table_output += '</tr>';
 
-            table_output += '</table>';
+             }
 
-            document.getElementById('file_data').innerHTML = table_output;
+             table_output += '</table>';
 
-        }
+             document.getElementById('file_data').innerHTML = table_output;
+
+          }
 
 
         // excel_file.value = '';
 
+         
+        
+        }
+        xhr.send()
+
     }
-    xhr.send()
-}
+
+
+
 
 recloadcsv()

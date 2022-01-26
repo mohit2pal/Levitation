@@ -248,6 +248,15 @@ function populateUI() {
 // populateUI()
 
 
+/*******   FUNCTION TO GIVE SOUND FROM 3s TIMER     ************/
+
+
+function sound2() {
+  var aud = new Audio('./static/js/timeend.mp3');
+  aud.play();
+}
+
+
 // timer
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
@@ -304,19 +313,23 @@ clearInterval(timerInterval);
 }
 
 function startTimer() {
-timerInterval = setInterval(() => {
-  timePassed = timePassed += 1;
-  timeLeft = TIME_LIMIT - timePassed;
-  document.getElementById("base-timer-label").innerHTML = formatTime(
-    timeLeft
-  );
-  setCircleDasharray();
-  setRemainingPathColor(timeLeft);
+  timerInterval = setInterval(() => {
+    timePassed = timePassed += 1;
+    timeLeft = TIME_LIMIT - timePassed;
+    document.getElementById("base-timer-label").innerHTML = formatTime(
+      timeLeft
+    );
+    setCircleDasharray();
+    setRemainingPathColor(timeLeft);
 
-  if (timeLeft === 0) {
-    onTimesUp();
-  }
-}, 1000);
+    if (timeLeft === 3) {
+      sound2();
+    }
+
+    if (timeLeft === 0) {
+      onTimesUp();
+    }
+  }, 1000);
 }
 
 function formatTime(time) {

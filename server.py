@@ -9,7 +9,6 @@ from log import *
 from alllot import *
 from blockerallot import *
 
-
 import time
 from index import blockermat
 
@@ -27,6 +26,11 @@ pod_d={-69}
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'levetation'
+
+dicto = {"selector": 0}
+json_object = json.dumps(dicto, indent = 1)
+with open("./static/js/damage.json", "w") as outfile:
+   outfile.write(json_object)
 
 @app.route('/')
 def home():
@@ -136,6 +140,10 @@ def worker():
 def submit():
     return render_template("dmg_submit.html")
 
+@app.route('/platform_submit', methods=['GET', 'POST'])
+def sub():
+    return render_template("podselector_sub.html")
+
 # @app.route('/log', methods=['GET', 'POST'])
 # def log():
 #     return render_template("log.html")
@@ -210,6 +218,11 @@ def pod_selector():
                 t3+=1
                 pod_d.add(t3)
         print(pod_d)
+        
+        dicto = {"selector": 1}
+        json_object = json.dumps(dicto, indent = 1)
+        with open("./static/js/damage.json", "w") as outfile:
+           outfile.write(json_object)      
         # pod_d.append(select_data)
         # print(pod_d)
     return render_template("pod_selector.html") 

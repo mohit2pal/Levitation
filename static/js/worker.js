@@ -18,7 +18,7 @@ function ajaxx() {
     xhr.send(markseat)
 }
 
-//A functio to update the UI
+// // A functio to update the UI
 // function updateUI() {
 //     var xhr = new XMLHttpRequest()
 //     xhr.open('GET', './static/js/change.json', true)
@@ -65,11 +65,22 @@ function store() {
 }
 
 
+
+/*******   FUNCTION TO GIVE SOUND ON EACH CLICK     ************/
+
+
+function sound() {
+    var audio = new Audio('./static/js/tune.mp3');
+    audio.play();
+}
+
+
 /*******   USED TO LISTEN SEAT CLICKING AND TOGGLING COLOUR     ************/
 
 
 container.addEventListener("click", (e) => {
     if (e.target.classList.contains("seat") && !e.target.classList.contains("sold")) {
+        sound()
         e.target.classList.toggle("booked")
         // else {
         //     pass
@@ -86,11 +97,35 @@ container.addEventListener("click", (e) => {
 })
 
 
+function dmgpage(){
+    setTimeout(
+       function()
+         { window.open("/damage_submit","_self");}, 1000);
+}
+
+
+function refresh(){
+    // const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats2"))
+    // seats.forEach((seat, index) => {
+    //     if (selectedSeats.indexOf(index) > -1) {
+    //         seat.classList.remove("sold")
+    //     }
+    // })
+    const bookedSeats2 = document.querySelectorAll(".row2 .seat.hooked")
+    const seatsIndex = [...bookedSeats2].map((seat) => [...seats].indexOf(seat))
+    localStorage.setItem("bookedSeats2", JSON.stringify(seatsIndex))
+    populateUI()
+    window.location.reload()
+
+}
+
+
 /*******   CALLING FUNCTIONS ON CLICK OF SUBMIT BUTTON   **************/ 
 
 
 button.addEventListener("click", () => {
-
+    sound()
+    dmgpage()
     store()
     current_store()
     const selectedSeats = JSON.parse(localStorage.getItem("bookedSeats2"))
