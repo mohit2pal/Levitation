@@ -16,17 +16,15 @@
         }
         #popup2{
           position: absolute;
-          top: 50%;
+          top: 30%;
           left: 50%;
           transform: translate(-50%, -50%);
-          width: 350px;
-          height: 320px;
-          background: white;
-          border-radius: 25px;
-          border-style: solid;
-          border-width: 0.5mm;
-          border-color: #7ac142;
-          box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+          height: 250px;
+          width: 500px;
+          background: #ffffff;
+          border-radius: 20px;
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+          backdrop-filter: blur(10px);
           visibility: hidden;
           opacity: 0;
           transition: 0.5s;
@@ -44,17 +42,15 @@
         }
         #popup3{
           position: absolute;
-          top: 50%;
+          top: 30%;
           left: 50%;
           transform: translate(-50%, -50%);
-          width: 350px;
-          height: 320px;
-          background: white;
-          border-radius: 25px;
-          border-style: solid;
-          border-width: 0.5mm;
-          border-color: #7ac142;
-          box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+          height: 200px;
+          width: 300px;
+          background: #ffffff;
+          border-radius: 20px;
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+          backdrop-filter: blur(10px);
           visibility: hidden;
           opacity: 0;
           transition: 0.5s;
@@ -72,17 +68,15 @@
         }
         #popup4{
           position: absolute;
-          top: 50%;
+          top: 30%;
           left: 50%;
           transform: translate(-50%, -50%);
-          width: 350px;
-          height: 320px;
-          background: white;
-          border-radius: 25px;
-          border-style: solid;
-          border-width: 0.5mm;
-          border-color: #7ac142;
-          box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+          height: 250px;
+          width: 400px;
+          background: #ffffff;
+          border-radius: 20px;
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+          backdrop-filter: blur(10px);
           visibility: hidden;
           opacity: 0;
           transition: 0.5s;
@@ -115,7 +109,7 @@
                 <a class="nav-link active" type="button" aria-current="page" onclick="window.location.href='{{'/'}}'">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" active" type="button" aria-current="page" onclick="window.location.href='{{'/loginfo'}}'">Worker</a>
+                <a class="nav-link" active" type="button" aria-current="page" onclick="window.location.href='{{'/loginfo'}}'">Employee Access</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" active" type="button" aria-current="page" onclick="window.location.href='{{'/aboutus'}}'">About us</a>
@@ -145,22 +139,22 @@
     
     <div id="popup2">
       <h2> ALERT!!!! </h2>
-      <p style = "font-size: 18px; "> Please Be Carefull!!! while choosing the platform for this machine. </p>
-      <p style = "font-size: 18px;"> On wrong selection you have to restart the server...</p>
-      <button class="btn btn-secondary" onclick="sound(); check();"> OK </button> 
+      <p style = "font-size: 18px; text-align:center "> Please Be Carefull!!! while choosing the platform for this machine. </p>
+      <p style = "font-size: 18px; text-align:center"> On wrong selection you have to restart the server...</p>
+      <button class="btn btn-secondary" onclick="sound(); check();" style="margin: 0 210px;"> OK </button> 
     </div>
 
     <div id="popup3">
       <h2> ALERT!!!! </h2>
-      <p style = "font-size: 18px; "> ARE YOU SURE!!! </p>
-      <button class="btn btn-secondary" onclick="sound(); check3(); end();"> OK </button> 
+      <p style = "font-size: 18px; text-align:center "> ARE YOU SURE? </p>
+      <button class="btn btn-secondary" onclick="sound(); check3(); end();" style="margin: 0 120px;"> OK </button> 
     </div>
 
     <div id="popup4">
       <h2> ALERT!!!! </h2>
-      <p style = "font-size: 18px; "> Platform is already assigned!!! </p>
-      <p style = "font-size: 18px;"> To Reselect restart the server...</p>
-      <button class="btn btn-secondary" onclick="sound(); check4(); "> OK </button> 
+      <p style = "font-size: 18px; text-align:center "> Platform is already assigned!!! </p>
+      <p style = "font-size: 18px; text-align:center"> To Reselect restart the server...</p>
+      <button class="btn btn-secondary" onclick="sound(); check4();" style="margin: 0 170px;"> OK </button> 
     </div>
     
     <script>
