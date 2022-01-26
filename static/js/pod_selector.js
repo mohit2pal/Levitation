@@ -1,16 +1,16 @@
 const b1 = document.getElementById("button1").addEventListener("click", send_group1)
-const b2 = document.getElementById("button2").addEventListener("click", send_group1)
-const b3 = document.getElementById("button3").addEventListener("click", send_group1)
-const b4 = document.getElementById("button4").addEventListener("click", send_group1)
-const b5 = document.getElementById("button5").addEventListener("click", send_group1)
-const b6 = document.getElementById("button6").addEventListener("click", send_group1)
-const b7 = document.getElementById("button7").addEventListener("click", send_group1)
-const b8 = document.getElementById("button8").addEventListener("click", send_group1)
-const b9 = document.getElementById("button9").addEventListener("click", send_group1)
-const b10 = document.getElementById("button10").addEventListener("click", send_group1)
-const b11 = document.getElementById("button11").addEventListener("click", send_group1)
-const b12 = document.getElementById("button12").addEventListener("click", send_group1)
-const b13 = document.getElementById("button13").addEventListener("click", send_group1)
+const b2 = document.getElementById("button2").addEventListener("click", send_group2)
+const b3 = document.getElementById("button3").addEventListener("click", send_group3)
+const b4 = document.getElementById("button4").addEventListener("click", send_group4)
+const b5 = document.getElementById("button5").addEventListener("click", send_group5)
+const b6 = document.getElementById("button6").addEventListener("click", send_group6)
+const b7 = document.getElementById("button7").addEventListener("click", send_group7)
+const b8 = document.getElementById("button8").addEventListener("click", send_group8)
+const b9 = document.getElementById("button9").addEventListener("click", send_group9)
+const b10 = document.getElementById("button10").addEventListener("click", send_group10)
+const b11 = document.getElementById("button11").addEventListener("click", send_group11)
+const b12 = document.getElementById("button12").addEventListener("click", send_group12)
+const b13 = document.getElementById("button13").addEventListener("click", send_group13)
 
 
 var clicks = 0;
@@ -25,12 +25,13 @@ function caller(){
    
   if(dmg['selector'] == 0){
     sound();
+    check3();
     clicks = 1
-    end();
 
   }  
   else if(dmg['selector'] == 1){
-      ok();
+      sound();
+      check4();
   }
 }
 chr.send()
@@ -55,6 +56,7 @@ function send_group2() {
   xhr.setRequestHeader('Content-Type', 'text/plain')
   
   xhr.send(data)
+  caller()
 }
 
 function send_group3() {
@@ -65,6 +67,7 @@ function send_group3() {
   xhr.setRequestHeader('Content-Type', 'text/plain')
   
   xhr.send(data)
+  caller()
 }
 
 function send_group4() {
@@ -75,6 +78,7 @@ function send_group4() {
   xhr.setRequestHeader('Content-Type', 'text/plain')
   
   xhr.send(data)
+  caller()
 }
 
 function send_group5() {
@@ -85,6 +89,7 @@ function send_group5() {
   xhr.setRequestHeader('Content-Type', 'text/plain')
   
   xhr.send(data)
+  caller()
 }
 
 function send_group6() {
@@ -95,6 +100,7 @@ function send_group6() {
   xhr.setRequestHeader('Content-Type', 'text/plain')
   
   xhr.send(data)
+  caller()
 }
 
 function send_group7() {
@@ -105,6 +111,7 @@ function send_group7() {
   xhr.setRequestHeader('Content-Type', 'text/plain')
   
   xhr.send(data)
+  caller()
 }
 
 function send_group8() {
@@ -115,6 +122,7 @@ function send_group8() {
   xhr.setRequestHeader('Content-Type', 'text/plain')
   
   xhr.send(data)
+  caller()
 }
 
 function send_group9() {
@@ -125,6 +133,7 @@ function send_group9() {
   xhr.setRequestHeader('Content-Type', 'text/plain')
   
   xhr.send(data)
+  caller()
 }
 
 function send_group10() {
@@ -135,6 +144,7 @@ function send_group10() {
   xhr.setRequestHeader('Content-Type', 'text/plain')
   
   xhr.send(data)
+  caller()
 }
 
 function send_group11() {
@@ -145,6 +155,7 @@ function send_group11() {
   xhr.setRequestHeader('Content-Type', 'text/plain')
   
   xhr.send(data)
+  caller()
 }
 
 function send_group12() {
@@ -155,6 +166,7 @@ function send_group12() {
   xhr.setRequestHeader('Content-Type', 'text/plain')
   
   xhr.send(data)
+  caller()
 }
 
 function send_group13() {
@@ -165,6 +177,7 @@ function send_group13() {
   xhr.setRequestHeader('Content-Type', 'text/plain')
   
   xhr.send(data)
+  caller()
 }
 
 function sound() {
@@ -172,11 +185,7 @@ function sound() {
   audio.play();
 }
 
-function end(){
-  setTimeout(
-function()
-{ window.open("/platform_submit","_self");}, 1000);
-}
+
 
 function check3(){
     var popup = document.getElementById("grad1");
@@ -186,8 +195,11 @@ function check3(){
     
 }
 
-function ok(){
-    window.alert("ok");
+function check4(){
+  var popup = document.getElementById("grad1");
+  popup.classList.toggle("active");
+  var popup4 = document.getElementById("popup4");
+  popup4.classList.toggle("active");
 }
 
 
