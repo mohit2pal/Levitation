@@ -5,6 +5,7 @@
 
 
 from blockerallot import variable_edit
+from index import variedit
 
 import datetime
 import json
@@ -74,6 +75,7 @@ def check(l,sto):
     #      pidd = pid[:2]
     # check_json(pidd)
     variable_edit(seat_counter,pod_bay_counter,platform_counter,time,time_rec,time_rechr,time_hourrecd,pod_rec,allot_time,pod_changed_count,bay_rec,default_time)
+    variedit()
     return pidd
        
         
