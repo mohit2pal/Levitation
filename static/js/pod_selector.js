@@ -16,16 +16,23 @@ const b13 = document.getElementById("button13").addEventListener("click", send_g
 var clicks = 0;
 
 function caller(){
+
+  var chr = new XMLHttpRequest()
+  chr.open("GET", "./static/js/damage.json", true)
+
+  chr.onload = function(){
+    var dmg = JSON.parse(this.responseText)
    
-  if(clicks == 0){
+  if(dmg['selector'] == 0){
     sound();
     clicks = 1
     end();
 
   }  
-  else{
+  else if(dmg['selector'] == 1){
       ok();
   }
+}
 }
 
 function send_group1() {
