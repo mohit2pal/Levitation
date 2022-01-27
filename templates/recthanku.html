@@ -124,7 +124,7 @@
             const start = () => {
              setTimeout(function() {
                confetti.start()
-              }, 100); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+              }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
            };
            start();
         } 
@@ -134,6 +134,8 @@
         }
           
         async function sentence(){
+             document.getElementById("sen").innerHTML = "4s";
+             await sleep(1000);
              document.getElementById("sen").innerHTML = "3s";
              await sleep(1000);
              document.getElementById("sen").innerHTML = "2s";
