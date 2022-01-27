@@ -6,6 +6,6 @@ WORKDIR /levitation
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
-RUN timedatectl set-timezone America/Monterrey
+RUN TZ=Asia/Kolkata
 
 ENTRYPOINT ["python", "server.py"]
