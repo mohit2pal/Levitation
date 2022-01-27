@@ -1,3 +1,5 @@
+#server
+
 from flask import Flask, render_template, redirect
 from flask import request
 
