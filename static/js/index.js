@@ -101,6 +101,7 @@ function timer(){
       </div>
       `;
     clearInterval(timerInterval);
+    next.disabled = false
     }
 
 
