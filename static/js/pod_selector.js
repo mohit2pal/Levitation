@@ -1,20 +1,20 @@
-const b1 = document.getElementById("button1").addEventListener("click", send_group1)
-const b2 = document.getElementById("button2").addEventListener("click", send_group2)
-const b3 = document.getElementById("button3").addEventListener("click", send_group3)
-const b4 = document.getElementById("button4").addEventListener("click", send_group4)
-const b5 = document.getElementById("button5").addEventListener("click", send_group5)
-const b6 = document.getElementById("button6").addEventListener("click", send_group6)
-const b7 = document.getElementById("button7").addEventListener("click", send_group7)
-const b8 = document.getElementById("button8").addEventListener("click", send_group8)
-const b9 = document.getElementById("button9").addEventListener("click", send_group9)
-const b10 = document.getElementById("button10").addEventListener("click", send_group10)
-const b11 = document.getElementById("button11").addEventListener("click", send_group11)
-const b12 = document.getElementById("button12").addEventListener("click", send_group12)
-const b13 = document.getElementById("button13").addEventListener("click", send_group13)
+const b1 = document.getElementById("button1").addEventListener("click", caller)
+const b2 = document.getElementById("button2").addEventListener("click", caller)
+const b3 = document.getElementById("button3").addEventListener("click", caller)
+const b4 = document.getElementById("button4").addEventListener("click", caller)
+const b5 = document.getElementById("button5").addEventListener("click", caller)
+const b6 = document.getElementById("button6").addEventListener("click", caller)
+const b7 = document.getElementById("button7").addEventListener("click", caller)
+const b8 = document.getElementById("button8").addEventListener("click", caller)
+const b9 = document.getElementById("button9").addEventListener("click", caller)
+const b10 = document.getElementById("button10").addEventListener("click", caller)
+const b11 = document.getElementById("button11").addEventListener("click", caller)
+const b12 = document.getElementById("button12").addEventListener("click", caller)
+const b13 = document.getElementById("button13").addEventListener("click", caller)
 
 
 
-function caller(){
+function caller(d){
 
   var chr = new XMLHttpRequest()
   chr.open("GET", "./static/js/damage.json", true)
@@ -23,6 +23,7 @@ function caller(){
     var dmg = JSON.parse(this.responseText)
    
   if(dmg['selector'] == 0){
+    send_group(d)
     sound();
     end();
 
@@ -35,8 +36,23 @@ function caller(){
 chr.send()
 }
 
-function send_group1() {
-    const data = 'B,C,D,E,F,G,H,I,J,K,L,M'
+function send_group(t) {
+
+  if(t==1){const data = 'B,C,D,E,F,G,H,I,J,K,L,M'}
+  else if(t==2){const data = 'A,C,D,E,F,G,H,I,J,K,L,M'}
+  else if(t==3){const data = 'A,B,D,E,F,G,H,I,J,K,L,M'}
+  else if(t==4){const data = 'A,B,C,E,F,G,H,I,J,K,L,M'}
+  else if(t==5){const data = 'A,B,C,D,F,G,H,I,J,K,L,M'}
+  else if(t==6){const data = 'A,B,C,D,E,G,H,I,J,K,L,M'}
+  else if(t==7){const data = 'A,B,C,D,E,F,H,I,J,K,L,M'}
+  else if(t==8){const data = 'A,B,C,D,E,F,G,I,J,K,L,M'}
+  else if(t==9){const data = 'A,B,C,D,E,F,G,H,J,K,L,M'}
+  else if(t==10){const data = 'A,B,C,D,E,F,G,H,I,K,L,M'}
+  else if(t==11){const data = 'A,B,C,D,E,F,G,H,I,J,L,M'}
+  else if(t==12){const data = 'A,B,C,D,E,F,G,H,I,J,K,M'}
+  else if(t==13){const data = 'A,B,C,D,E,F,G,H,I,J,K,L'}
+  
+    
 
     var xhr = new XMLHttpRequest()
     xhr.open('POST', '/pod_selector', true)
@@ -44,138 +60,6 @@ function send_group1() {
     
     xhr.send(data)
     caller()
-}
-
-function send_group2() {
-  const data = 'A,C,D,E,F,G,H,I,J,K,L,M'
-
-  var xhr = new XMLHttpRequest()
-  xhr.open('POST', '/pod_selector', true)
-  xhr.setRequestHeader('Content-Type', 'text/plain')
-  
-  xhr.send(data)
-  caller()
-}
-
-function send_group3() {
-  const data = 'A,B,D,E,F,G,H,I,J,K,L,M'
-
-  var xhr = new XMLHttpRequest()
-  xhr.open('POST', '/pod_selector', true)
-  xhr.setRequestHeader('Content-Type', 'text/plain')
-  
-  xhr.send(data)
-  caller()
-}
-
-function send_group4() {
-  const data = 'A,B,C,E,F,G,H,I,J,K,L,M'
-
-  var xhr = new XMLHttpRequest()
-  xhr.open('POST', '/pod_selector', true)
-  xhr.setRequestHeader('Content-Type', 'text/plain')
-  
-  xhr.send(data)
-  caller()
-}
-
-function send_group5() {
-  const data = 'A,B,C,D,F,G,H,I,J,K,L,M'
-
-  var xhr = new XMLHttpRequest()
-  xhr.open('POST', '/pod_selector', true)
-  xhr.setRequestHeader('Content-Type', 'text/plain')
-  
-  xhr.send(data)
-  caller()
-}
-
-function send_group6() {
-  const data = 'A,B,C,D,E,G,H,I,J,K,L,M'
-
-  var xhr = new XMLHttpRequest()
-  xhr.open('POST', '/pod_selector', true)
-  xhr.setRequestHeader('Content-Type', 'text/plain')
-  
-  xhr.send(data)
-  caller()
-}
-
-function send_group7() {
-  const data = 'A,B,C,D,E,F,H,I,J,K,L,M'
-
-  var xhr = new XMLHttpRequest()
-  xhr.open('POST', '/pod_selector', true)
-  xhr.setRequestHeader('Content-Type', 'text/plain')
-  
-  xhr.send(data)
-  caller()
-}
-
-function send_group8() {
-  const data = 'A,B,C,D,E,F,G,I,J,K,L,M'
-
-  var xhr = new XMLHttpRequest()
-  xhr.open('POST', '/pod_selector', true)
-  xhr.setRequestHeader('Content-Type', 'text/plain')
-  
-  xhr.send(data)
-  caller()
-}
-
-function send_group9() {
-  const data = 'A,B,C,D,E,F,G,H,J,K,L,M'
-
-  var xhr = new XMLHttpRequest()
-  xhr.open('POST', '/pod_selector', true)
-  xhr.setRequestHeader('Content-Type', 'text/plain')
-  
-  xhr.send(data)
-  caller()
-}
-
-function send_group10() {
-  const data = 'A,B,C,D,E,F,G,H,I,K,L,M'
-
-  var xhr = new XMLHttpRequest()
-  xhr.open('POST', '/pod_selector', true)
-  xhr.setRequestHeader('Content-Type', 'text/plain')
-  
-  xhr.send(data)
-  caller()
-}
-
-function send_group11() {
-  const data = 'A,B,C,D,E,F,G,H,I,J,L,M'
-
-  var xhr = new XMLHttpRequest()
-  xhr.open('POST', '/pod_selector', true)
-  xhr.setRequestHeader('Content-Type', 'text/plain')
-  
-  xhr.send(data)
-  caller()
-}
-
-function send_group12() {
-  const data = 'A,B,C,D,E,F,G,H,I,J,K,M'
-
-  var xhr = new XMLHttpRequest()
-  xhr.open('POST', '/pod_selector', true)
-  xhr.setRequestHeader('Content-Type', 'text/plain')
-  
-  xhr.send(data)
-  caller()
-}
-
-function send_group13() {
-  const data = 'A,B,C,D,E,F,G,H,I,J,K,L'
-
-  var xhr = new XMLHttpRequest()
-  xhr.open('POST', '/pod_selector', true)
-  xhr.setRequestHeader('Content-Type', 'text/plain')
-  
-  xhr.send(data)
-  caller()
 }
 
 function sound() {
