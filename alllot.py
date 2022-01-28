@@ -141,23 +141,23 @@ def differ():
 #         pod_bay_counter = 6
 #         platform_counter = 12
     
-def blocker():                               # 0 is blocked and 1 is allowed
-    global allot_time
-    time = sec()
-    if(seat_counter==29):
-      allot_time = time + 300
-      o = 1
-      return(o)
-    elif(time > allot_time):
-        p = 1
-        return(p)
-    elif(time < allot_time and (pod_bay_counter != 0 or platform_counter != 0 or seat_counter != 1)):
-         u = 1 
-         return(u)
-    else:
-        l=0
-        # l=1
-        return(l)   
+# def blocker():                               # 0 is blocked and 1 is allowed
+#     global allot_time
+#     time = sec()
+#     if(seat_counter==29):
+#       allot_time = time + 300
+#       o = 1
+#       return(o)
+#     elif(time > allot_time):
+#         p = 1
+#         return(p)
+#     elif(time < allot_time and (pod_bay_counter != 0 or platform_counter != 0 or seat_counter != 1)):
+#          u = 1 
+#          return(u)
+#     else:
+#         l=0
+#         # l=1
+#         return(l)   
 
 def allot(res):
     global seat_counter
@@ -166,15 +166,15 @@ def allot(res):
     global pod_dmg
     if(res == 0):
         timeal = differ()
-        block_code =  blocker()
+        # block_code =  blocker()
     elif(res == 1):
         timeal = 0
-        block_code = 1
+        # block_code = 1
     print("Timeal:", timeal)
-    if(block_code == 1):
-        pass
-    elif(block_code == 0):
-        return("Blocked")
+    # if(block_code == 1):
+    #     pass
+    # elif(block_code == 0):
+    #     return("Blocked")
     # if(block_code == 1):
     if(seat_counter > 0):
         # if(seat_counter > 28):
