@@ -1,5 +1,5 @@
 
-const next = document.getElementById("next")
+const next = document.querySelector(".container.my-4.col-1")
 next.disabled = true
 var time_remaining = 0
 
