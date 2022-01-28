@@ -21,6 +21,7 @@ name2 = ""
 allot2 = ""
 dataty_len = 0
 pod_d={-69}
+select_list=[]
 
 
 # seat_ticket= ""
@@ -130,10 +131,15 @@ def output():
 @app.route('/worker', methods=['GET', 'POST'])
 def worker():
     global pod_d
+    global pod_e
+    pod_c = {-69}
     if request.method == 'POST':
         pod_a = request.get_json()
         for i in pod_a:
-            pod_d.add(i)
+            pod_c.add(i)
+        pod_d = pod_c
+        for s in pod_e:
+            pod_d.add(s)
         print(pod_d)
         print("This is the damaged pods:", pod_d)
     return render_template("worker.html")
@@ -180,6 +186,8 @@ def empaccess():
 @app.route('/pod_selector', methods=['GET', 'POST'])
 def pod_selector():
     global pod_d
+    global pod_e
+    pod_e = []
     if request.method == 'POST':
         select_data = request.get_data()
         select = select_data.decode("utf-8")
@@ -218,7 +226,9 @@ def pod_selector():
                 # v1 = v+1
                 # t3 = x+str(v1)
                 t3+=1
-                pod_d.add(t3)
+                pod_e.append(t3)
+            for e in pod_e:
+                pod_d.add(e)
         print(pod_d)
         
         dicto = {"selector": 1}
