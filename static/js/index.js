@@ -1,8 +1,7 @@
 
 const next = document.getElementById("next")
-next.disabled = true
 var time_remaining = 0
-
+console.log(next)
 
 function status_update() {
     var xhr = new XMLHttpRequest()
@@ -13,7 +12,7 @@ function status_update() {
         console.log(block['status'])
 
         if(block['status'] == 1){
-            next.innerHTML = '{{form.submit(class="btn btn-secondary btn-lg")}}'
+            next.disabled = false
             document.getElementById('app').innerHTML = `
             <div>
               <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
@@ -25,6 +24,7 @@ function status_update() {
             `;
         }
         else if(block['status'] == 0) {
+            next.disabled = true
             // document.getElementById('app').innerHTML = "Blocked"
             time_remaining = block['timer']
             timer()
