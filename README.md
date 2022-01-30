@@ -1,21 +1,38 @@
-# TEAM LEVITATION
- 
- <img src="/pdf_img/ABSTRACT PDF_HO-222553_page-0001.jpg">
- <img src="/pdf_img/ABSTRACT PDF_HO-222553_page-0002.jpg">
- <img src="/pdf_img/ABSTRACT PDF_HO-222553_page-0003.jpg">
- <img src="/pdf_img/ABSTRACT PDF_HO-222553_page-0004.jpg">
- <img src="/pdf_img/ABSTRACT PDF_HO-222553_page-0005.jpg">
- <img src="/pdf_img/ABSTRACT PDF_HO-222553_page-0006.jpg">
- <img src="/pdf_img/ABSTRACT PDF_HO-222553_page-0007.jpg">
- <img src="/pdf_img/ABSTRACT PDF_HO-222553_page-0008.jpg">
- <img src="/pdf_img/ABSTRACT PDF_HO-222553_page-0009.jpg">
- <img src="/pdf_img/ABSTRACT PDF_HO-222553_page-0010.jpg">
- <img src="/pdf_img/ABSTRACT PDF_HO-222553_page-0011.jpg">
- <img src="/pdf_img/ABSTRACT PDF_HO-222553_page-0012.jpg">
- <img src="/pdf_img/ABSTRACT PDF_HO-222553_page-0013.jpg">
- <img src="/pdf_img/ABSTRACT PDF_HO-222553_page-0014.jpg">
- <img src="/pdf_img/ABSTRACT PDF_HO-222553_page-0015.jpg">
- <img src="/pdf_img/ABSTRACT PDF_HO-222553_page-0016.jpg">
- <img src="/pdf_img/ABSTRACT PDF_HO-222553_page-0017.jpg">
- <img src="/pdf_img/ABSTRACT PDF_HO-222553_page-0018.jpg">
- <img src="/pdf_img/ABSTRACT PDF_HO-222553_page-0019.jpg">
+<div align="center">
+        <h1 align='center'>
+            <img src="/pdf_img/logofinal.png" height="150" />
+        </h2>
+    </div>
+       </div>
+      <div align="center">
+         <h1>LINKS</h1>
+        Levitation-Web-App : https://levitation-web-app.herokuapp.com/
+        <br>
+        Explanation Video : https://bit.ly/34id5j0
+        <br> 
+        Docker Run command : docker run -d -p 5000:5000 ghcr.io/mohit2pal/levitation:main
+        <hr>
+   </div>
+    <div align="center"> 
+        <p><img src="/pdf_img/1.png"></p>
+        <p><img src="/pdf_img/2.png"></p>
+        <p><img src="/pdf_img/3.png"></p>
+        <p><img src="/pdf_img/4.png"></p>
+        <p><img src="/pdf_img/5.png"></p>
+        <p><img src="/pdf_img/6.png"></p>
+        <p><img src="/pdf_img/7.png"></p>
+        <p><img src="/pdf_img/8.png"></p>
+        <p><img src="/pdf_img/9.png"></p>
+        <p><img src="/pdf_img/10.png"></p>
+        <p><img src="/pdf_img/11.png"></p>
+        <p><img src="/pdf_img/12.png"></p>
+        <p><img src="/pdf_img/13.png"></p>
+     </div>
+
+   <div align="center">
+        <p><img src="/pdf_img/16.png" ></p>
+        <hr>
+        <p><img src="/pdf_img/17.png" ></p>
+        <hr>
+        <p><img src="/pdf_img/14.png"></p>
+        <hr>
