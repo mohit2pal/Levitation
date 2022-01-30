@@ -10,8 +10,11 @@
     Explanation Video : https://bit.ly/34id5j0
     <br>
     Docker Run command : docker run -d -p 5000:5000 ghcr.io/mohit2pal/levitation:main
-    <hr>
 </div>
+
+
+
+<hr>
 <h1>How to deploy the docker container</h1>
 <p> 1. First download the Docker desktop from : https://www.docker.com/products/docker-desktop</p>
 <p> 2. Install the application</p>
