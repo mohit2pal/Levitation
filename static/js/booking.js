@@ -1,5 +1,11 @@
+
+
+/*******   NAVBAR RESPONSIVE SCRIPT     ************/
+
 function myFunction() {
-  var x = document.getElementById("myTopnav");
+
+  var x = document.getElementById("myTopnav");    
+
   if (x.className === "topnav") {
       x.className += " responsive";
   } else {
@@ -7,12 +13,12 @@ function myFunction() {
   }
 }
 
-const container = document.querySelector(".container")
-const seats = document.querySelectorAll(".row .seat")
-const button = document.querySelector(".button")
-const button2 = document.getElementById("count")
-const final = document.getElementById("prn")
-const seatsb = document.querySelectorAll(".row .seat.booked")
+const container = document.querySelector(".container")                 // CONTAINER FOR THE SEATS
+const seats = document.querySelectorAll(".row .seat")                 // SELECT SEATS WITH CLASS ROW AND CLASS SEAT 
+const button = document.querySelector(".button")                     // SUBMIT BUTTON
+const button2 = document.getElementById("count")                    // AMOUNT DISPLAY BUTTON 
+const final = document.getElementById("prn")                       // SUBMIT BUTTON    
+const seatsb = document.querySelectorAll(".row .seat.booked")     // SELECT SEATS WITH CLASS ROW AND CLASS BOOKED 
 
 // seats.forEach((seat,index) => {
 //   console.log(seat.classList)
@@ -36,7 +42,7 @@ function ajaxx() {
 }
 
 
-/*******   A FUNCTION TO UPDATE THE UI     ************/
+/*******   A FUNCTION TO UPDATE/REFRESH THE UI     ************/
 
 
 function updateUI() {
@@ -93,6 +99,7 @@ function store() {
 //     xhr.send(amount);
 // }
 
+// TO START
 
 /*******   FUNCTION TO GIVE SOUND ON EACH CLICK     ************/
 
@@ -189,7 +196,13 @@ final.addEventListener("click", () => {
 //     ajaxx()
 // })
 
+
+
 button.addEventListener("click", button_click)
+
+
+/*******   AFTER CLICKING THE SUBMIT BUTTON     ************/
+
 
 function button_click() {
   populator()
@@ -211,6 +224,10 @@ function button_click() {
     window.open("/print_ticket","_self") 
 }
 
+
+/*******   A FUNCTION TO GIVE 1 SEAT IF NONE SEATS ARE SELECTED     ************/
+
+
 function populator(){
   tututu = 0
   if(document.querySelectorAll(".row .seat.booked").length < 1 ){
@@ -231,6 +248,8 @@ function populator(){
 }
 
 
+
+/*******   A FUNCTION TO SHOW THE PREVIOUSLY BOOKED SEATS     ************/
 
 
 function populateUI() {
@@ -257,7 +276,9 @@ function sound2() {
 }
 
 
-// timer
+/*******   TIMER FUNCTIONS     ************/
+
+
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
 const ALERT_THRESHOLD = 5;
@@ -378,5 +399,5 @@ document
 
 
 
-const myTimeout = setTimeout(button_click, 21000)
+const myTimeout = setTimeout(button_click, 21000)     // CALLING BUTTON CLICK AFTER 21 seconds
 
