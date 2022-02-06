@@ -1,7 +1,9 @@
 
 const next = document.getElementById("next")
-var time_remaining = 0
+var time_remaining = 0          // Initialize the remaining time
 console.log(next)
+
+/*******   Update the status of blocker notification   **************/ 
 
 function status_update() {
     var xhr = new XMLHttpRequest()
@@ -36,7 +38,11 @@ function status_update() {
 
 status_update()
 
+
+
 // timer
+
+
 function timer(){
     const FULL_DASH_ARRAY = 283;
     const WARNING_THRESHOLD = 10;
