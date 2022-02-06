@@ -10,22 +10,22 @@ from index import variedit
 import datetime
 import json
 
-default_time = 0
+default_time = 0                    #The default time when the program starts.
 
-seat_counter = 29
-pod_bay_counter = 6
+seat_counter = 29                   #The number of seats with which program starts.
+pod_bay_counter = 6                 #The number of Pod Bays with which program starts.
 # pod_bay_counter = 5
-platform_counter = 12
+platform_counter = 12               #The number of Platforms with which program starts.
 # platform_counter = 13
-time = 0
-time_rec = default_time
-time_rechr = 0
-time_hourrecd = 0
-pod_rec = ""
-allot_time = 0
+time = 0                            #To initialise the current time.
+time_rec = default_time             #The default time when the program starts.
+time_rechr = 0                      #It records the hour of the current time
+time_hourrecd = 0                   #It records the time of the current time, Now defunct.
+pod_rec = ""                        #Records the previously alloted pod.
+allot_time = 0                      #It records the previously alloted pod`s time, Now defunct.
 #pod_d = 0
-pod_changed_count = 0
-bay_rec = -1
+pod_changed_count = 0               #It is used to calculate the amount of pod booked between a critical time.
+bay_rec = -1                        #It records the previosly alloted pod bay, used in check json
 
 def check_json(t):
     global pod_rec
@@ -49,11 +49,11 @@ def check_json(t):
     pod_rec = t
 
     
-def check(l,sto):
-    dmg = []
+def check(l,sto):        # l = damaged pod , sto = If first pod booking 0 and 1 for multiple pods bookings.   
+    dmg = []             # To store damage pods in processed form
     # dmg = l.split()
     for j in l:
-        dmg_string = ""
+        dmg_string = ""  
         g = j
         g+=1
         counter_j =  int(j/6)
@@ -61,7 +61,7 @@ def check(l,sto):
         dmg_string = dmg_string + str(g-(counter_j*6))
         dmg.append(dmg_string)
     print("The processed dmaged pods are:", dmg)
-    pid = allot(sto)
+    pid = allot(sto)            # It is the alloted pod bay and seat
     pidd = pid[:2]
     while(1 != 0):
         if(pidd in dmg):
@@ -95,14 +95,14 @@ def sec():
 
 
 def counth():
-    timeh = sec()
+    timeh = sec()                # timeh stores the current time
     # timeh = (time_rechr*60*60) + (timeh1*60) + timesec
-    global time_rec
-    time_count = 0
+    global time_rec            
+    time_count = 0               # To store the no. of critical point reached.
     # if(time_rechr > 0):
     #     pass
     # else:
-    for i in range(time_rec,timeh):
+    for i in range(time_rec,timeh):     
        if(i%90 == 30):
          time_count+=1
     # time_rec = timeh - (time_rechr*60)
@@ -115,7 +115,7 @@ def counth():
 def differ():
     global pod_changed_count
     time_differ = counth()
-    pod_differ = pod_changed_count
+    pod_differ = pod_changed_count          #It is used to calculate the amount of pod booked between a critical time.
     
     pod_changed = pod_differ - time_differ
     if(pod_changed < 0):
@@ -159,13 +159,13 @@ def differ():
 #         # l=1
 #         return(l)   
 
-def allot(res):
+def allot(res):             # res = sto
     global seat_counter
     global pod_bay_counter
     global platform_counter
     global pod_dmg
     if(res == 0):
-        timeal = differ()
+        timeal = differ()       # When Timeal = 0 time is not considered and when Timeal = 1 time is considered.
         # block_code =  blocker()
     elif(res == 1):
         timeal = 0
@@ -218,7 +218,7 @@ def allot(res):
     #if (pod_d = A1):
 
         
-    
+                     #To convert the alloted pod and seats to processed form
 
     platform_change = 12-platform_counter
     platform_ascii= platform_change + 65
