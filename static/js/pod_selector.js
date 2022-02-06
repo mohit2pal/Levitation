@@ -12,6 +12,8 @@ const b11 = document.getElementById("button11").addEventListener("click", deflec
 const b12 = document.getElementById("button12").addEventListener("click", deflector12)
 const b13 = document.getElementById("button13").addEventListener("click", deflector13)
 
+/*******   Respective arguments for respective buttons are sended to these functions   **************/ 
+
 function deflector1() {
   caller(1)
 }
@@ -55,6 +57,8 @@ function deflector13() {
 
 var data = ''
 
+/*******   Used to call functions at a specific requirement   **************/ 
+
 function caller(d){
   console.log(d)
   var chr = new XMLHttpRequest()
@@ -76,6 +80,8 @@ function caller(d){
 }
 chr.send()
 }
+
+/*******   Alloting Platform to a respective button   **************/ 
 
 function send_group(t) {
 
@@ -102,12 +108,14 @@ function send_group(t) {
   xhr.send(datat)
 }
 
+/*******   Sound for buttons   **************/ 
+
 function sound() {
   var audio = new Audio('./static/js/tune.mp3');
   audio.play();
 }
 
-
+/*******   Alert on reselecting platform   **************/ 
 
 function check4(){
   var popup = document.getElementById("grad1");
@@ -116,13 +124,14 @@ function check4(){
   popup4.classList.toggle("active");
 }
 
+/*******   Leads to submit page on clicking submit button  **************/ 
+
 function end(){
   setTimeout(
 function()
 { window.open("/platform_submit","_self");}, 1000);
 }
 
-/************* CALLING FUNCTIONS STARTED ******************/
 
 
 // b1.addEventListener("click", () => {

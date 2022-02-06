@@ -9,31 +9,32 @@ import json
 counter = 0
 
 st = 0
-default_timeht = 0
+default_timeht = 0                #The default time when the program starts.
 # seat_counter = 29
-seat_counter2 = 29
+seat_counter2 = 29                #The number of seats with which program starts.
 # pod_bay_counter = 6
 # pod_bay_counter = 5
-pod_bay_counter2 = 6
+pod_bay_counter2 = 6              #The number of Pod Bays with which program starts.
 # platform_counter = 12
-platform_counter2 = 12
+platform_counter2 = 12            #The number of Platforms with which program starts.
 # platform_counter = 13
 # time = 0
-time2 = 0
+time2 = 0                         #To initialise the current time.
 # time_rec = 0
-time2_rec = st
+time2_rec = st                    #The default time when the program starts.
 # time_rechr = 0
-time2_rechr = 0
+time2_rechr = 0                   #It records the hour of the current time
 # time_hourrecd = 0
-time2_hourrecd = 0
-pod_rec2 = ""
-allot_time2 = 0
+time2_hourrecd = 0                #It records the time of the current time, Now defunct.
+pod_rec2 = ""                     #Records the previously alloted pod.
+allot_time2 = 0                   #It records the previously alloted pod`s time, Now defunct.
 #pod_d = 0
-pod_changed_count2 = 0
-bay_rec2 = -1
+pod_changed_count2 = 0            #It is used to calculate the amount of pod booked between a critical time.
+bay_rec2 = -1                     #It records the previosly alloted pod bay, used in check json
 
 # pidd2 = 0
 
+# To sync the variable values with alllot.
 
 def variable_edit(seat_counter,pod_bay_counter,platform_counter,time,time_rec,time_rechr,time_hourrecd,pod_rec,allot_time,pod_changed_count,bay_rec,default_time):
         global counter
@@ -96,13 +97,13 @@ def check_json2(t):
     pod_rec2 = t
 
     
-def check2(l,sto):
+def check2(l,sto):                  # l = damaged pod , sto = If first pod booking 0 and 1 for multiple pods bookings.
     global counter
     global pidd2
     if(counter != 1):
-        dmg = []
+        dmg = []                    # To store damage pods in processed form
         # dmg = l.split()
-        for j in l:
+        for j in l:                         
             dmg_string = ""
             g = j
             g+=1
@@ -111,7 +112,7 @@ def check2(l,sto):
             dmg_string = dmg_string + str(g-(counter_j*6))
             dmg.append(dmg_string)
         print("The processed dmaged pods are:", dmg)
-        pid = allot2(sto)
+        pid = allot2(sto)           # It is the alloted pod bay and seat
         pidd = pid[:2]
         while(1 != 0):
             if(pidd in dmg):
@@ -129,7 +130,7 @@ def check2(l,sto):
         counter = 1
         edit(pidd2,pidd3)
 
-def edit(t,u):
+def edit(t,u):              #To store the values of the pod to be alloted and time for the seats to be alloted.                 
     t2 = int(t)
     u2 = int(u)
     st2 = st
@@ -156,10 +157,10 @@ def sec2():
 
 
 def counth2():
-    time2h = sec2()
+    time2h = sec2()         # timeh stores the current time
     # time2h = (time2_rechr*60*60) + (time2h1*60) + time2sec
     global time2_rec
-    time2_count = 0
+    time2_count = 0         # To store the no. of critical point reached.
     # if(time2_rechr > 0):
     #     pass
     # else:
@@ -176,7 +177,7 @@ def counth2():
 def differ2():
     global pod_changed_count2
     time2_differ = counth2()
-    pod_differ = pod_changed_count2
+    pod_differ = pod_changed_count2     #It is used to calculate the amount of pod booked between a critical time.
     
     pod_changed = pod_differ - time2_differ
     if(pod_changed < 0):
@@ -220,13 +221,13 @@ def differ2():
 #         # l=1
 #         return(l)   
 
-def allot2(res):
+def allot2(res):                # res = sto
     global seat_counter2
     global pod_bay_counter2
     global platform_counter2
     global pod_dmg
     if(res == 0):
-        timeal = differ2()
+        timeal = differ2()     # When Timeal = 0 time is not considered and when Timeal = 1 time is considered.
         # block_code =  blocker()
     elif(res == 1):
         timeal = 0
@@ -279,7 +280,7 @@ def allot2(res):
     #if (pod_d = A1):
 
         
-    
+                                    #To convert the alloted pod and seats to processed form
 
     platform_change = 12-platform_counter2
     platform_ascii= platform_change + 65

@@ -1,19 +1,19 @@
 import json
 import datetime
-canter = 0
+canter = 0                  #Stores the amount of time index.py has ran.
 
-block_timer_array = []
-count = 1
-default2 = 0
-depa = 0
-isAllowed = -1
-o2 = -1
+block_timer_array = []      #To store the criticl time for each pod in a platform 
+count = 1                   #Variable used to add 3 minutes to the calculation, Booking start time
+default2 = 0                #It stores the critical value of the next to be alloted pod 
+depa = 0                    #Variable used to add 6 minutes to the calculation, departure time
+isAllowed = -1              #isAllowed shows where the blocker notification should be allowed or not, initialize at -1, allowed at 1 and bloacked at 0
+o2 = -1                     #processed value of the pod to be alloted
 
-def variedit():
+def variedit():                 #Updates the canter depending upon allot`s run time.
     global canter
     canter = 0
 
-def sec2():
+def sec2():                         #Calculate the current time 
     global time2
     global time2_hourrecd
     global time2_rechr
@@ -27,7 +27,7 @@ def sec2():
     #   time2_hourrecd = time2hr
     return (time2)
 
-def blockermat():
+def blockermat():       
     global canter
     global o2
     global isAllowed
@@ -35,9 +35,9 @@ def blockermat():
         global depa
         global count
         global default2
-        timet = sec2()
+        timet = sec2()      #Stores the current time
         print(timet)
-        default = 0
+        default = 0         #Initialize the default time.
         if(count == 1):
             default = timet
             i = default
@@ -57,7 +57,7 @@ def blockermat():
         seat = data['seats']
         canter = 1
         if(timet < block_timer_array[o2] and seat == 28):
-            remain_timer = block_timer_array[o2] - timet
+            remain_timer = block_timer_array[o2] - timet        #Shows the time to be shown on the blocker notification
             print(remain_timer)
             isAllowed = 0
             dicto = {"status": 0, "timer": remain_timer}

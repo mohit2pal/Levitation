@@ -152,14 +152,6 @@ def submit():
 def sub():
     return render_template("podselector_sub.html")
 
-# @app.route('/log', methods=['GET', 'POST'])
-# def log():
-#     return render_template("log.html")
-
-# @app.route('/log', methods=['GET', 'POST']) 
-# def log(): 
-# 	with open('log.txt', 'r') as f: 
-# 		return render_template('log.html', text=f.read())
 @app.route('/log', methods=['GET', 'POST'])
 def log():
     return render_template("log.html")
